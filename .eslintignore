@@ -1,0 +1,9 @@
+**/node_modules
+
+build/
+out/
+next/
+coverage/
+fixtures/
+public/**/*.js
+public/**/*.mjs

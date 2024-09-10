@@ -1,19 +1,60 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
-    },
-  },
-  plugins: [],
+	darkMode: ['class'],
+	content: ['./src/pages/**/*.{js,ts,jsx,tsx,mdx}', './src/components/**/*.{js,ts,jsx,tsx,mdx}', './src/app/**/*.{js,ts,jsx,tsx,mdx}'],
+	prefix: '',
+	theme: {
+		extend: {
+			colors: {
+				background: 'var(--background)',
+				foreground: 'var(--foreground)',
+			},
+		},
+	},
+	plugins: [
+		require('tailwindcss-animate'),
+		plugin(function ({ addComponents, addUtilities }) {
+			addComponents({
+				'.flex-between': {
+					display: 'flex',
+					justifyContent: 'space-between',
+					alignItems: 'center',
+				},
+				'.flex-center': {
+					display: 'flex',
+					justifyContent: 'center',
+					alignItems: 'center',
+				},
+				'.absolute-center': {
+					position: 'absolute',
+					top: '50%',
+					left: '50%',
+					transform: 'translate(-50%, -50%)',
+				},
+				'.fixed-center': {
+					position: 'fixed',
+					top: '50%',
+					left: '50%',
+					transform: 'translate(-50%, -50%)',
+				},
+			});
+			addUtilities({
+				'.overflow-y-auto': {
+					'scroll-behavior': 'smooth',
+					'scrollbar-width': 'thin',
+				},
+				'.overflow-x-auto': {
+					'scroll-behavior': 'smooth',
+					'scrollbar-width': 'thin',
+				},
+				'.overflow-auto': {
+					'scroll-behavior': 'smooth',
+					'scrollbar-width': 'thin',
+				},
+			});
+		}),
+	],
 };
 export default config;
