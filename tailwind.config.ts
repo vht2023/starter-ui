@@ -14,8 +14,12 @@ const config: Config = {
         laptop: '1280px',
       },
       colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
+        'muted-foreground': '#475569',
+        foreground: '#0F172A',
+        link: '#006FEE',
+      },
+      fontFamily: {
+        sans: ['var(--font-inter)'],
       },
     },
   },

@@ -4,4 +4,14 @@
 
 html {
   height: 100vh;
+  font-family: var(--font-inter);
+}
+
+.header-underline {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: black;
 }

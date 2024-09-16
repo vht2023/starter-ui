@@ -1,23 +1,27 @@
 'use client'
 
-import {DOCS_ROUTES} from 'enums/routes'
 import {usePathname} from 'next/navigation'
 import {useMemo} from 'react'
 
+import {DOCS_ROUTES} from '@/constants/routes'
+import {ENUM_ROUTES} from '@/enums/routes'
+
 const useHeaderNavigation = () => {
   const pathname = usePathname()
+
+  const docsRoutes = useMemo(() => DOCS_ROUTES.map((item) => item.toString()), [])
 
   const paths = useMemo(
     () => [
       {
         name: 'Docs',
-        href: '/docs',
-        active: DOCS_ROUTES.includes(pathname),
+        href: ENUM_ROUTES.DOCS,
+        active: docsRoutes.includes(pathname),
       },
       {
         name: 'Components',
-        href: '/docs/components',
-        active: pathname.startsWith('/docs/components'),
+        href: ENUM_ROUTES.COMPONENTS,
+        active: pathname.startsWith(ENUM_ROUTES.COMPONENTS),
       },
     ],
     [pathname]
@@ -36,19 +40,30 @@ const useSidebarNavigation = () => {
         sub: [
           {
             name: 'Introduction',
-            href: '/docs',
-            active: pathname === '/docs',
+            href: ENUM_ROUTES.DOCS,
+            active: pathname === ENUM_ROUTES.DOCS,
           },
           {
             name: 'Installation',
-            href: '/docs/installation',
-            active: pathname === '/docs/installation',
+            href: ENUM_ROUTES.DOCS_INSTALLATION,
+            active: pathname === ENUM_ROUTES.DOCS_INSTALLATION,
           },
         ],
       },
       {
         name: 'Components',
-        sub: [],
+        sub: [
+          {
+            name: 'Button',
+            href: ENUM_ROUTES.COMPONENTS_BUTTON,
+            active: pathname === ENUM_ROUTES.COMPONENTS_BUTTON,
+          },
+          {
+            name: 'Input',
+            href: ENUM_ROUTES.COMPONENTS_INPUT,
+            active: pathname === ENUM_ROUTES.COMPONENTS_INPUT,
+          },
+        ],
       },
     ],
     [pathname]

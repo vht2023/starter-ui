@@ -1,4 +1,12 @@
-const DOCS_ROUTES = ['/docs', '/docs/installation']
-const COMPONENTS_ROUTES = ['/docs/components']
+export enum ENUM_ROUTES {
+  HOME = '/',
 
-export {COMPONENTS_ROUTES, DOCS_ROUTES}
+  // DOCS
+  DOCS = '/docs',
+  DOCS_INSTALLATION = '/docs/installation',
+
+  // COMPONENTS
+  COMPONENTS = '/docs/components',
+  COMPONENTS_BUTTON = '/docs/components/button',
+  COMPONENTS_INPUT = '/docs/components/input',
+}

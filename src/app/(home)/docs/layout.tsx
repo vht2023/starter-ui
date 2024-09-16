@@ -1,5 +1,9 @@
-import Sidebar from 'components/common/Sidebar'
+'use client'
+
 import React from 'react'
+
+import Breadcrumbs from '@/components/common/Breadcrumbs'
+import Sidebar from '@/components/common/Sidebar'
 
 const layout = ({
   children,
@@ -8,10 +12,13 @@ const layout = ({
 }>) => {
   return (
     <div className='relative h-full w-full'>
-      <div className='scrollbar-thin fixed h-full w-80 overflow-y-auto pt-10'>
+      <aside className='fixed h-full w-72 overflow-y-auto pt-10 scrollbar-thin'>
         <Sidebar />
-      </div>
-      <div className='ml-80 pt-10'>{children}</div>
+      </aside>
+      <main className='ml-72 h-full pt-10'>
+        <Breadcrumbs />
+        <div>{children}</div>
+      </main>
     </div>
   )
 }
