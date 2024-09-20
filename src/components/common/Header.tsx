@@ -26,7 +26,7 @@ const Header = () => {
               <Link
                 key={index}
                 href={menu.href}
-                className={cn(['text-muted-foreground flex-center relative h-full text-sm font-normal hover:text-black', menu.active && 'font-semibold text-foreground'])}
+                className={cn(['text-muted flex-center relative h-full text-sm font-normal hover:text-black', menu.active && 'text-default font-semibold'])}
               >
                 {menu.name}
                 {menu.active ? <motion.div className='header-underline' layoutId='header-underline' /> : null}

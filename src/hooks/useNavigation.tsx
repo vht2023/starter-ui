@@ -52,7 +52,13 @@ const useSidebarNavigation = () => {
       },
       {
         name: 'Components',
+        href: ENUM_ROUTES.COMPONENTS,
         sub: [
+          {
+            name: 'Badge',
+            href: ENUM_ROUTES.COMPONENTS_BADGE,
+            active: pathname === ENUM_ROUTES.COMPONENTS_BADGE,
+          },
           {
             name: 'Button',
             href: ENUM_ROUTES.COMPONENTS_BUTTON,

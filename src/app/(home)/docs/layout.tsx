@@ -11,8 +11,8 @@ const layout = ({
   children: React.ReactNode
 }>) => {
   return (
-    <div className='relative h-full w-full'>
-      <aside className='fixed h-full w-72 overflow-y-auto pt-10 scrollbar-thin'>
+    <div className='relative h-full w-full pb-20'>
+      <aside className='fixed z-10 h-full w-72 overflow-y-auto pt-10 scrollbar-thin'>
         <Sidebar />
       </aside>
       <main className='ml-72 h-full pt-10'>

@@ -14,9 +14,26 @@ const config: Config = {
         laptop: '1280px',
       },
       colors: {
-        'muted-foreground': '#475569',
-        foreground: '#0F172A',
+        muted: '#475569',
         link: '#006FEE',
+        default: {
+          DEFAULT: '#0F172A',
+        },
+        primary: {
+          DEFAULT: '#006FEE',
+        },
+        secondary: {
+          DEFAULT: '#9353D3',
+        },
+        success: {
+          DEFAULT: '#17C964',
+        },
+        warning: {
+          DEFAULT: '#F5A524',
+        },
+        error: {
+          DEFAULT: '#dc2626',
+        },
       },
       fontFamily: {
         sans: ['var(--font-inter)'],

@@ -6,7 +6,7 @@ const page = () => {
       <div className='grow space-y-6 px-10'>
         <div className='space-y-3'>
           <div className='text-4xl font-bold'>Installation</div>
-          <div className='text-muted-foreground'>How to install dependencies and structure your app.</div>
+          <div className='text-muted'>How to install dependencies and structure your app.</div>
         </div>
         <div className='space-y-3'>
           <div className='font-semibold'>Requirements:</div>
@@ -39,7 +39,11 @@ const page = () => {
               <span className='font-semibold'>Create project</span>
               <div className='ml-5'>
                 <div>
-                  Start by creating a new React project using <span className='font-semibold'>vite</span>:
+                  Start by creating a new React project using{' '}
+                  <a href='https://vitejs.dev' className='text-link' target='_blank' rel='noreferrer'>
+                    Vite
+                  </a>
+                  :
                 </div>
                 <div>`npm create vite@latest`</div>
               </div>
@@ -65,10 +69,10 @@ const page = () => {
               </div>
             </li>
             <li>
-              <span className='font-semibold'>Install StarterUI package</span>
+              <span className='font-semibold'>Install Starter UI package</span>
               <div className='ml-5'>
                 <div>
-                  To install <span className='font-semibold'>StarterUI</span>, run one of the following commands in your terminal:
+                  To install <span className='font-semibold'>Starter UI</span>, run one of the following commands in your terminal:
                 </div>
                 <div>`npm install starter-ui`</div>
               </div>
@@ -76,7 +80,7 @@ const page = () => {
           </ul>
         </div>
       </div>
-      <div className='w-72 flex-none'>Timeline</div>
+      <div className='w-72 flex-none'>On This Page</div>
     </div>
   )
 }
