@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import Examples from './(examples)'
+import Import from './(import)'
 import Usage from './(usage)'
 
 const page = () => {
@@ -14,8 +14,8 @@ const page = () => {
           <div>Badges are used as a small numerical value or status descriptor for UI elements.</div>
           <div className='w-full border-b' />
         </div>
+        <Import />
         <Usage />
-        <Examples />
       </div>
     </React.Fragment>
   )

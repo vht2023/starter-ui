@@ -4,12 +4,12 @@ import React from 'react'
 
 import Colors from './Colors'
 import Default from './Default'
+import Orthers from './Orthers'
+import Sizes from './Sizes'
 
 const Examples = () => {
   return (
     <div className='space-y-3'>
-      <div className='text-2xl font-bold'>Examples</div>
-      <div className='w-full border-b' />
       <div className='space-y-3'>
         <div className='text-xl font-bold'>Default</div>
         <Default />
@@ -17,6 +17,14 @@ const Examples = () => {
       <div className='space-y-3'>
         <div className='text-xl font-bold'>Colors</div>
         <Colors />
+      </div>
+      <div className='space-y-3'>
+        <div className='text-xl font-bold'>Sizes</div>
+        <Sizes />
+      </div>
+      <div className='space-y-3'>
+        <div className='text-xl font-bold'>Orthers</div>
+        <Orthers />
       </div>
     </div>
   )

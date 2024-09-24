@@ -1,2 +1,4 @@
 import Badge from './badge'
-export {Badge}
+import Button from './button'
+import Spinner from './spinner'
+export {Badge, Button, Spinner}
