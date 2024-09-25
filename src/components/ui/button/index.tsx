@@ -1,8 +1,9 @@
+import {motion} from 'framer-motion'
 import React, {CSSProperties, ReactNode} from 'react'
 import {twMerge} from 'tailwind-merge'
 
 import {cn} from '@/libs/utils'
-import {IButtonTypes, IColors, ISizes} from '@/types/common'
+import {IButtonTypes, IColors, IRadius, ISizes} from '@/types/common'
 
 import Spinner from '../spinner'
 
@@ -11,6 +12,7 @@ interface Props {
   color?: IColors
   size?: ISizes
   type?: IButtonTypes
+  radius?: IRadius
   disabled?: boolean
   outline?: boolean
   isIconOnly?: boolean // ONLY ICON
@@ -26,52 +28,90 @@ interface Props {
 const buttonColors = (color: IColors, shouldHover: boolean, outline: boolean) => {
   switch (color) {
     case 'default':
-      return `[&>span]:text-default bg-grey focus:ring-grey/70 ${shouldHover && 'hover:bg-grey-dark'} ${outline && 'outline-default'}`
+      return `[&_div]:text-default bg-grey focus:ring-grey/70 ${shouldHover && 'hover:bg-grey-dark'} ${outline && 'outline-default'}`
     case 'primary':
-      return `[&>span]:text-white bg-primary focus:ring-primary/70 ${shouldHover && 'hover:bg-primary-dark'} ${outline && 'outline-primary [&>span]:text-primary'}`
+      return `[&_div]:text-white bg-primary focus:ring-primary/70 ${shouldHover && 'hover:bg-primary-dark'} ${outline && 'outline-primary [&_div]:text-primary'}`
     case 'secondary':
-      return `[&>span]:text-white bg-secondary focus:ring-secondary/70 ${shouldHover && 'hover:bg-secondary-dark'} ${outline && 'outline-secondary [&>span]:text-primary'}`
+      return `[&_div]:text-white bg-secondary focus:ring-secondary/70 ${shouldHover && 'hover:bg-secondary-dark'} ${outline && 'outline-secondary [&_div]:text-primary'}`
     case 'success':
-      return `[&>span]:text-default bg-success focus:ring-success/70 ${shouldHover && 'hover:bg-success-dark'} ${outline && 'outline-success [&>span]:text-success'}`
+      return `[&_div]:text-default bg-success focus:ring-success/70 ${shouldHover && 'hover:bg-success-dark'} ${outline && 'outline-success [&_div]:text-success'}`
     case 'warning':
-      return `[&>span]:text-default bg-warning focus:ring-warning/70 ${shouldHover && 'hover:bg-warning-dark'} ${outline && 'outline-warning [&>span]:text-warning'}`
+      return `[&_div]:text-default bg-warning focus:ring-warning/70 ${shouldHover && 'hover:bg-warning-dark'} ${outline && 'outline-warning [&_div]:text-warning'}`
     case 'error':
-      return `[&>span]:text-white bg-error focus:ring-error/70 ${shouldHover && 'hover:bg-error-dark'} ${outline && 'outline-error [&>span]:text-error'}`
+      return `[&_div]:text-white bg-error focus:ring-error/70 ${shouldHover && 'hover:bg-error-dark'} ${outline && 'outline-error [&_div]:text-error'}`
     default:
-      return `[&>span]:text-default bg-grey focus:ring-default/70 ${shouldHover && 'hover:bg-grey-dark'} ${outline && 'outline-default'}`
+      return `[&_div]:text-default bg-grey focus:ring-default/70 ${shouldHover && 'hover:bg-grey-dark'} ${outline && 'outline-default'}`
   }
 }
 
 const buttonOutline = (color: IColors) => {
   switch (color) {
     case 'default':
-      return 'outline-default hover:bg-white'
+      return 'outline-default [&_div]:text-default'
     case 'primary':
-      return 'outline-primary text-primary'
+      return 'outline-primary [&_div]:text-primary'
     case 'secondary':
-      return 'outline-secondary text-primary'
+      return 'outline-secondary [&_div]:text-secondary'
     case 'success':
-      return 'outline-success text-success'
+      return 'outline-success [&_div]:text-success'
     case 'warning':
-      return 'outline-warning text-warning'
+      return 'outline-warning [&_div]:text-warning'
     case 'error':
-      return 'outline-error text-error'
+      return 'outline-error [&_div]:text-error'
     default:
-      return 'outline-default'
+      return 'outline-default [&_div]:text-default'
   }
 }
 
 const buttonSizes = (size: ISizes) => {
   switch (size) {
     case 'sm':
-      return 'text-sm px-3 py-2 rounded-md'
+      return 'text-sm px-4 py-2 rounded-md'
     case 'md':
-      return 'text-md px-5 py-2.5 rounded-lg'
+      return 'text-md px-6 py-2.5 rounded-lg'
     case 'lg':
-      return 'text-lg px-6 py-3 rounded-xl'
+      return 'text-lg px-8 py-3 rounded-xl'
     default:
-      return 'text-md px-5 py-2.5 rounded-lg'
+      return 'text-md px-6 py-2.5 rounded-lg'
   }
+}
+
+const buttonRadius = (radius: IRadius) => {
+  switch (radius) {
+    case 'sm':
+      return 'rounded-md'
+    case 'md':
+      return 'rounded-lg'
+    case 'lg':
+      return 'rounded-xl'
+    case 'full':
+      return 'rounded-full'
+    case 'none':
+      return 'rounded-none'
+    default:
+      return ''
+  }
+}
+
+const loadingColors = (color: IColors, outline: boolean) => {
+  if (outline) {
+    switch (color) {
+      case 'default':
+        return 'border-t-transparent border-black'
+      case 'primary':
+        return 'border-primary'
+      case 'secondary':
+        return 'border-secondary'
+      case 'success':
+        return 'border-success'
+      case 'warning':
+        return 'border-warning'
+      case 'error':
+        return 'border-error'
+      default:
+        return 'border-black'
+    }
+  } else return 'border-t-transparent border-white'
 }
 
 const Button: React.FC<Props> = ({
@@ -79,6 +119,7 @@ const Button: React.FC<Props> = ({
   color = 'default',
   size = 'md',
   type = 'button',
+  radius = 'md',
   className,
   style,
   disabled = false,
@@ -105,46 +146,48 @@ const Button: React.FC<Props> = ({
 
   /* ======== ICON + CHILDREN ======== */
   const renderChildren = () => (
-    <span className='flex-center gap-2'>
-      {isLoading ? (
-        <React.Fragment>
-          <Spinner />
-          {children}
-          {endIcon && endIcon}
-        </React.Fragment>
-      ) : (
-        <React.Fragment>
-          {startIcon && startIcon}
-          {children}
-          {endIcon && endIcon}
-        </React.Fragment>
-      )}
-    </span>
+    <motion.div layout className={twMerge(cn(['flex-center w-full', isLoading && 'gap-2']))}>
+      <motion.div
+        animate={{opacity: 1}}
+        transition={{
+          opacity: {ease: 'backInOut'},
+        }}
+        className={twMerge(cn(['h-4 w-4 animate-spin rounded-full border-2 border-solid', loadingColors(color, outline), isLoading ? 'block border-t-transparent' : 'hidden']))}
+      />
+
+      <motion.div className='flex-center gap-2'>
+        {!isLoading && startIcon && startIcon}
+        <motion.div layout>{children}</motion.div>
+        {endIcon && endIcon}
+      </motion.div>
+    </motion.div>
   )
 
   return (
-    <button
+    <motion.button
       id={id}
       type={type}
       disabled={disabled || isLoading}
       onClick={onClick}
       className={twMerge(
         cn([
-          'inline-flex items-center justify-start whitespace-nowrap text-center font-medium transition-all duration-200 ease-in-out focus:outline-none focus:ring',
-          buttonColors(color, !disabled && !isLoading, outline),
+          'flex-center inline-flex min-w-20 whitespace-nowrap text-center font-medium transition-all duration-200 ease-in-out focus:outline-none focus:ring',
+          buttonColors(color, !disabled && !isLoading && !outline, outline),
           buttonSizes(size),
-          outline && `bg-transparent outline outline-offset-0 ${buttonOutline(color)}`,
+          buttonRadius(radius),
+          outline && `bg-transparent outline outline-offset-0 hover:opacity-70 ${buttonOutline(color)}`,
           disabled && 'cursor-not-allowed opacity-60',
-          isLoading && 'cursor-wait',
+          isLoading && 'cursor-wait opacity-70',
         ]),
         className
       )}
       style={{
         ...style,
       }}
+      whileTap={{scale: 0.9}}
     >
       {isIconOnly ? renderOnlyIcon() : renderChildren()}
-    </button>
+    </motion.button>
   )
 }
 
