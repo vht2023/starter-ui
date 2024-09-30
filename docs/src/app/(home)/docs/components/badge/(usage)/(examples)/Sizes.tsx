@@ -2,7 +2,7 @@ import {motion} from 'framer-motion'
 import {useMemo, useState} from 'react'
 
 import ViewCode from '@/components/common/ViewCode'
-import {Badge} from '@/components/ui'
+import {Badge} from '@starter-ui/core'
 import {demoCodeSizes} from '@/constants/documents/components/badge'
 import {cn} from '@/libs/utils'
 

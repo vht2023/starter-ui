@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		height: 100vh;
+		font-family: var(--font-inter);
+		@apply text-default bg-white;
+	}
+}

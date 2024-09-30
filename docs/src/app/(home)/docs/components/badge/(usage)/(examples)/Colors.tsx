@@ -1,8 +1,8 @@
+import {Badge} from '@starter-ui/core'
 import {motion} from 'framer-motion'
 import {useMemo, useState} from 'react'
 
 import ViewCode from '@/components/common/ViewCode'
-import {Badge} from '@/components/ui'
 import {demoCodeColors} from '@/constants/documents/components/badge'
 import {cn} from '@/libs/utils'
 
