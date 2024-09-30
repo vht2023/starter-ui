@@ -1,3 +1,4 @@
+import {Button} from '@starter-ui/core'
 import Link from 'next/link'
 import React from 'react'
 
@@ -10,8 +11,12 @@ const page = () => {
           Start developing with an open-source library of over 100+ UI components, sections, and pages built with the utility classes from Tailwind CSS.
         </div>
         <div className='flex-center gap-6'>
-          <Link href='docs'>Get started</Link>
-          <Link href='docs/components'>Explore components</Link>
+          <Link href='docs'>
+            <Button color='primary'>Get started</Button>
+          </Link>
+          <Link href='docs/components'>
+            <Button outline>Explore components</Button>
+          </Link>
         </div>
       </div>
     </div>
