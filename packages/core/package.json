@@ -1,0 +1,80 @@
+{
+	"name": "@starter-ui/core",
+	"version": "1.0.0",
+	"description": "This is a UI Components built with the utility classes from Tailwind CSS.",
+	"type": "module",
+	"files": [
+		"/dist"
+	],
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org"
+	},
+	"main": "dist/index.umd.js",
+	"module": "dist/index.es.js",
+	"types": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/index.es.js",
+			"require": "./dist/index.umd.js",
+			"types": "./dist/index.d.ts"
+		}
+	},
+	"sideEffects": false,
+	"scripts": {
+		"dev": "vite",
+		"prebuild": "rm -rf dist",
+		"build": "tsc && vite build",
+		"prepare": "npm run build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"clsx": "^2.1.1",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"sass": "^1.79.4",
+		"tailwind-merge": "^2.5.2"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.9.0",
+		"@types/node": "^22.7.4",
+		"@types/react": "^18.3.3",
+		"@types/react-dom": "^18.3.0",
+		"@vitejs/plugin-react-swc": "^3.5.0",
+		"autoprefixer": "^10.4.20",
+		"eslint": "^9.9.0",
+		"eslint-plugin-react-hooks": "^5.1.0-rc.0",
+		"eslint-plugin-react-refresh": "^0.4.9",
+		"globals": "^15.9.0",
+		"postcss": "^8.4.47",
+		"tailwindcss": "^3.4.13",
+		"typescript": "^5.5.3",
+		"typescript-eslint": "^8.0.1",
+		"vite": "^5.4.1",
+		"vite-plugin-dts": "^4.2.3"
+	},
+	"keywords": [
+		"ui",
+		"component",
+		"components",
+		"react-component",
+		"frontend",
+		"design",
+		"react",
+		"reactjs",
+		"react-ts",
+		"typescript",
+		"starter-ui"
+	],
+	"author": "thien.v <thien.vh611@gmail.com>",
+	"homepage": "https://starterui.vercel.app",
+	"license": "MIT",
+	"repository": {
+		"url": "git+https://github.com/vht2023/starter-ui.git",
+		"type": "git",
+		"directory": "packages/core"
+	},
+	"bugs": {
+		"url": "https://github.com/vht2023/starter-ui/issues"
+	}
+}
