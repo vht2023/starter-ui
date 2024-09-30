@@ -1,8 +1,8 @@
+import {Button} from '@starter-ui/core'
 import {motion} from 'framer-motion'
 import {useMemo, useState} from 'react'
 
 import ViewCode from '@/components/common/ViewCode'
-import {Button} from '@/components/ui'
 import {demoCodeSizes} from '@/constants/documents/components/button'
 import {cn} from '@/libs/utils'
 
