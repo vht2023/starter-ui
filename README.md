@@ -7,7 +7,7 @@
 
 ## Getting Started
 
-Visit <a aria-label="starter-ui" href="https://starterui.vercel.app">https://starterui.vercel.app</a> to get started with NextUI.
+Visit <a aria-label="starter-ui" href="https://starterui.vercel.app">https://starterui.vercel.app</a> to get started with Starter UI.
 
 ## Documentation
 
