@@ -1,6 +1,6 @@
 {
 	"name": "@starter-ui/core",
-	"version": "1.0.4",
+	"version": "1.0.6",
 	"description": "This is a UI Components built with the utility classes from Tailwind CSS.",
 	"type": "module",
 	"files": [
@@ -17,13 +17,17 @@
 			"import": "./dist/index.es.js",
 			"require": "./dist/index.umd.js",
 			"types": "./dist/index.d.ts"
+		},
+		"./dist/index.css": {
+			"import": "./dist/starter-ui.css"
 		}
 	},
 	"sideEffects": false,
 	"scripts": {
 		"dev": "vite",
 		"prebuild": "rm -rf dist",
-		"build": "tsc && vite build",
+		"build": "tsc && vite build && npm run build-css",
+		"build-css": "npx tailwindcss -i ./src/index.scss -o dist/starter-ui.css --minify",
 		"prepare": "npm run build",
 		"preview": "vite preview"
 	},

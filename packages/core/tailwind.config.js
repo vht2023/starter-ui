@@ -2,7 +2,6 @@
 import plugin from 'tailwindcss/plugin';
 
 export default {
-	prefix: '',
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
 	safelist: [
 		// => THE REASON
