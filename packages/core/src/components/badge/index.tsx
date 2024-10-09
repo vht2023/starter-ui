@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { IColors, ISizes } from '../../types/common';
@@ -11,7 +11,6 @@ interface Props {
 	disabled?: boolean;
 	outline?: boolean;
 	style?: CSSProperties;
-	children: React.ReactNode;
 }
 
 const badgeColors = (color: IColors, outline: boolean) => {
@@ -46,7 +45,7 @@ const badgeSizes = (size: ISizes, outline: boolean) => {
 	}
 };
 
-const Badge: React.FC<Props> = ({ color = 'default', size = 'md', className, style, disabled = false, outline = false, children }) => {
+const Badge = ({ color = 'default', size = 'md', className, style, disabled = false, outline = false, children }: PropsWithChildren<Props>) => {
 	return (
 		<div
 			className={twMerge(

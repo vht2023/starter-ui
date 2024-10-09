@@ -1,4 +1,5 @@
-import Badge from './badge';
-import Button from './button';
-import Spinner from './spinner';
-export { Badge, Button, Spinner };
+import Badge from './Badge';
+import Button from './Button';
+import Spinner from './Spinner';
+import Accordion from './Accordion';
+export { Badge, Button, Spinner, Accordion };

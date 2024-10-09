@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactNode } from 'react';
+import React, { CSSProperties, PropsWithChildren, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { IButtonTypes, IColors, IRadius, ISizes } from '../../types/common';
@@ -18,7 +18,6 @@ interface Props {
 	endIcon?: ReactNode | null;
 	className?: string;
 	style?: CSSProperties;
-	children: React.ReactNode;
 	onClick?: () => void;
 }
 
@@ -65,9 +64,9 @@ const buttonSizes = (size: ISizes, isIconOnly: boolean) => {
 		case 'sm':
 			return `text-sm rounded-md ${isIconOnly ? 'p-2' : 'px-4 py-2'}`;
 		case 'md':
-			return `text-md rounded-lg ${isIconOnly ? 'p-2.5' : 'px-6 py-2.5'}`;
+			return `text-md rounded-lg ${isIconOnly ? 'p-3' : 'px-6 py-3'}`;
 		case 'lg':
-			return `text-lg rounded-xl ${isIconOnly ? 'p-3' : 'px-8 py-3'}`;
+			return `text-lg rounded-xl ${isIconOnly ? 'p-4' : 'px-8 py-4'}`;
 		default:
 			return `text-sm rounded-md ${isIconOnly ? 'p-2' : 'px-4 py-2'}`;
 	}
@@ -111,7 +110,7 @@ const loadingColors = (color: IColors, outline: boolean) => {
 	} else return 'border-t-transparent border-white';
 };
 
-const Button: React.FC<Props> = ({
+const Button = ({
 	id = 'buttonId',
 	color = 'default',
 	size = 'md',
@@ -127,7 +126,7 @@ const Button: React.FC<Props> = ({
 	endIcon = null,
 	children,
 	onClick,
-}) => {
+}: PropsWithChildren<Props>) => {
 	/* ======== ONLY ICON ======== */
 	const renderOnlyIcon = () => (
 		<React.Fragment>
@@ -145,7 +144,7 @@ const Button: React.FC<Props> = ({
 
 	/* ======== ICON + CHILDREN ======== */
 	const renderChildren = () => (
-		<div className={twMerge(cn(['transition-size flex-center w-full duration-500 ease-in-out', isLoading && 'gap-2']))}>
+		<div className={twMerge(cn(['flex-center w-full', isLoading && 'gap-2']))}>
 			<div
 				className={twMerge(cn(['h-4 w-4 animate-spin rounded-full border-2 border-solid', loadingColors(color, outline), isLoading ? 'block border-t-transparent' : 'hidden']))}
 			/>
@@ -165,7 +164,7 @@ const Button: React.FC<Props> = ({
 			onClick={onClick}
 			className={twMerge(
 				cn([
-					'flex-center inline-flex whitespace-nowrap text-center font-medium transition-all duration-500 ease-in-out focus:outline-none focus:ring',
+					'flex-center whitespace-nowrap text-center font-medium transition-transform transform active:scale-95 focus:ring',
 					buttonColors(color, !disabled && !isLoading && !outline, outline),
 					buttonSizes(size, isIconOnly),
 					buttonRadius(radius),
