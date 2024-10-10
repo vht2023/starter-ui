@@ -7,7 +7,7 @@ import {CodeBlock} from 'react-code-block'
 
 import ClipboardIcon from '@/assets/icons/clipboard.svg'
 import ClipboardCheckedIcon from '@/assets/icons/clipboard-checked.svg'
-import {importCode} from '@/constants/documents/components/badge'
+import {importCode} from '@/constants/documents/components/accordion'
 import ComponentDocumentsContext from '@/contexts/ComponentDocumentsContext'
 
 const Import = () => {

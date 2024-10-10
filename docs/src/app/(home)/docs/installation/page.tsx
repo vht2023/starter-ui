@@ -1,9 +1,13 @@
+'use client'
+
 import React from 'react'
+
+import ViewCode from '@/components/common/ViewCode'
 
 const page = () => {
   return (
-    <div className='flex'>
-      <div className='grow space-y-6 px-10'>
+    <React.Fragment>
+      <div className='w-full space-y-6 px-10'>
         <div className='space-y-3'>
           <div className='text-4xl font-bold'>Installation</div>
           <div className='text-muted'>How to install dependencies and structure your app.</div>
@@ -23,12 +27,12 @@ const page = () => {
               </a>{' '}
               or later
             </li>
-            <li>
+            {/* <li>
               <a href='https://www.framer.com' className='text-link' target='_blank' rel='noreferrer'>
                 Framer Motion 11
               </a>{' '}
               or later
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className='w-full border-b' />
@@ -37,7 +41,7 @@ const page = () => {
           <ul className='list-inside list-decimal space-y-3'>
             <li>
               <span className='font-semibold'>Create project</span>
-              <div className='ml-5'>
+              <div className='ml-5 space-y-1.5'>
                 <div>
                   Start by creating a new React project using{' '}
                   <a href='https://vitejs.dev' className='text-link' target='_blank' rel='noreferrer'>
@@ -45,21 +49,29 @@ const page = () => {
                   </a>
                   :
                 </div>
-                <div>`npm create vite@latest`</div>
+                <div>
+                  <ViewCode id='vite' code='npm create vite@latest' />
+                </div>
               </div>
             </li>
             <li>
               <span className='font-semibold'>Add Tailwind and its configuration</span>
-              <div className='ml-5'>
+              <div className='ml-5 space-y-1.5'>
                 <div>
                   Install <span className='font-semibold'>tailwindcss</span> and its peer dependencies, then generate your <span className='font-semibold'>tailwind.config.js</span>{' '}
                   and <span className='font-semibold'>postcss.config.js</span> files:
                 </div>
-                <div>`npm install -D tailwindcss postcss autoprefixer`</div>
-                <div>`npx tailwindcss init -p`</div>
+                <div>
+                  <ViewCode
+                    id='tailwindcss'
+                    code={`npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+                    `}
+                  />
+                </div>
               </div>
             </li>
-            <li>
+            {/* <li>
               <span className='font-semibold'>Install Framer Motion</span>
               <div className='ml-5'>
                 <div>
@@ -67,21 +79,22 @@ const page = () => {
                 </div>
                 <div>`npm install framer-motion`</div>
               </div>
-            </li>
+            </li> */}
             <li>
               <span className='font-semibold'>Install Starter UI package</span>
-              <div className='ml-5'>
+              <div className='ml-5 space-y-1.5'>
                 <div>
                   To install <span className='font-semibold'>Starter UI</span>, run one of the following commands in your terminal:
                 </div>
-                <div>`npm install starter-ui`</div>
+                <div>
+                  <ViewCode id='starter-ui/core' code='npm install @starter-ui/core' />
+                </div>
               </div>
             </li>
           </ul>
         </div>
       </div>
-      <div className='w-72 flex-none'>On This Page</div>
-    </div>
+    </React.Fragment>
   )
 }
 

@@ -2,10 +2,9 @@
 
 import React from 'react'
 
-import Colors from './Colors'
+import Controlled from './Controlled'
 import Default from './Default'
-import Orthers from './Orthers'
-import Sizes from './Sizes'
+import Multiple from './Multiple'
 
 const Examples = () => {
   return (
@@ -15,16 +14,12 @@ const Examples = () => {
         <Default />
       </div>
       <div className='space-y-3'>
-        <div className='text-xl font-bold'>Colors</div>
-        <Colors />
+        <div className='text-xl font-bold'>Expand multiple items</div>
+        <Multiple />
       </div>
       <div className='space-y-3'>
-        <div className='text-xl font-bold'>Sizes</div>
-        <Sizes />
-      </div>
-      <div className='space-y-3'>
-        <div className='text-xl font-bold'>Orthers</div>
-        <Orthers />
+        <div className='text-xl font-bold'>Controlled</div>
+        <Controlled />
       </div>
     </React.Fragment>
   )

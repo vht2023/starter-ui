@@ -13,9 +13,11 @@ import ComponentDocumentsContext from '@/contexts/ComponentDocumentsContext'
 const Import = () => {
   const {idCoppied, copyCode} = useContext(ComponentDocumentsContext)
   return (
-    <div className='space-y-3'>
-      <div className='text-2xl font-bold'>Import</div>
-      <div className='w-full border-b' />
+    <div className='space-y-6'>
+      <div>
+        <div className='text-2xl font-bold'>Import</div>
+        <div className='mt-1.5 w-full border-b' />
+      </div>
       <CodeBlock code={importCode} language='ts' theme={themes.synthwave84}>
         <div className='relative'>
           <CodeBlock.Code className='rounded-lg bg-black p-3'>

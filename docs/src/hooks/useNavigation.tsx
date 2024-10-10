@@ -60,6 +60,12 @@ const useSidebarNavigation = () => {
         href: ENUM_ROUTES.COMPONENTS,
         sub: [
           {
+            name: 'Accordion',
+            href: ENUM_ROUTES.COMPONENTS_ACCORDION,
+            active: pathname === ENUM_ROUTES.COMPONENTS_ACCORDION,
+            sub: [],
+          },
+          {
             name: 'Badge',
             href: ENUM_ROUTES.COMPONENTS_BADGE,
             active: pathname === ENUM_ROUTES.COMPONENTS_BADGE,

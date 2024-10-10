@@ -12,7 +12,7 @@ import Sizes from './Sizes'
 
 const Examples = () => {
   return (
-    <div className='space-y-3'>
+    <React.Fragment>
       <div className='space-y-3'>
         <div className='text-xl font-bold'>Default</div>
         <Default />
@@ -41,7 +41,7 @@ const Examples = () => {
         <div className='text-xl font-bold'>Disabled</div>
         <Disabled />
       </div>
-    </div>
+    </React.Fragment>
   )
 }
 
