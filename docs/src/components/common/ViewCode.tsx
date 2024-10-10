@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import {themes} from 'prism-react-renderer'
 import React, {useContext} from 'react'
