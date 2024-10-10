@@ -73,9 +73,6 @@ export default {
 			fontFamily: {
 				sans: ['var(--font-inter)'],
 			},
-			transitionProperty: {
-				size: 'width, height',
-			},
 		},
 	},
 	plugins: [

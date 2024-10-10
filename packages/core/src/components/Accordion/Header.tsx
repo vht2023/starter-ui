@@ -1,4 +1,4 @@
-import { PropsWithChildren, useContext } from 'react';
+import { PropsWithChildren, ReactNode, useContext } from 'react';
 import { cn } from '../../libs/utils';
 import { twMerge } from 'tailwind-merge';
 import { AccordionContext } from './Container';
@@ -6,18 +6,23 @@ import { AccordionItemContext } from './Item';
 
 const Header = ({
 	className,
-	onClick,
+	subTitle,
 	children,
+	onClick,
 }: PropsWithChildren<{
 	className?: string;
+	subTitle?: ReactNode;
 	onClick?: () => void;
 }>) => {
 	const { mode, activatedKeys, setActivatedKeys } = useContext(AccordionContext);
 
-	const { itemId, loading } = useContext(AccordionItemContext);
+	const { itemId, loading, isDisabled } = useContext(AccordionItemContext);
 
 	const onClickHeader = () => {
+		if (loading || isDisabled) return;
+
 		onClick?.();
+
 		if (mode === 'single') {
 			setActivatedKeys((prev) => (prev.includes(itemId) ? [] : [itemId]));
 		} else {
@@ -26,11 +31,20 @@ const Header = ({
 	};
 
 	return (
-		<div id={`accordion-header-${itemId}`} onClick={onClickHeader} className={twMerge(cn(['flex-between text-lg font-semibold w-full cursor-pointer']), className)}>
-			{children}
+		<div
+			id={`accordion-header-${itemId}`}
+			onClick={onClickHeader}
+			className={twMerge(cn(['flex-between w-full cursor-pointer', loading && 'opacity-70 cursor-wait', isDisabled && 'cursor-default opacity-50', className]))}
+		>
+			<div>
+				<div className='text-lg font-semibold'>{children}</div>
+				<div className='text-sm font-light opacity-85'>{subTitle}</div>
+			</div>
 
-			{!loading && (
-				<div className={twMerge(cn(['transition-all duration-300', activatedKeys.includes(itemId) ? 'rotate-180' : 'rotate-0']))}>
+			{loading ? (
+				<div className='h-3 w-3 animate-spin rounded-full border-2 border-solid block border-t-transparent border-black/50 mr-0.5' />
+			) : (
+				<div className={twMerge(cn(['transition-all duration-200', activatedKeys.includes(itemId) ? 'rotate-180' : 'rotate-0']))}>
 					<svg width='14px' height='14px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
 						<g id='SVGRepo_bgCarrier' stroke-width='0'></g>
 						<g id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'></g>

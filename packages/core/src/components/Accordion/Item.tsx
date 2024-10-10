@@ -1,27 +1,34 @@
-import { createContext, PropsWithChildren, SetStateAction, useEffect, useState } from 'react';
+import { createContext, PropsWithChildren, SetStateAction, useContext, useEffect, useMemo, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { cn } from '../../libs/utils';
+import { AccordionContext } from './Container';
 
 export const AccordionItemContext = createContext<{
-	itemId: string;
 	loading?: boolean;
+	isDisabled: boolean;
+	itemId: string;
 	setItemId: React.Dispatch<SetStateAction<string>>;
 }>({
-	itemId: '',
 	loading: false,
+	isDisabled: false,
+	itemId: '',
 	setItemId: () => '',
 });
 
 const Item = ({ id = '', loading = false, className = '', children }: PropsWithChildren<{ id?: string; className?: string; loading?: boolean }>) => {
+	const { disabledKeys = [] } = useContext(AccordionContext);
+
 	const [itemId, setItemId] = useState<string>('');
+
+	const isDisabled = useMemo(() => disabledKeys.includes(itemId), [disabledKeys, itemId]);
 
 	useEffect(() => {
 		setItemId(id);
 	}, [id]);
 
 	return (
-		<AccordionItemContext.Provider value={{ loading, itemId, setItemId }}>
-			<div className={twMerge(cn(['py-3 first:pt-0 last:pb-0', className]))}>{children}</div>
+		<AccordionItemContext.Provider value={{ loading, isDisabled, itemId, setItemId }}>
+			<div className={twMerge(cn(['pt-3 last:pb-0', className]))}>{children}</div>
 		</AccordionItemContext.Provider>
 	);
 };

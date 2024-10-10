@@ -1,17 +1,17 @@
-import React, { PropsWithChildren, useState } from 'react';
+import { PropsWithChildren, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { cn } from '../../libs/utils';
 import AccordionContainer, { AccordionContext } from './Container';
 import Item from './Item';
 import Header from './Header';
 import Content from './Content';
+import './index.scss';
 
 interface Props {
 	id?: string;
 	mode?: 'single' | 'multiple';
-	selectedKeys?: string[] | 'all';
+	selectedKeys?: string[];
 	disabledKeys?: string[];
-	defaultSelectedKeys?: string[] | 'all';
 	showDivider?: boolean;
 	className?: string;
 	onChange?: (keys: string[]) => void;
@@ -22,17 +22,16 @@ const Accordion = ({
 	mode = 'single',
 	selectedKeys = [],
 	disabledKeys = [],
-	defaultSelectedKeys = [],
 	showDivider = true,
 	className,
 	children,
 	onChange,
 }: PropsWithChildren<Props>) => {
-	const [activatedKeys, setActivatedKeys] = useState<string[]>([]);
+	const [activatedKeys, setActivatedKeys] = useState<string[]>(selectedKeys);
 
 	return (
-		<div id={id} className={twMerge(cn(['w-full divide-y']), className)}>
-			<AccordionContext.Provider value={{ mode, showDivider, activatedKeys, setActivatedKeys }}>
+		<div id={id} className={twMerge(cn(['w-full', showDivider && 'divide-y', className]))}>
+			<AccordionContext.Provider value={{ mode, selectedKeys, disabledKeys, activatedKeys, setActivatedKeys }}>
 				<AccordionContainer onChange={(ids) => onChange && onChange(ids)}>{children}</AccordionContainer>
 			</AccordionContext.Provider>
 		</div>
