@@ -1,4 +1,4 @@
-import React, { CSSProperties, PropsWithChildren, ReactNode } from 'react';
+import React, { PropsWithChildren, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { IButtonTypes, IColors, IRadius, ISizes } from '../../types/common';
@@ -17,7 +17,6 @@ interface Props {
 	startIcon?: ReactNode | null;
 	endIcon?: ReactNode | null;
 	className?: string;
-	style?: CSSProperties;
 	onClick?: () => void;
 }
 
@@ -117,7 +116,6 @@ const Button = ({
 	type = 'button',
 	radius = 'md',
 	className,
-	style,
 	disabled = false,
 	outline = false,
 	isLoading = false,
@@ -175,9 +173,6 @@ const Button = ({
 				]),
 				className
 			)}
-			style={{
-				...style,
-			}}
 		>
 			{isIconOnly ? renderOnlyIcon() : renderChildren()}
 		</button>

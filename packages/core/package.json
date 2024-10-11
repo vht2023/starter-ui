@@ -1,6 +1,6 @@
 {
 	"name": "@starter-ui/core",
-	"version": "1.0.10",
+	"version": "1.0.12",
 	"description": "This is a UI Components built with the utility classes from Tailwind CSS.",
 	"type": "module",
 	"files": [
@@ -34,6 +34,7 @@
 	"dependencies": {
 		"clsx": "^2.1.1",
 		"framer-motion": "^11.10.0",
+		"lucide-react": "^0.451.0",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"sass": "^1.79.4",
@@ -56,7 +57,8 @@
 		"typescript": "^5.5.3",
 		"typescript-eslint": "^8.0.1",
 		"vite": "^5.4.1",
-		"vite-plugin-dts": "^4.2.3"
+		"vite-plugin-dts": "^4.2.3",
+		"vite-plugin-svgr": "^4.2.0"
 	},
 	"keywords": [
 		"ui",
