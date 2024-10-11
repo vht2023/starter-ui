@@ -31,7 +31,7 @@ const config: Config = {
       screens: {
         /* CUSTOMIZE NEW SCREEN */
         mobile_max: {max: '480px'},
-        tablet_max: {max: '1279px'},
+        tablet_max: {max: '1027px'},
         laptop: '1280px',
       },
       colors: {

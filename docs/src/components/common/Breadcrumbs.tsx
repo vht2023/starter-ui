@@ -20,7 +20,7 @@ const Breadcrumbs = () => {
   if (total === 1) return undefined
 
   return (
-    <div className='text-muted mb-4 flex items-center space-x-1 pl-10 text-sm leading-none'>
+    <div className='mb-4 flex items-center space-x-1 pl-10 text-sm leading-none text-muted'>
       {breadcrumbs.map((item, index) => (
         <React.Fragment key={index}>
           {isLink(index + 1) ? (
@@ -28,7 +28,7 @@ const Breadcrumbs = () => {
               {item}
             </Link>
           ) : (
-            <span className={cn('first-letter:uppercase', index === breadcrumbs.length - 1 && 'text-default font-medium')}>{item}</span>
+            <span className={cn('first-letter:uppercase', index === breadcrumbs.length - 1 && 'font-medium text-default')}>{item}</span>
           )}
 
           {index < breadcrumbs.length - 1 && <Image alt='Breadcrumb Icon' src={RightBreadcrumbIcon} className='text-muted' width={16} height={16} />}
