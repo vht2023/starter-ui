@@ -4,6 +4,20 @@ import React from 'react'
 
 import ViewCode from '@/components/common/ViewCode'
 
+const tailwindCssCode = `npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+`
+
+const lucideReactCode = 'npm install lucide-react'
+
+const starteruiCssCode = `
+// src/main.tsx <-- ReactJS -->
+// app/layout.tsx <-- NextJS app directory -->
+
+import '@starter-ui/core/index.css'
+...
+`
+
 const page = () => {
   return (
     <React.Fragment>
@@ -24,6 +38,12 @@ const page = () => {
             <li>
               <a href='https://tailwindcss.com' className='text-link' target='_blank' rel='noreferrer'>
                 Tailwind CSS 3.4
+              </a>{' '}
+              or later
+            </li>
+            <li>
+              <a href='https://lucide.dev/guide/packages/lucide-react' className='text-link' target='_blank' rel='noreferrer'>
+                Lucide React 0.451.0
               </a>{' '}
               or later
             </li>
@@ -62,12 +82,18 @@ const page = () => {
                   and <span className='font-semibold'>postcss.config.js</span> files:
                 </div>
                 <div>
-                  <ViewCode
-                    id='tailwindcss'
-                    code={`npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-                    `}
-                  />
+                  <ViewCode id='tailwindcss' code={tailwindCssCode} />
+                </div>
+              </div>
+            </li>
+            <li>
+              <span className='font-semibold'>Add lucide-react icons</span>
+              <div className='ml-5'>
+                <div>
+                  Install <span className='font-semibold'>lucide-react</span> from npm:
+                </div>
+                <div>
+                  <ViewCode id='lucideReact' code={lucideReactCode} />
                 </div>
               </div>
             </li>
@@ -88,6 +114,14 @@ npx tailwindcss init -p
                 </div>
                 <div>
                   <ViewCode id='starter-ui/core' code='npm install @starter-ui/core' />
+                </div>
+              </div>
+            </li>
+            <li>
+              <span className='font-semibold'>Add the Starter UI CSS to your CSS</span>
+              <div className='ml-5 space-y-1.5'>
+                <div className='mt-1.5'>
+                  <ViewCode id='starteruiCss' code={starteruiCssCode} />
                 </div>
               </div>
             </li>

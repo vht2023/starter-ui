@@ -66,6 +66,12 @@ const useSidebarNavigation = () => {
             sub: [],
           },
           {
+            name: 'Avatar',
+            href: ENUM_ROUTES.COMPONENTS_AVATAR,
+            active: pathname === ENUM_ROUTES.COMPONENTS_AVATAR,
+            sub: [],
+          },
+          {
             name: 'Badge',
             href: ENUM_ROUTES.COMPONENTS_BADGE,
             active: pathname === ENUM_ROUTES.COMPONENTS_BADGE,
