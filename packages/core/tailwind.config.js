@@ -4,14 +4,6 @@ import plugin from 'tailwindcss/plugin';
 export default {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
 	safelist: [
-		// => THE REASON
-		// https://tailwindcss.com/docs/content-configuration#dynamic-class-names
-		/*
-      Using dynamic classes in tailwind-css is usually not recommended because tailwind uses tree-shaking i.e any class that wasn't declared in your source files, won't be generated in the output file.
-    */
-
-		// => SOLUTION TO FIX
-		// https://tailwindcss.com/docs/content-configuration#safelisting-classes
 		{
 			pattern: /bg-(default|primary|secondary|success|warning|error)/,
 			variants: ['lg', 'hover', 'focus', 'lg:hover'],

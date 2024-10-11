@@ -1,3 +1,5 @@
+'use client'
+
 import {Button} from '@starter-ui/core'
 import Link from 'next/link'
 import React from 'react'

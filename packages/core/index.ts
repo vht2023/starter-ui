@@ -1,1 +1,1 @@
-export { Button, Badge, Spinner } from './src/components/index';
+export { Button, Badge, Spinner, Accordion } from './src/components/index';

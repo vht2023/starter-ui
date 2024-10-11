@@ -5,7 +5,6 @@ import AccordionContainer, { AccordionContext } from './Container';
 import Item from './Item';
 import Header from './Header';
 import Content from './Content';
-import './index.scss';
 
 interface Props {
 	id?: string;
