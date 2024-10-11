@@ -8,8 +8,6 @@ const tailwindCssCode = `npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 `
 
-const lucideReactCode = 'npm install lucide-react'
-
 const starteruiCssCode = `
 // src/main.tsx <-- ReactJS -->
 // app/layout.tsx <-- NextJS app directory -->
@@ -38,12 +36,6 @@ const page = () => {
             <li>
               <a href='https://tailwindcss.com' className='text-link' target='_blank' rel='noreferrer'>
                 Tailwind CSS 3.4
-              </a>{' '}
-              or later
-            </li>
-            <li>
-              <a href='https://lucide.dev/guide/packages/lucide-react' className='text-link' target='_blank' rel='noreferrer'>
-                Lucide React 0.451.0
               </a>{' '}
               or later
             </li>
@@ -83,17 +75,6 @@ const page = () => {
                 </div>
                 <div>
                   <ViewCode id='tailwindcss' code={tailwindCssCode} />
-                </div>
-              </div>
-            </li>
-            <li>
-              <span className='font-semibold'>Add lucide-react icons</span>
-              <div className='ml-5'>
-                <div>
-                  Install <span className='font-semibold'>lucide-react</span> from npm:
-                </div>
-                <div>
-                  <ViewCode id='lucideReact' code={lucideReactCode} />
                 </div>
               </div>
             </li>
