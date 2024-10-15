@@ -4,7 +4,7 @@ const page = () => {
   return (
     <React.Fragment>
       <div className='w-full space-y-6 px-10'>
-        <div className='text-4xl font-bold'>Introduction</div>
+        <div className='w-fit text-4xl font-bold tablet_max:leading-none'>Introduction</div>
         <div>
           Welcome to the <span className='font-bold text-default'>Starter UI</span> documentation!
         </div>
