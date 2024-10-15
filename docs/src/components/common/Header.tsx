@@ -26,9 +26,11 @@ const Header = () => {
     <div className='fixed left-0 top-0 z-50 h-[60px] min-h-[60px] w-full border-b backdrop-blur-lg tablet_max:h-fit tablet_max:min-h-[60px] tablet_max:border-none'>
       <div className='mx-auto h-full min-h-[60px] w-3/4 tablet_max:w-full tablet_max:border-b'>
         <div className='flex h-full min-h-[60px] items-center gap-16 tablet_max:px-4'>
-          <Link href={ENUM_ROUTES.HOME} className={`${martian.className} flex-1 text-2xl font-bold tracking-tighter tablet_max:text-xl`}>
-            starter|ui
-          </Link>
+          <div>
+            <Link href={ENUM_ROUTES.HOME} className={`${martian.className} w-fit flex-1 text-2xl font-bold tracking-tighter tablet_max:text-xl`}>
+              starter|ui
+            </Link>
+          </div>
           <div className='flex h-full items-center gap-6 tablet_max:hidden'>
             {paths.map((menu, index) => (
               <Link
