@@ -20,7 +20,7 @@ interface Props {
 	onClick?: () => void;
 }
 
-const buttonColors = (color: IColors, shouldHover: boolean, outline: boolean) => {
+const getButtonColors = (color: IColors, shouldHover: boolean, outline: boolean) => {
 	switch (color) {
 		case 'default':
 			return `[&_div]:text-default bg-grey focus:ring-grey/70 ${shouldHover && 'hover:bg-grey-dark'} ${outline && 'outline-default'}`;
@@ -58,12 +58,12 @@ const buttonOutline = (color: IColors) => {
 	}
 };
 
-const buttonSizes = (size: ISizes, isIconOnly: boolean) => {
+const getButtonSizes = (size: ISizes, isIconOnly: boolean) => {
 	switch (size) {
 		case 'sm':
 			return `text-sm rounded-md ${isIconOnly ? 'p-2' : 'px-4 py-2'}`;
 		case 'md':
-			return `text-md rounded-lg ${isIconOnly ? 'p-3' : 'px-6 py-3'}`;
+			return `text-base rounded-lg ${isIconOnly ? 'p-3' : 'px-6 py-3'}`;
 		case 'lg':
 			return `text-lg rounded-xl ${isIconOnly ? 'p-4' : 'px-8 py-4'}`;
 		default:
@@ -71,7 +71,7 @@ const buttonSizes = (size: ISizes, isIconOnly: boolean) => {
 	}
 };
 
-const buttonRadius = (radius: IRadius) => {
+const getButtonRadius = (radius: IRadius) => {
 	switch (radius) {
 		case 'sm':
 			return 'rounded-md';
@@ -88,7 +88,7 @@ const buttonRadius = (radius: IRadius) => {
 	}
 };
 
-const loadingColors = (color: IColors, outline: boolean) => {
+const getLoadingColors = (color: IColors, outline: boolean) => {
 	if (outline) {
 		switch (color) {
 			case 'default':
@@ -131,7 +131,9 @@ const Button = ({
 			{isLoading ? (
 				<div className='flex-center'>
 					<div
-						className={twMerge(cn(['h-4 w-4 animate-spin rounded-full border-2 border-solid', loadingColors(color, outline), isLoading ? 'block border-t-transparent' : 'hidden']))}
+						className={twMerge(
+							cn(['h-4 w-4 animate-spin rounded-full border-2 border-solid', getLoadingColors(color, outline), isLoading ? 'block border-t-transparent' : 'hidden'])
+						)}
 					/>
 				</div>
 			) : (
@@ -144,7 +146,7 @@ const Button = ({
 	const renderChildren = () => (
 		<div className={twMerge(cn(['flex-center w-full', isLoading && 'gap-2']))}>
 			<div
-				className={twMerge(cn(['h-4 w-4 animate-spin rounded-full border-2 border-solid', loadingColors(color, outline), isLoading ? 'block border-t-transparent' : 'hidden']))}
+				className={twMerge(cn(['h-4 w-4 animate-spin rounded-full border-2 border-solid', getLoadingColors(color, outline), isLoading ? 'block border-t-transparent' : 'hidden']))}
 			/>
 			<div className='flex-center gap-2'>
 				{!isLoading && startIcon && startIcon}
@@ -163,9 +165,9 @@ const Button = ({
 			className={twMerge(
 				cn([
 					'flex-center whitespace-nowrap text-center font-medium transition-transform transform active:scale-95 focus:ring',
-					buttonColors(color, !disabled && !isLoading && !outline, outline),
-					buttonSizes(size, isIconOnly),
-					buttonRadius(radius),
+					getButtonColors(color, !disabled && !isLoading && !outline, outline),
+					getButtonSizes(size, isIconOnly),
+					getButtonRadius(radius),
 					outline && `bg-transparent outline outline-offset-0 hover:opacity-70 ${buttonOutline(color)}`,
 					disabled && 'cursor-not-allowed opacity-60',
 					isLoading && 'cursor-wait opacity-70',

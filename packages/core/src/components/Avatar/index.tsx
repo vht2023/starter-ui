@@ -18,7 +18,7 @@ interface Props {
 	onClick?: () => void;
 }
 
-const avatarRadius = (radius: IRadius) => {
+const getAvatarRadius = (radius: IRadius) => {
 	switch (radius) {
 		case 'sm':
 			return 'rounded-md';
@@ -35,7 +35,7 @@ const avatarRadius = (radius: IRadius) => {
 	}
 };
 
-const avatarColor = (color: IColors) => {
+const getAvatarColor = (color: IColors) => {
 	switch (color) {
 		case 'default':
 			return 'border-default ring-default';
@@ -66,7 +66,14 @@ const AvatarDefault: React.FC<{
 	return (
 		<div
 			className={twMerge(
-				cn(['bg-gray-100 rounded-full flex-center', bordered && 'border-[1.5px]', avatarColor(color), avatarRadius(radius), disabled && 'opacity-50 cursor-not-allowed', className])
+				cn([
+					'bg-gray-100 rounded-full flex-center',
+					bordered && 'border-[1.5px]',
+					getAvatarColor(color),
+					getAvatarRadius(radius),
+					disabled && 'opacity-50 cursor-not-allowed',
+					className,
+				])
 			)}
 			onClick={() => {
 				if (disabled) return;
@@ -98,8 +105,8 @@ const AvatarWithName: React.FC<{
 				cn([
 					'bg-gray-100 rounded-full inline-flex flex-center p-2 w-fit h-fit',
 					bordered && 'border',
-					avatarColor(color),
-					avatarRadius(radius),
+					getAvatarColor(color),
+					getAvatarRadius(radius),
 					disabled && 'opacity-50 cursor-not-allowed',
 					className,
 				])
@@ -135,8 +142,8 @@ const Avatar: React.FC<Props> = ({ src, name, alt = 'alt-avatar', color = 'defau
 				cn([
 					'rounded-full object-cover object-center',
 					bordered && 'ring-1 p-0.5',
-					avatarColor(color),
-					avatarRadius(radius),
+					getAvatarColor(color),
+					getAvatarRadius(radius),
 					disabled && 'opacity-50 cursor-not-allowed',
 					className,
 				])

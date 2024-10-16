@@ -12,7 +12,7 @@ interface Props {
 	outline?: boolean;
 }
 
-const badgeColors = (color: IColors, outline: boolean) => {
+const getBadgeColors = (color: IColors, outline: boolean) => {
 	switch (color) {
 		case 'default':
 			return `text-default bg-grey ${outline && 'border-default'}`;
@@ -31,16 +31,16 @@ const badgeColors = (color: IColors, outline: boolean) => {
 	}
 };
 
-const badgeSizes = (size: ISizes, outline: boolean) => {
+const getBadgeSizes = (size: ISizes, outline: boolean) => {
 	switch (size) {
 		case 'sm':
 			return 'text-sm px-2 py-1 rounded-md';
 		case 'md':
-			return `text-md px-3 py-2 rounded-lg ${outline && 'border-[1.5px]'}`;
+			return `text-base px-3 py-2 rounded-lg ${outline && 'border-[1.5px]'}`;
 		case 'lg':
 			return `text-lg px-4 py-3 rounded-xl ${outline && 'border-[2px]'}`;
 		default:
-			return `text-md px-3 py-2 rounded-lg ${outline && 'border-[1.5px]'}`;
+			return `text-base px-3 py-2 rounded-lg ${outline && 'border-[1.5px]'}`;
 	}
 };
 
@@ -50,8 +50,8 @@ const Badge = ({ color = 'default', size = 'md', className, disabled = false, ou
 			className={twMerge(
 				cn([
 					'inline-flex items-center justify-start whitespace-nowrap',
-					badgeColors(color, outline),
-					badgeSizes(size, outline),
+					getBadgeColors(color, outline),
+					getBadgeSizes(size, outline),
 					outline && 'border bg-transparent',
 					disabled && 'cursor-not-allowed opacity-60',
 				]),

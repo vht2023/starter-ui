@@ -3,4 +3,6 @@ import Button from './Button';
 import Spinner from './Spinner';
 import Accordion from './Accordion';
 import Avatar from './Avatar';
-export { Badge, Button, Spinner, Accordion, Avatar };
+import Breadcrumb from './Breadcrumb';
+import Card from './Card';
+export { Badge, Button, Spinner, Accordion, Avatar, Breadcrumb, Card };
