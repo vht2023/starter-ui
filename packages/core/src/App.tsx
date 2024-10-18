@@ -1,4 +1,4 @@
-import { Alert } from './components';
+import { Badge, Button } from './components';
 
 function App() {
 	return (

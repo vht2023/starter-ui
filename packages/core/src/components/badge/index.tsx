@@ -34,22 +34,22 @@ const getBadgeColors = (color: IColors, outline: boolean) => {
 const getBadgeSizes = (size: ISizes, outline: boolean) => {
 	switch (size) {
 		case 'sm':
-			return 'text-sm px-2 py-1 rounded-md';
+			return 'text-sm px-2 py-1.5 rounded-md';
 		case 'md':
 			return `text-base px-3 py-2 rounded-lg ${outline && 'border-[1.5px]'}`;
 		case 'lg':
 			return `text-lg px-4 py-3 rounded-xl ${outline && 'border-[2px]'}`;
 		default:
-			return `text-base px-3 py-2 rounded-lg ${outline && 'border-[1.5px]'}`;
+			return 'text-sm px-2 py-1.5 rounded-md';
 	}
 };
 
-const Badge = ({ color = 'default', size = 'md', className, disabled = false, outline = false, children }: PropsWithChildren<Props>) => {
+const Badge = ({ color = 'default', size = 'sm', className, disabled = false, outline = false, children }: PropsWithChildren<Props>) => {
 	return (
 		<div
 			className={twMerge(
 				cn([
-					'inline-flex items-center justify-start whitespace-nowrap',
+					'inline-flex items-center justify-start w-fit h-fit whitespace-nowrap',
 					getBadgeColors(color, outline),
 					getBadgeSizes(size, outline),
 					outline && 'border bg-transparent',
