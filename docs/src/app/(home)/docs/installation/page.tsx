@@ -1,5 +1,6 @@
 'use client'
 
+import {themes} from 'prism-react-renderer'
 import React from 'react'
 
 import ViewCode from '@/components/common/ViewCode'
@@ -62,7 +63,7 @@ const page = () => {
                   :
                 </div>
                 <div>
-                  <ViewCode id='vite' code='npm create vite@latest' />
+                  <ViewCode id='vite' code='npm create vite@latest' language='bash' theme={themes.synthwave84} />
                 </div>
               </div>
             </li>
@@ -74,7 +75,7 @@ const page = () => {
                   and <span className='font-semibold'>postcss.config.js</span> files:
                 </div>
                 <div>
-                  <ViewCode id='tailwindcss' code={tailwindCssCode} />
+                  <ViewCode id='tailwindcss' code={tailwindCssCode} language='bash' theme={themes.synthwave84} />
                 </div>
               </div>
             </li>
@@ -94,7 +95,7 @@ const page = () => {
                   To install <span className='font-semibold'>Starter UI</span>, run one of the following commands in your terminal:
                 </div>
                 <div>
-                  <ViewCode id='starter-ui/core' code='npm install @starter-ui/core' />
+                  <ViewCode id='starter-ui/core' code='npm install @starter-ui/core' language='bash' theme={themes.synthwave84} />
                 </div>
               </div>
             </li>
@@ -102,7 +103,7 @@ const page = () => {
               <span className='font-semibold'>Add the Starter UI CSS to your CSS</span>
               <div className='ml-5 space-y-1.5'>
                 <div className='mt-1.5'>
-                  <ViewCode id='starteruiCss' code={starteruiCssCode} />
+                  <ViewCode id='starteruiCss' code={starteruiCssCode} language='typescript' theme={themes.synthwave84} />
                 </div>
               </div>
             </li>

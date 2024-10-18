@@ -3,6 +3,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { IButtonTypes, IColors, IRadius, ISizes } from '../../types/common';
 import { cn } from '../../libs/utils';
+import Spinner from '../Spinner';
 
 interface Props {
 	id?: string;
@@ -88,27 +89,6 @@ const getButtonRadius = (radius: IRadius) => {
 	}
 };
 
-const getLoadingColors = (color: IColors, outline: boolean) => {
-	if (outline) {
-		switch (color) {
-			case 'default':
-				return 'border-t-transparent border-black';
-			case 'primary':
-				return 'border-primary';
-			case 'secondary':
-				return 'border-secondary';
-			case 'success':
-				return 'border-success';
-			case 'warning':
-				return 'border-warning';
-			case 'error':
-				return 'border-error';
-			default:
-				return 'border-black';
-		}
-	} else return 'border-t-transparent border-white';
-};
-
 const Button = ({
 	id = 'buttonId',
 	color = 'default',
@@ -126,28 +106,12 @@ const Button = ({
 	onClick,
 }: PropsWithChildren<Props>) => {
 	/* ======== ONLY ICON ======== */
-	const renderOnlyIcon = () => (
-		<React.Fragment>
-			{isLoading ? (
-				<div className='flex-center'>
-					<div
-						className={twMerge(
-							cn(['h-4 w-4 animate-spin rounded-full border-2 border-solid', getLoadingColors(color, outline), isLoading ? 'block border-t-transparent' : 'hidden'])
-						)}
-					/>
-				</div>
-			) : (
-				children
-			)}
-		</React.Fragment>
-	);
+	const renderOnlyIcon = () => <React.Fragment>{isLoading ? <Spinner isLoading={isLoading} color={outline ? color : 'white'} /> : children}</React.Fragment>;
 
 	/* ======== ICON + CHILDREN ======== */
 	const renderChildren = () => (
 		<div className={twMerge(cn(['flex-center w-full', isLoading && 'gap-2']))}>
-			<div
-				className={twMerge(cn(['h-4 w-4 animate-spin rounded-full border-2 border-solid', getLoadingColors(color, outline), isLoading ? 'block border-t-transparent' : 'hidden']))}
-			/>
+			<Spinner isLoading={isLoading} color={outline ? color : 'white'} />
 			<div className='flex-center gap-2'>
 				{!isLoading && startIcon && startIcon}
 				{children}
@@ -164,13 +128,14 @@ const Button = ({
 			onClick={onClick}
 			className={twMerge(
 				cn([
-					'flex-center whitespace-nowrap text-center font-medium transition-transform transform active:scale-95 focus:ring',
+					'flex-center whitespace-nowrap text-center font-medium transition-transform transform',
 					getButtonColors(color, !disabled && !isLoading && !outline, outline),
 					getButtonSizes(size, isIconOnly),
 					getButtonRadius(radius),
 					outline && `bg-transparent outline outline-offset-0 hover:opacity-70 ${buttonOutline(color)}`,
 					disabled && 'cursor-not-allowed opacity-60',
 					isLoading && 'cursor-wait opacity-70',
+					!disabled && !isLoading && 'active:scale-95 focus:ring',
 					isIconOnly ? 'min-w-fit' : 'min-w-20',
 				]),
 				className

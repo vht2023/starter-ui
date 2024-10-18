@@ -15,7 +15,12 @@ const Content = ({ className, children }: PropsWithChildren<{ className?: string
 		<div
 			id={`accordion-body-${itemId}`}
 			className={twMerge(
-				cn(['accordion-body overflow-hidden pt-3', isOpen ? 'accordion-body-open pb-3' : 'accordion-body-close', isDisabled && 'cursor-default opacity-50', className])
+				cn([
+					'starterui-accordion-body overflow-hidden pt-3',
+					isOpen ? 'starterui-accordion-body-open pb-3' : 'starterui-accordion-body-close',
+					isDisabled && 'cursor-default opacity-50',
+					className,
+				])
 			)}
 		>
 			<div>{children}</div>

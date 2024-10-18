@@ -10,20 +10,72 @@
 	}
 }
 
-.accordion-body {
+.starterui-accordion-body {
 	display: grid;
 	grid-template-rows: 0fr;
 	transition: 200ms grid-template-rows ease;
 }
 
-.accordion-body > div {
+.starterui-accordion-body > div {
 	overflow: hidden;
 }
 
-.accordion-body-open {
+.starterui-accordion-body-open {
 	grid-template-rows: 1fr;
 }
 
-.accordion-body-close {
+.starterui-accordion-body-close {
 	grid-template-rows: 0fr;
+}
+
+.starterui-checkbox-wrapper .starterui-label-checkbox span {
+	display: inline-block;
+	vertical-align: middle;
+	transform: translate3d(0, 0, 0);
+}
+
+.starterui-checkbox-wrapper .starterui-label-checkbox span:first-child svg {
+	position: absolute;
+	top: 4px;
+	left: 3px;
+	fill: none;
+	stroke: #ffffff;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-dasharray: 16px;
+	stroke-dashoffset: 16px;
+	transition: all 0.3s ease;
+	transition-delay: 0.1s;
+	transform: translate3d(0, 0, 0);
+}
+
+.starterui-checkbox-wrapper .starterui-label-checkbox span:first-child:before {
+	content: '';
+	width: 100%;
+	height: 100%;
+	display: block;
+	transform: scale(0);
+	opacity: 1;
+	border-radius: 50%;
+}
+
+.starterui-checkbox-wrapper .starterui-input-checkbox:checked + .starterui-label-checkbox span:first-child {
+	animation: starterui-checkbox 0.4s ease;
+}
+
+.starterui-checkbox-wrapper .starterui-input-checkbox:checked + .starterui-label-checkbox span:first-child svg {
+	stroke-dashoffset: 0;
+}
+
+.starterui-checkbox-wrapper .starterui-input-checkbox:checked + .starterui-label-checkbox span:first-child:before {
+	transform: scale(2);
+	opacity: 0;
+	transition: all 0.6s ease;
+}
+
+@keyframes starterui-checkbox {
+	50% {
+		transform: scale(0.9);
+	}
 }

@@ -1,3 +1,5 @@
+import { Alert } from './components';
+
 function App() {
 	return (
 		<div className='text-base w-full h-screen flex-center flex-col gap-6'>
