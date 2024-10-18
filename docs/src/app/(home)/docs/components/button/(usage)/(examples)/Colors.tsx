@@ -11,25 +11,13 @@ const Colors = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex-center h-40 w-full flex-wrap gap-3 rounded-md border py-3'>
-        <div className='flex flex-col justify-center'>
-          <Button>Default</Button>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Button color='primary'>Primary</Button>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Button color='secondary'>Secondary</Button>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Button color='success'>Success</Button>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Button color='warning'>Warning</Button>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Button color='error'>Error</Button>
-        </div>
+      <div className='flex-center h-40 w-full flex-wrap gap-3 overflow-auto rounded-md border p-3'>
+        <Button>Default</Button>
+        <Button color='primary'>Primary</Button>
+        <Button color='secondary'>Secondary</Button>
+        <Button color='success'>Success</Button>
+        <Button color='warning'>Warning</Button>
+        <Button color='error'>Error</Button>
       </div>
     ),
     []

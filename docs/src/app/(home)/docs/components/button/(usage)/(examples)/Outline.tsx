@@ -11,35 +11,23 @@ const Outline = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex-center h-40 w-full flex-wrap gap-3 rounded-md border py-3'>
-        <div className='flex flex-col justify-center'>
-          <Button outline>Default</Button>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Button outline color='primary'>
-            Primary
-          </Button>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Button outline color='secondary'>
-            Secondary
-          </Button>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Button outline color='success'>
-            Success
-          </Button>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Button outline color='warning'>
-            Warning
-          </Button>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Button outline color='error'>
-            Error
-          </Button>
-        </div>
+      <div className='flex-center h-40 w-full flex-wrap gap-3 overflow-auto rounded-md border p-3'>
+        <Button outline>Default</Button>
+        <Button outline color='primary'>
+          Primary
+        </Button>
+        <Button outline color='secondary'>
+          Secondary
+        </Button>
+        <Button outline color='success'>
+          Success
+        </Button>
+        <Button outline color='warning'>
+          Warning
+        </Button>
+        <Button outline color='error'>
+          Error
+        </Button>
       </div>
     ),
     []

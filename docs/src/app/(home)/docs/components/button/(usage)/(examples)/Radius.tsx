@@ -11,22 +11,12 @@ const Radius = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex-center h-40 w-full flex-wrap gap-3 rounded-md border py-3'>
-        <div className='flex flex-col justify-center'>
-          <Button radius='full'>Full</Button>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Button radius='lg'>Large</Button>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Button radius='md'>Medium</Button>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Button radius='sm'>Small</Button>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Button radius='none'>None</Button>
-        </div>
+      <div className='flex-center h-40 w-full flex-wrap gap-3 overflow-auto rounded-md border p-3'>
+        <Button radius='full'>Full</Button>
+        <Button radius='lg'>Large</Button>
+        <Button radius='md'>Medium</Button>
+        <Button radius='sm'>Small</Button>
+        <Button radius='none'>None</Button>
       </div>
     ),
     []

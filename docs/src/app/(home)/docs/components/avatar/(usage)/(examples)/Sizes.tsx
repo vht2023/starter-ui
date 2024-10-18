@@ -11,7 +11,7 @@ const Sizes = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex-center h-40 w-full flex-wrap gap-6 rounded-md border'>
+      <div className='flex-center h-40 w-full flex-wrap gap-6 rounded-md border tablet_max:gap-3'>
         <Avatar size={32} />
         <Avatar size={40} />
         <Avatar size={52} />

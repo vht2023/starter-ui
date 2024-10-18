@@ -1,6 +1,6 @@
 {
 	"name": "@starter-ui/core",
-	"version": "1.0.15",
+	"version": "1.0.16",
 	"description": "This is a UI Components built with the utility classes from Tailwind CSS.",
 	"type": "module",
 	"files": [

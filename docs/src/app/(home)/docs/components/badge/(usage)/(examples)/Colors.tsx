@@ -11,25 +11,13 @@ const Colors = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex-center h-40 w-full flex-wrap gap-3 rounded-md border'>
-        <div className='flex flex-col justify-center'>
-          <Badge>Default</Badge>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Badge color='primary'>Primary</Badge>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Badge color='secondary'>Secondary</Badge>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Badge color='success'>Success</Badge>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Badge color='warning'>Warning</Badge>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Badge color='error'>Error</Badge>
-        </div>
+      <div className='flex-center h-40 w-full flex-wrap gap-3 overflow-auto rounded-md border p-3'>
+        <Badge>Default</Badge>
+        <Badge color='primary'>Primary</Badge>
+        <Badge color='secondary'>Secondary</Badge>
+        <Badge color='success'>Success</Badge>
+        <Badge color='warning'>Warning</Badge>
+        <Badge color='error'>Error</Badge>
       </div>
     ),
     []

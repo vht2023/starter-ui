@@ -11,40 +11,26 @@ const Loading = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex-center h-40 w-full flex-wrap gap-3 rounded-md border py-3'>
-        <div className='flex flex-col justify-center'>
-          <Button isLoading>Default</Button>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Button isLoading color='primary'>
-            Primary
-          </Button>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Button isLoading color='secondary'>
-            Secondary
-          </Button>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Button isLoading color='success'>
-            Success
-          </Button>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Button isLoading color='warning'>
-            Warning
-          </Button>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Button isLoading color='error'>
-            Error
-          </Button>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <Button isLoading outline>
-            Outline
-          </Button>
-        </div>
+      <div className='flex-center h-40 w-full flex-wrap gap-3 overflow-auto rounded-md border p-3'>
+        <Button isLoading>Default</Button>
+        <Button isLoading color='primary'>
+          Primary
+        </Button>
+        <Button isLoading color='secondary'>
+          Secondary
+        </Button>
+        <Button isLoading color='success'>
+          Success
+        </Button>
+        <Button isLoading color='warning'>
+          Warning
+        </Button>
+        <Button isLoading color='error'>
+          Error
+        </Button>
+        <Button isLoading outline>
+          Outline
+        </Button>
       </div>
     ),
     []

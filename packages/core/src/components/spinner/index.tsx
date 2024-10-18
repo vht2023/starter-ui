@@ -26,6 +26,8 @@ const getSpinnerSizes = (size: ISizes) => {
 
 const getSpinnerColors = (color: IColors | 'white') => {
 	switch (color) {
+		case 'default':
+			return 'border-default';
 		case 'primary':
 			return 'border-primary';
 		case 'secondary':

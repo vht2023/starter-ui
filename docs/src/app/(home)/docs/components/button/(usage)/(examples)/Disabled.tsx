@@ -11,68 +11,44 @@ const Disabled = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex-center h-40 w-full flex-col flex-wrap gap-3 rounded-md border'>
+      <div className='flex-center h-40 w-full flex-col flex-wrap gap-3 overflow-auto rounded-md border p-3 tablet_max:h-60'>
         <div className='flex-center w-full flex-wrap gap-3'>
-          <div className='flex flex-col justify-center'>
-            <Button disabled>Default</Button>
-          </div>
-          <div className='flex flex-col justify-center'>
-            <Button disabled color='primary'>
-              Primary
-            </Button>
-          </div>
-          <div className='flex flex-col justify-center'>
-            <Button disabled color='secondary'>
-              Secondary
-            </Button>
-          </div>
-          <div className='flex flex-col justify-center'>
-            <Button disabled color='success'>
-              Success
-            </Button>
-          </div>
-          <div className='flex flex-col justify-center'>
-            <Button disabled color='warning'>
-              Warning
-            </Button>
-          </div>
-          <div className='flex flex-col justify-center'>
-            <Button disabled color='error'>
-              Error
-            </Button>
-          </div>
+          <Button disabled>Default</Button>
+          <Button disabled color='primary'>
+            Primary
+          </Button>
+          <Button disabled color='secondary'>
+            Secondary
+          </Button>
+          <Button disabled color='success'>
+            Success
+          </Button>
+          <Button disabled color='warning'>
+            Warning
+          </Button>
+          <Button disabled color='error'>
+            Error
+          </Button>
         </div>
         <div className='flex-center w-full flex-wrap gap-3'>
-          <div className='flex flex-col justify-center'>
-            <Button outline disabled>
-              Default
-            </Button>
-          </div>
-          <div className='flex flex-col justify-center'>
-            <Button outline disabled color='primary'>
-              Primary
-            </Button>
-          </div>
-          <div className='flex flex-col justify-center'>
-            <Button outline disabled color='secondary'>
-              Secondary
-            </Button>
-          </div>
-          <div className='flex flex-col justify-center'>
-            <Button outline disabled color='success'>
-              Success
-            </Button>
-          </div>
-          <div className='flex flex-col justify-center'>
-            <Button outline disabled color='warning'>
-              Warning
-            </Button>
-          </div>
-          <div className='flex flex-col justify-center'>
-            <Button outline disabled color='error'>
-              Error
-            </Button>
-          </div>
+          <Button outline disabled>
+            Default
+          </Button>
+          <Button outline disabled color='primary'>
+            Primary
+          </Button>
+          <Button outline disabled color='secondary'>
+            Secondary
+          </Button>
+          <Button outline disabled color='success'>
+            Success
+          </Button>
+          <Button outline disabled color='warning'>
+            Warning
+          </Button>
+          <Button outline disabled color='error'>
+            Error
+          </Button>
         </div>
       </div>
     ),

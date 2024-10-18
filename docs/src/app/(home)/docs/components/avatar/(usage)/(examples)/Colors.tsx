@@ -11,7 +11,7 @@ const Colors = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex-center h-40 w-full flex-wrap gap-6 rounded-md border'>
+      <div className='flex-center h-40 w-full flex-wrap gap-6 overflow-auto rounded-md border p-3 tablet_max:gap-3'>
         <Avatar bordered color='default' />
         <Avatar bordered color='primary' />
         <Avatar bordered color='secondary' />

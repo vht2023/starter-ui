@@ -11,7 +11,7 @@ const Bordered = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex-center h-40 w-full flex-wrap gap-6 rounded-md border'>
+      <div className='flex-center h-40 w-full flex-wrap gap-6 rounded-md border tablet_max:gap-3'>
         <Avatar bordered />
         <Avatar name='Starter UI' bordered />
         <Avatar src='https://hoanghamobile.com/tin-tuc/wp-content/uploads/2023/09/hinh-nen-luffy.jpg' bordered />
