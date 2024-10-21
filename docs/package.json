@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@starter-ui/core": "^1.0.16",
+    "@starter-ui/core": "^1.0.17",
     "clsx": "^2.1.1",
     "framer-motion": "^11.5.4",
     "lucide-react": "^0.451.0",
