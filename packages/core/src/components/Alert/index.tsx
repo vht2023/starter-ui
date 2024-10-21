@@ -61,31 +61,31 @@ const getAlertCloseIcons = (type: IAlertTypes, onClose?: () => void) => {
 	switch (type) {
 		case 'info':
 			return (
-				<div className='me-2 flex-shrink-0 p-1 cursor-pointer rounded-lg hover:bg-primary-light/20' onClick={onClose}>
+				<div className='ms-2 -mr-1.5 flex-shrink-0 p-1 cursor-pointer rounded-lg hover:bg-primary-light/20' onClick={onClose}>
 					<X size={18} />
 				</div>
 			);
 		case 'success':
 			return (
-				<div className='me-2 flex-shrink-0 p-1 cursor-pointer rounded-lg hover:bg-success-light/20' onClick={onClose}>
+				<div className='ms-2 -mr-1.5 flex-shrink-0 p-1 cursor-pointer rounded-lg hover:bg-success-light/20' onClick={onClose}>
 					<X size={18} />
 				</div>
 			);
 		case 'warning':
 			return (
-				<div className='me-2 flex-shrink-0 p-1 cursor-pointer rounded-lg hover:bg-warning-light/30' onClick={onClose}>
+				<div className='ms-2 -mr-1.5 flex-shrink-0 p-1 cursor-pointer rounded-lg hover:bg-warning-light/30' onClick={onClose}>
 					<X size={18} />
 				</div>
 			);
 		case 'error':
 			return (
-				<div className='me-2 flex-shrink-0 p-1 cursor-pointer rounded-lg hover:bg-error-light/20' onClick={onClose}>
+				<div className='ms-2 -mr-1.5 flex-shrink-0 p-1 cursor-pointer rounded-lg hover:bg-error-light/20' onClick={onClose}>
 					<X size={18} />
 				</div>
 			);
 		default:
 			return (
-				<div className='me-2 flex-shrink-0 p-1 cursor-pointer rounded-lg hover:bg-muted/15' onClick={onClose}>
+				<div className='ms-2 -mr-1.5 flex-shrink-0 p-1 cursor-pointer rounded-lg hover:bg-muted/15' onClick={onClose}>
 					<X size={18} />
 				</div>
 			);

@@ -31,18 +31,22 @@ const Header = () => {
               starter|ui
             </Link>
           </div>
+          {/* Desktop Header */}
           <div className='flex h-full items-center gap-6 tablet_max:hidden'>
             {paths.map((menu, index) => (
               <Link
                 key={index}
                 href={menu.href || ''}
-                className={cn(['flex-center relative h-full text-sm font-normal text-muted hover:text-black', menu.active && 'font-semibold text-default'])}
+                className={cn(['group flex-center relative h-full text-sm font-normal text-muted hover:text-black', menu.active && 'font-semibold text-default'])}
               >
                 {menu.name}
                 {menu.active ? <motion.div className='header-underline' layoutId='header-underline' /> : null}
+                <span className='absolute bottom-0 left-0 h-0.5 w-0 bg-default transition-all group-hover:w-full' />
               </Link>
             ))}
           </div>
+
+          {/* Mobile Header */}
           <div className='hidden h-full w-full tablet_max:flex tablet_max:items-center tablet_max:justify-end'>
             <div className='flex items-center justify-center' onClick={() => setToggle((prev) => !prev)}>
               <div className='group flex h-8 w-8 cursor-pointer items-center justify-center rounded-full p-2'>

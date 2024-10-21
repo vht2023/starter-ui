@@ -66,6 +66,12 @@ const useSidebarNavigation = () => {
             sub: [],
           },
           {
+            name: 'Alert',
+            href: ENUM_ROUTES.COMPONENTS_ALERT,
+            active: pathname === ENUM_ROUTES.COMPONENTS_ALERT,
+            sub: [],
+          },
+          {
             name: 'Avatar',
             href: ENUM_ROUTES.COMPONENTS_AVATAR,
             active: pathname === ENUM_ROUTES.COMPONENTS_AVATAR,
@@ -78,9 +84,27 @@ const useSidebarNavigation = () => {
             sub: [],
           },
           {
+            name: 'Breadcrumb',
+            href: ENUM_ROUTES.COMPONENTS_BREADCRUMB,
+            active: pathname === ENUM_ROUTES.COMPONENTS_BREADCRUMB,
+            sub: [],
+          },
+          {
             name: 'Button',
             href: ENUM_ROUTES.COMPONENTS_BUTTON,
             active: pathname === ENUM_ROUTES.COMPONENTS_BUTTON,
+            sub: [],
+          },
+          {
+            name: 'Card',
+            href: ENUM_ROUTES.COMPONENTS_CARD,
+            active: pathname === ENUM_ROUTES.COMPONENTS_CARD,
+            sub: [],
+          },
+          {
+            name: 'Checkbox',
+            href: ENUM_ROUTES.COMPONENTS_CHECKBOX,
+            active: pathname === ENUM_ROUTES.COMPONENTS_CHECKBOX,
             sub: [],
           },
           {
@@ -88,6 +112,12 @@ const useSidebarNavigation = () => {
             href: ENUM_ROUTES.COMPONENTS_INPUT,
             active: pathname === ENUM_ROUTES.COMPONENTS_INPUT,
             disabled: true,
+            sub: [],
+          },
+          {
+            name: 'Spinner',
+            href: ENUM_ROUTES.COMPONENTS_SPINNER,
+            active: pathname === ENUM_ROUTES.COMPONENTS_SPINNER,
             sub: [],
           },
         ],

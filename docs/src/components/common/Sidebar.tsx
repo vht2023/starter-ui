@@ -23,11 +23,12 @@ const Sidebar = () => {
           <div className='flex flex-col gap-3'>
             {menu.sub.map((sub, subIndex) =>
               sub?.href && !sub?.disabled ? (
-                <Link key={subIndex} href={sub?.href} className={cn(['w-fit text-sm font-normal text-muted hover:underline', sub.active && 'font-semibold text-default'])}>
+                <Link key={subIndex} href={sub?.href} className={cn(['group relative w-fit text-sm font-normal text-muted/95', sub.active && 'font-medium text-default'])}>
                   {sub.name}
+                  <span className='absolute bottom-0.5 left-0 h-[1px] w-0 bg-default transition-all group-hover:w-full' />
                 </Link>
               ) : (
-                <span key={subIndex} className={cn(['w-fit cursor-not-allowed text-sm font-normal text-muted/50', sub.active && 'font-semibold text-default'])}>
+                <span key={subIndex} className={cn(['w-fit cursor-not-allowed text-sm font-normal text-muted/35', sub.active && 'font-medium text-default'])}>
                   {sub.name}
                 </span>
               )
