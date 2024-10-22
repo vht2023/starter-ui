@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "esnext",
+		"outDir": "dist",
+		"declaration": true,
+		"strict": true,
+		"esModuleInterop": true,
+		"allowJs": false,
+		"skipLibCheck": true,
+		"noEmit": true,
+		"moduleResolution": "Bundler"
+	},
+	"include": ["src", "./index.ts"],
+	"exclude": ["node_modules"]
+}

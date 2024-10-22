@@ -1,10 +1,9 @@
 import React from 'react';
-import { twMerge } from 'tailwind-merge';
 import { IColors, ISizes } from '../../types/common';
 import { cn } from '../../libs/utils';
 
 interface Props {
-	isLoading: boolean;
+	isLoading?: boolean;
 	size?: ISizes;
 	color?: IColors | 'white';
 	className?: string;
@@ -46,14 +45,9 @@ const getSpinnerColors = (color: IColors | 'white') => {
 const Spinner: React.FC<Props> = ({ isLoading = true, size = 'md', color = 'default', className }) => {
 	return (
 		<div
-			className={twMerge(
-				cn([
-					'animate-spin rounded-full border-2 border-solid',
-					size && getSpinnerSizes(size),
-					color && getSpinnerColors(color),
-					isLoading ? 'block border-t-transparent' : 'hidden',
-					className,
-				])
+			className={cn(
+				['animate-spin rounded-full border-2 border-solid', size && getSpinnerSizes(size), color && getSpinnerColors(color), isLoading ? 'block border-t-transparent' : 'hidden'],
+				className
 			)}
 		/>
 	);

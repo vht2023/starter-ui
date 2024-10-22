@@ -1,6 +1,6 @@
+import 'react-toastify/dist/ReactToastify.css'
 import '@starter-ui/core/index.css'
 import './globals.scss'
-import 'react-toastify/dist/ReactToastify.css'
 
 import type {Metadata} from 'next'
 import {Inter} from 'next/font/google'

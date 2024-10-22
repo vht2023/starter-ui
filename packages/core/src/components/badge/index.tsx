@@ -1,5 +1,4 @@
 import { PropsWithChildren } from 'react';
-import { twMerge } from 'tailwind-merge';
 
 import { IColors, ISizes } from '../../types/common';
 import { cn } from '../../libs/utils';
@@ -47,14 +46,14 @@ const getBadgeSizes = (size: ISizes, outline: boolean) => {
 const Badge = ({ color = 'default', size = 'sm', className, disabled = false, outline = false, children }: PropsWithChildren<Props>) => {
 	return (
 		<div
-			className={twMerge(
-				cn([
+			className={cn(
+				[
 					'inline-flex items-center justify-start w-fit h-fit whitespace-nowrap',
 					getBadgeColors(color, outline),
 					getBadgeSizes(size, outline),
 					outline && 'border bg-transparent',
 					disabled && 'cursor-not-allowed opacity-60',
-				]),
+				],
 				className
 			)}
 		>

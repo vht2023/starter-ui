@@ -1,7 +1,6 @@
 import { ReactNode } from 'react';
 import { IColors, IRadius } from '../../types/common';
 import { User } from 'lucide-react';
-import { twMerge } from 'tailwind-merge';
 import { cn } from '../../libs/utils';
 
 interface Props {
@@ -65,15 +64,15 @@ const AvatarDefault: React.FC<{
 }> = ({ color, size, radius, bordered, disabled, className, onClick }) => {
 	return (
 		<div
-			className={twMerge(
-				cn([
-					'bg-gray-100 rounded-full flex-center',
+			className={cn(
+				[
+					'bg-gray-100 rounded-full flex items-center justify-center',
 					bordered && 'border-[1.5px]',
 					getAvatarColor(color),
 					getAvatarRadius(radius),
 					disabled && 'opacity-50 cursor-not-allowed',
-					className,
-				])
+				],
+				className
 			)}
 			onClick={() => {
 				if (disabled) return;
@@ -101,15 +100,15 @@ const AvatarWithName: React.FC<{
 }> = ({ name, color, size, radius, bordered, disabled, className, onClick }) => {
 	return (
 		<div
-			className={twMerge(
-				cn([
-					'bg-gray-100 rounded-full inline-flex flex-center p-2 w-fit h-fit',
+			className={cn(
+				[
+					'bg-gray-100 rounded-full inline-flex items-center justify-center p-2 w-fit h-fit',
 					bordered && 'border',
 					getAvatarColor(color),
 					getAvatarRadius(radius),
 					disabled && 'opacity-50 cursor-not-allowed',
-					className,
-				])
+				],
+				className
 			)}
 			onClick={() => {
 				if (disabled) return;
@@ -138,15 +137,9 @@ const Avatar: React.FC<Props> = ({ src, name, alt = 'alt-avatar', color = 'defau
 			}}
 			src={src}
 			alt={alt}
-			className={twMerge(
-				cn([
-					'rounded-full object-cover object-center',
-					bordered && 'ring-1 p-0.5',
-					getAvatarColor(color),
-					getAvatarRadius(radius),
-					disabled && 'opacity-50 cursor-not-allowed',
-					className,
-				])
+			className={cn(
+				['rounded-full object-cover object-center', bordered && 'ring-1 p-0.5', getAvatarColor(color), getAvatarRadius(radius), disabled && 'opacity-50 cursor-not-allowed'],
+				className
 			)}
 			onClick={() => {
 				if (disabled) return;

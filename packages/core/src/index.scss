@@ -1,12 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.starterui-required {
+	position: relative;
 
-@layer base {
-	html {
-		height: 100vh;
-		font-family: var(--font-inter);
-		@apply text-default bg-white;
+	::after {
+		content: '*';
+		position: absolute;
+		left: 100%;
+		top: 0px;
+		margin-left: 4px;
+		color: #dc2626;
 	}
 }
 
@@ -14,10 +15,9 @@
 	display: grid;
 	grid-template-rows: 0fr;
 	transition: 200ms grid-template-rows ease;
-}
-
-.starterui-accordion-body > div {
-	overflow: hidden;
+	& > div {
+		overflow: hidden;
+	}
 }
 
 .starterui-accordion-body-open {

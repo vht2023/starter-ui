@@ -1,5 +1,4 @@
 import React, { PropsWithChildren, ReactNode } from 'react';
-import { twMerge } from 'tailwind-merge';
 
 import { IButtonTypes, IColors, IRadius, ISizes } from '../../types/common';
 import { cn } from '../../libs/utils';
@@ -24,17 +23,17 @@ interface Props {
 const getButtonColors = (color: IColors, shouldHover: boolean, outline: boolean) => {
 	switch (color) {
 		case 'primary':
-			return `[&_div]:text-white bg-primary focus:ring-primary/70 ${shouldHover && 'hover:bg-primary-dark'} ${outline && 'border-primary [&_div]:text-primary'}`;
+			return `[&_div]:text-white bg-primary focus:ring-primary/40 ${shouldHover && 'hover:bg-primary-dark'} ${outline && 'border-primary [&_div]:text-primary'}`;
 		case 'secondary':
-			return `[&_div]:text-white bg-secondary focus:ring-secondary/70 ${shouldHover && 'hover:bg-secondary-dark'} ${outline && 'border-secondary [&_div]:text-primary'}`;
+			return `[&_div]:text-white bg-secondary focus:ring-secondary/40 ${shouldHover && 'hover:bg-secondary-dark'} ${outline && 'border-secondary [&_div]:text-primary'}`;
 		case 'success':
-			return `[&_div]:text-default bg-success focus:ring-success/70 ${shouldHover && 'hover:bg-success-dark'} ${outline && 'border-success [&_div]:text-success'}`;
+			return `[&_div]:text-default bg-success focus:ring-success/40 ${shouldHover && 'hover:bg-success-dark'} ${outline && 'border-success [&_div]:text-success'}`;
 		case 'warning':
-			return `[&_div]:text-default bg-warning focus:ring-warning/70 ${shouldHover && 'hover:bg-warning-dark'} ${outline && 'border-warning [&_div]:text-warning'}`;
+			return `[&_div]:text-default bg-warning focus:ring-warning/40 ${shouldHover && 'hover:bg-warning-dark'} ${outline && 'border-warning [&_div]:text-warning'}`;
 		case 'error':
-			return `[&_div]:text-white bg-error focus:ring-error/70 ${shouldHover && 'hover:bg-error-dark'} ${outline && 'border-error [&_div]:text-error'}`;
+			return `[&_div]:text-white bg-error focus:ring-error/40 ${shouldHover && 'hover:bg-error-dark'} ${outline && 'border-error [&_div]:text-error'}`;
 		default:
-			return `[&_div]:text-default bg-grey focus:ring-grey/70 ${shouldHover && 'hover:bg-grey-dark'} ${outline && 'border-default'}`;
+			return `[&_div]:text-default bg-grey focus:ring-grey/40 ${shouldHover && 'hover:bg-grey-dark'} ${outline && 'border-default'}`;
 	}
 };
 
@@ -106,9 +105,9 @@ const Button = ({
 
 	/* ======== ICON + CHILDREN ======== */
 	const renderChildren = () => (
-		<div className={twMerge(cn(['flex-center w-full', isLoading && 'gap-2']))}>
+		<div className={cn(['flex items-center justify-center w-full', isLoading && 'gap-2'])}>
 			<Spinner isLoading={isLoading} color={outline ? color : 'white'} />
-			<div className='flex-center gap-2'>
+			<div className='flex items-center justify-center gap-2'>
 				{!isLoading && startIcon && startIcon}
 				{children}
 				{endIcon && endIcon}
@@ -122,18 +121,18 @@ const Button = ({
 			type={type}
 			disabled={disabled || isLoading}
 			onClick={onClick}
-			className={twMerge(
-				cn([
-					'flex-center whitespace-nowrap text-center font-medium transition-transform transform box-border',
+			className={cn(
+				[
+					'flex items-center justify-center whitespace-nowrap text-center font-medium transition-transform transform box-border',
 					getButtonColors(color, !disabled && !isLoading && !outline, outline),
 					getButtonSizes(size, isIconOnly),
 					getButtonRadius(radius),
 					outline && `bg-transparent border hover:opacity-70 ${buttonOutline(color)}`,
 					disabled && 'cursor-not-allowed opacity-60',
 					isLoading && 'cursor-wait opacity-70',
-					!disabled && !isLoading && 'active:scale-95 focus:ring',
+					!disabled && !isLoading && 'active:scale-95 focus:ring-2',
 					isIconOnly ? 'min-w-fit' : 'min-w-20',
-				]),
+				],
 				className
 			)}
 		>

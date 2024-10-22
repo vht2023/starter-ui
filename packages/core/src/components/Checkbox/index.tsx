@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react';
 import { IColors } from '../../types/common';
-import { twMerge } from 'tailwind-merge';
 import { cn } from '../../libs/utils';
 
 interface Props {
@@ -38,7 +37,7 @@ const Checkbox: React.FC<Props> = ({ id = 'default-checkbox', color = 'default',
 		} else return label;
 	};
 	return (
-		<div className={twMerge(cn(['starterui-checkbox-wrapper group', className]))}>
+		<div className={cn(['starterui-checkbox-wrapper group'], className)}>
 			<input
 				type='checkbox'
 				id={id}
@@ -48,11 +47,12 @@ const Checkbox: React.FC<Props> = ({ id = 'default-checkbox', color = 'default',
 				onClick={onClick}
 				className='starterui-input-checkbox hidden invisible peer'
 			/>
-			<label htmlFor={id} className={twMerge(cn(['starterui-label-checkbox select-none cursor-pointer', disabled && 'opacity-50 cursor-default']))}>
+			<label htmlFor={id} className={cn(['starterui-label-checkbox select-none cursor-pointer', disabled && 'opacity-50 cursor-default'])}>
 				<span
-					className={twMerge(
-						cn(['mr-2 border relative w-5 h-5 rounded align-middle scale-100 transition-all ease-in-out duration-200 border-muted', color && getCheckboxColors(color, disabled)])
-					)}
+					className={cn([
+						'mr-2 border relative w-5 h-5 rounded align-middle scale-100 transition-all ease-in-out duration-200 border-muted',
+						color && getCheckboxColors(color, disabled),
+					])}
 				>
 					<svg viewBox='0 0 12 10' height='10px' width='12px'>
 						<polyline points='1.5 6 4.5 9 10.5 1'></polyline>

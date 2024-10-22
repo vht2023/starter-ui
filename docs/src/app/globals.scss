@@ -32,6 +32,12 @@
   }
 }
 
+html {
+  height: 100vh;
+  font-family: var(--font-inter);
+  @apply bg-white;
+}
+
 @layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {

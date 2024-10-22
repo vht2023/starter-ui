@@ -1,7 +1,6 @@
 import { PropsWithChildren, useContext } from 'react';
 import { AccordionContext } from './Container';
 import { AccordionItemContext } from './Item';
-import { twMerge } from 'tailwind-merge';
 import { cn } from '../../libs/utils';
 
 const Content = ({ className, children }: PropsWithChildren<{ className?: string }>) => {
@@ -14,13 +13,13 @@ const Content = ({ className, children }: PropsWithChildren<{ className?: string
 	return (
 		<div
 			id={`accordion-body-${itemId}`}
-			className={twMerge(
-				cn([
+			className={cn(
+				[
 					'starterui-accordion-body overflow-hidden pt-3',
 					isOpen ? 'starterui-accordion-body-open pb-3' : 'starterui-accordion-body-close',
 					isDisabled && 'cursor-default opacity-50',
-					className,
-				])
+				],
+				className
 			)}
 		>
 			<div>{children}</div>

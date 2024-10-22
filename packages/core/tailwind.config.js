@@ -19,15 +19,10 @@ export default {
 	],
 	theme: {
 		extend: {
-			screens: {
-				/* CUSTOMIZE NEW SCREEN */
-				mobile_max: { max: '480px' },
-				tablet_max: { max: '1279px' },
-				laptop: '1280px',
-			},
 			colors: {
 				muted: '#475569',
 				link: '#006FEE',
+				disabled: '#e5e5e5',
 				default: {
 					DEFAULT: '#11181C',
 				},
@@ -62,52 +57,7 @@ export default {
 					dark: '#a1a1aa',
 				},
 			},
-			fontFamily: {
-				sans: ['var(--font-inter)'],
-			},
 		},
 	},
-	plugins: [
-		require('tailwindcss-animate'),
-		plugin(function ({ addComponents, addUtilities }) {
-			addComponents({
-				'.flex-between': {
-					display: 'flex',
-					justifyContent: 'space-between',
-					alignItems: 'center',
-				},
-				'.flex-center': {
-					display: 'flex',
-					justifyContent: 'center',
-					alignItems: 'center',
-				},
-				'.absolute-center': {
-					position: 'absolute',
-					top: '50%',
-					left: '50%',
-					transform: 'translate(-50%, -50%)',
-				},
-				'.fixed-center': {
-					position: 'fixed',
-					top: '50%',
-					left: '50%',
-					transform: 'translate(-50%, -50%)',
-				},
-			});
-			addUtilities({
-				'.overflow-y-auto': {
-					'scroll-behavior': 'smooth',
-					'scrollbar-width': 'thin',
-				},
-				'.overflow-x-auto': {
-					'scroll-behavior': 'smooth',
-					'scrollbar-width': 'thin',
-				},
-				'.overflow-auto': {
-					'scroll-behavior': 'smooth',
-					'scrollbar-width': 'thin',
-				},
-			});
-		}),
-	],
+	plugins: [require('tailwindcss-animate'), plugin()],
 };

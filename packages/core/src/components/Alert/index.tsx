@@ -1,6 +1,5 @@
 import { PropsWithChildren } from 'react';
 import { IAlertTypes } from '../../types/common';
-import { twMerge } from 'tailwind-merge';
 import { cn } from '../../libs/utils';
 import { CircleCheck, CircleX, Info, TriangleAlert, X } from 'lucide-react';
 
@@ -94,7 +93,7 @@ const getAlertCloseIcons = (type: IAlertTypes, onClose?: () => void) => {
 
 const Alert = ({ type = 'default', outline = false, closeable = true, className, children, onClose }: PropsWithChildren<Props>) => {
 	return (
-		<div className={twMerge(cn(['p-4 rounded-lg flex items-start font-medium text-base', type && getAlertTypes(type), outline && getAlertOutlines(type), className]))} role='alert'>
+		<div className={cn(['p-4 rounded-lg flex items-start font-medium text-base', type && getAlertTypes(type), outline && getAlertOutlines(type)], className)} role='alert'>
 			<div className='mt-[3px] flex-shrink-0 inline me-2'>{getAlertIcons(type)}</div>
 			<div className='grow'>{children}</div>
 			{closeable && getAlertCloseIcons(type, onClose)}

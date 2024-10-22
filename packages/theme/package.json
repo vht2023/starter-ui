@@ -1,0 +1,55 @@
+{
+	"name": "@starter-ui/theme",
+	"version": "1.0.3",
+	"description": "The custom theme for Starter UI components",
+	"type": "module",
+	"main": "dist/index.umd.js",
+	"module": "dist/index.es.js",
+	"types": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/index.es.js",
+			"require": "./dist/index.umd.js",
+			"types": "./dist/index.d.ts"
+		}
+	},
+	"files": [
+		"/dist"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "tsc && vite build"
+	},
+	"devDependencies": {
+		"@types/node": "^22.7.8",
+		"typescript": "^5.6.3",
+		"vite": "^5.4.9"
+	},
+	"keywords": [
+		"theme",
+		"theming",
+		"design",
+		"ui",
+		"components",
+		"classNames",
+		"css",
+		"colors",
+		"starter-ui"
+	],
+	"author": "thien.v <thien.vh611@gmail.com>",
+	"homepage": "https://starterui.vercel.app",
+	"license": "MIT",
+	"repository": {
+		"url": "git+https://github.com/vht2023/starter-ui.git",
+		"type": "git",
+		"directory": "packages/theme"
+	},
+	"bugs": {
+		"url": "https://github.com/vht2023/starter-ui/issues"
+	},
+	"dependencies": {
+		"vite-plugin-dts": "^4.2.4"
+	}
+}

@@ -1,5 +1,4 @@
 import { createContext, PropsWithChildren, SetStateAction, useContext, useEffect, useMemo, useState } from 'react';
-import { twMerge } from 'tailwind-merge';
 import { cn } from '../../libs/utils';
 import { AccordionContext } from './Container';
 
@@ -28,7 +27,7 @@ const Item = ({ id = '', loading = false, className = '', children }: PropsWithC
 
 	return (
 		<AccordionItemContext.Provider value={{ loading, isDisabled, itemId, setItemId }}>
-			<div className={twMerge(cn(['pt-3 last:pb-0', className]))}>{children}</div>
+			<div className={cn(['pt-3 last:pb-0'], className)}>{children}</div>
 		</AccordionItemContext.Provider>
 	);
 };

@@ -111,7 +111,6 @@ const useSidebarNavigation = () => {
             name: 'Input',
             href: ENUM_ROUTES.COMPONENTS_INPUT,
             active: pathname === ENUM_ROUTES.COMPONENTS_INPUT,
-            disabled: true,
             sub: [],
           },
           {

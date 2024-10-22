@@ -1,6 +1,5 @@
 import React from 'react';
 import { ISizes, IUnderlines } from '../../types/common';
-import { twMerge } from 'tailwind-merge';
 import { cn } from '../../libs/utils';
 import { ChevronRight } from 'lucide-react';
 
@@ -41,7 +40,7 @@ const Breadcrumb: React.FC<Props> = ({ data, size = 'md', underline = 'hover', c
 
 	return (
 		<nav className='flex' aria-label='Breadcrumb'>
-			<ol className={twMerge(cn(['inline-flex items-center space-x-1 leading-none', className]))}>
+			<ol className={cn(['inline-flex items-center space-x-1 leading-none'], className)}>
 				{data.map((item, index) => (
 					<React.Fragment key={index}>
 						<li className='flex items-center space-x-1' key={index} aria-current={index === data.length - 1}>
@@ -49,17 +48,17 @@ const Breadcrumb: React.FC<Props> = ({ data, size = 'md', underline = 'hover', c
 							{item.title && (
 								<>
 									{index === data.length - 1 || !item.url ? (
-										<span className={twMerge(cn(['w-fit text-default', index === data.length - 1 && 'font-bold', size && getTextSize(size), item?.className]))}>{item.title}</span>
+										<span className={cn(['w-fit text-default', index === data.length - 1 && 'font-bold', size && getTextSize(size)], item?.className)}>{item.title}</span>
 									) : (
 										<a
 											href={item.url}
-											className={twMerge(
-												cn([
+											className={cn(
+												[
 													'w-fit font-normal text-default hover:text-default/60 transition-all duration-200 underline-offset-1 decoration-1',
 													size && getTextSize(size),
 													underline && getUnderline(underline),
-													item?.className,
-												])
+												],
+												item?.className
 											)}
 											onClick={onClick?.(item.url)}
 										>
