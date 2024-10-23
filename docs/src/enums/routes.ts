@@ -16,5 +16,6 @@ export enum ENUM_ROUTES {
   COMPONENTS_CARD = '/docs/components/card',
   COMPONENTS_CHECKBOX = '/docs/components/checkbox',
   COMPONENTS_INPUT = '/docs/components/input',
+  COMPONENTS_SKELETON = '/docs/components/skeleton',
   COMPONENTS_SPINNER = '/docs/components/spinner',
 }

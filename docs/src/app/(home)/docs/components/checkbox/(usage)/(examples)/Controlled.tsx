@@ -3,7 +3,7 @@ import {motion} from 'framer-motion'
 import {useMemo, useState} from 'react'
 
 import ViewCode from '@/components/common/ViewCode'
-import {demoCodeCustom} from '@/constants/documents/components/card'
+import {demoCodeControlled} from '@/constants/documents/components/checkbox'
 import {cn} from '@/libs/utils'
 
 const Controlled = () => {
@@ -25,14 +25,14 @@ const Controlled = () => {
       <div className='flex w-full items-center gap-6 border-b'>
         <div className={cn(['flex-center relative h-full cursor-pointer px-3', !showCode && 'font-semibold'])} onClick={() => setShowCode(false)}>
           <div className='mb-1'>Preview</div>
-          {!showCode ? <motion.div className='preview-code-underline' layoutId='checkbox-colors-preview-code-underline' /> : null}
+          {!showCode ? <motion.div className='preview-code-underline' layoutId='checkbox-controlled-preview-code-underline' /> : null}
         </div>
         <div className={cn(['flex-center relative h-full cursor-pointer px-3', showCode && 'font-semibold'])} onClick={() => setShowCode(true)}>
           <div className='mb-1'>Code</div>
-          {showCode ? <motion.div className='preview-code-underline' layoutId='checkbox-colors-preview-code-underline' /> : null}
+          {showCode ? <motion.div className='preview-code-underline' layoutId='checkbox-controlled-preview-code-underline' /> : null}
         </div>
       </div>
-      <div className='w-full'>{showCode ? <ViewCode id='demoCodeCustom' code={demoCodeCustom} /> : viewPreview}</div>
+      <div className='w-full'>{showCode ? <ViewCode id='demoCodeControlled' code={demoCodeControlled} /> : viewPreview}</div>
     </div>
   )
 }

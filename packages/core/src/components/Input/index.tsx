@@ -16,6 +16,7 @@ export interface Props {
 	autoComplete?: string;
 	autoFocus?: boolean;
 	allowClearSearch?: boolean;
+	isReadOnly?: boolean;
 	helperText?: string;
 	labelClassName?: string;
 	inputClassName?: string;
@@ -62,6 +63,7 @@ const Input: React.FC<Props> = ({
 	disabled = false,
 	autoFocus = false,
 	allowClearSearch = true,
+	isReadOnly = false,
 	placeholder = 'Placeholder',
 	autoComplete = '',
 	helperText = '',
@@ -127,6 +129,7 @@ const Input: React.FC<Props> = ({
 					onFocus={onFocus}
 					autoComplete={autoComplete}
 					list='autocompleteOff'
+					readOnly={isReadOnly}
 				/>
 
 				{/* suffix ICON */}

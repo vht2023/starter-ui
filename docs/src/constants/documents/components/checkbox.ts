@@ -12,3 +12,22 @@ export const demoCodeColor = `
 <Checkbox id='checkbox-warning-color' color='warning' label='Warning' />
 <Checkbox id='checkbox-error-color' color='error' label='Error' />
 `
+
+export const demoCodeControlled = `
+const [checked, setChecked] = useState<boolean>(false)
+
+<Checkbox 
+  id='checkbox-primary-controlled' 
+  color='primary' 
+  label='Controlled' 
+  checked={checked} 
+  onChange={setChecked}
+/>
+
+<Checkbox 
+  id='checkbox-primary-disabled' 
+  color='primary' 
+  label='Disabled' 
+  disabled 
+/>
+`
