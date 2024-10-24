@@ -13,6 +13,8 @@ import {cn} from '@/libs/utils'
 
 const martian = Martian_Mono({subsets: ['latin']})
 
+const CURRENT_VERSION = '1.0.28'
+
 const Header = () => {
   const pathname = usePathname()
   const paths = useHeaderNavigation()
@@ -27,10 +29,11 @@ const Header = () => {
       <div className='mx-auto h-full min-h-[60px] w-3/4 tablet_max:w-full tablet_max:border-b'>
         <div className='flex h-full min-h-[60px] items-center gap-16 tablet_max:px-4'>
           {/* LOGO */}
-          <div>
-            <Link href={ENUM_ROUTES.HOME} className={`${martian.className} w-fit flex-1 text-2xl font-bold tracking-tighter tablet_max:text-xl`}>
+          <div className='relative flex h-full flex-col justify-center'>
+            <Link href={ENUM_ROUTES.HOME} className={`${martian.className} w-fit flex-none text-2xl font-bold tracking-tighter tablet_max:text-xl`}>
               starter|ui
             </Link>
+            <div className='absolute -end-12 top-1.5 w-fit rounded-full border-b p-1 px-1.5 text-xs font-medium leading-none shadow-xl'>{CURRENT_VERSION}</div>
           </div>
           {/* Desktop Header */}
           <div className='flex h-full w-full grow items-center gap-6 tablet_max:hidden'>
