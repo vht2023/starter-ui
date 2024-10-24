@@ -1,4 +1,4 @@
-import {Alert} from '@core'
+import {Alert} from '@starter-ui/core'
 import {motion} from 'framer-motion'
 import {useMemo, useState} from 'react'
 

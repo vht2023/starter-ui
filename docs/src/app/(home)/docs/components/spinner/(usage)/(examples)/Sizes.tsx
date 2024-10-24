@@ -1,4 +1,4 @@
-import {Spinner} from '@core'
+import {Spinner} from '@starter-ui/core'
 import {motion} from 'framer-motion'
 import {useMemo, useState} from 'react'
 

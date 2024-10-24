@@ -1,4 +1,4 @@
-import {Checkbox} from '@core'
+import {Checkbox} from '@starter-ui/core'
 import {motion} from 'framer-motion'
 import {useMemo, useState} from 'react'
 

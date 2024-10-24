@@ -1,4 +1,4 @@
-import {Card} from '@core'
+import {Card} from '@starter-ui/core'
 import {motion} from 'framer-motion'
 import {useMemo, useState} from 'react'
 

@@ -13,7 +13,7 @@ const config: Config = {
   content: [
     // ...
      // make sure it's pointing to the ROOT node_module
-    './node_modules/@starter-ui/core/dist/**/*.{js,ts,jsx,tsx}',
+    './node_modules/'@starter-ui/core'/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
@@ -31,7 +31,7 @@ const starteruiCssCode = `
 // src/main.tsx <-- ReactJS -->
 // app/layout.tsx <-- NextJS app directory -->
 
-import '@starter-ui/core/index.css'
+import ''@starter-ui/core'/index.css'
 ...
 `
 

@@ -2,7 +2,7 @@
 
 import './home.scss'
 
-import {Button} from '@core'
+import {Button} from '@starter-ui/core'
 import {ArrowRight} from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'

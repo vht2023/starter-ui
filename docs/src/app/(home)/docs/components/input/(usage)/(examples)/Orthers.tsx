@@ -1,4 +1,4 @@
-import {Input} from '@core'
+import {Input} from '@starter-ui/core'
 import {motion} from 'framer-motion'
 import {CheckCheck, UserRoundSearch} from 'lucide-react'
 import {useMemo, useState} from 'react'

@@ -1,4 +1,4 @@
-import {Breadcrumb} from '@core'
+import {Breadcrumb} from '@starter-ui/core'
 import {motion} from 'framer-motion'
 import {useMemo, useState} from 'react'
 

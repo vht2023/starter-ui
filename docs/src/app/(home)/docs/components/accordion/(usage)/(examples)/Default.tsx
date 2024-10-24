@@ -1,4 +1,4 @@
-import {Accordion} from '@core'
+import {Accordion} from '@starter-ui/core'
 import {motion} from 'framer-motion'
 import {useMemo, useState} from 'react'
 
