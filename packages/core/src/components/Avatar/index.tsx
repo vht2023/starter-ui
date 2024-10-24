@@ -66,7 +66,7 @@ const AvatarDefault: React.FC<{
 		<div
 			className={cn(
 				[
-					'bg-gray-100 rounded-full flex items-center justify-center',
+					'starterui-avatar bg-gray-100 rounded-full flex items-center justify-center',
 					bordered && 'border-[1.5px]',
 					getAvatarColor(color),
 					getAvatarRadius(radius),

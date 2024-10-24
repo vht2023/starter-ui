@@ -48,7 +48,7 @@ const Badge = ({ color = 'default', size = 'sm', className, disabled = false, ou
 		<div
 			className={cn(
 				[
-					'inline-flex items-center justify-start w-fit h-fit whitespace-nowrap',
+					'starterui-badge inline-flex items-center justify-start w-fit h-fit whitespace-nowrap',
 					getBadgeColors(color, outline),
 					getBadgeSizes(size, outline),
 					outline && 'border bg-transparent',

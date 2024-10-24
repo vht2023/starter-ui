@@ -39,7 +39,7 @@ const Breadcrumb: React.FC<Props> = ({ data, size = 'md', underline = 'hover', c
 	if (data && data.length === 0) return null;
 
 	return (
-		<nav className='flex' aria-label='Breadcrumb'>
+		<nav className='starterui-breadcrumb flex' aria-label='Breadcrumb'>
 			<ol className={cn(['inline-flex items-center space-x-1 leading-none'], className)}>
 				{data.map((item, index) => (
 					<React.Fragment key={index}>

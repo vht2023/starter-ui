@@ -111,7 +111,7 @@ const Input: React.FC<Props> = ({
 					autoFocus={autoFocus}
 					className={cn(
 						[
-							'block w-full rounded-md border border-muted text-default outline-none placeholder:text-muted/50 focus:border-primary focus:ring-primary transition-all ease-in-out',
+							'starterui-input block w-full rounded-md border border-muted text-default outline-none placeholder:text-muted/50 focus:border-primary focus:ring-primary transition-all ease-in-out',
 							size && getInputSizes(size),
 							prefix && 'pl-8',
 							suffix && 'pr-8',

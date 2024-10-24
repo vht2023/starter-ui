@@ -123,7 +123,7 @@ const Button = ({
 			onClick={onClick}
 			className={cn(
 				[
-					'flex items-center justify-center whitespace-nowrap text-center font-medium transition-all transform box-border',
+					'starterui-button flex items-center justify-center whitespace-nowrap text-center font-medium transition-all transform box-border',
 					getButtonColors(color, !disabled && !isLoading && !outline, outline),
 					getButtonSizes(size, isIconOnly),
 					getButtonRadius(radius),

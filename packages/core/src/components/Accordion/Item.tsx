@@ -27,7 +27,7 @@ const Item = ({ id = '', loading = false, className = '', children }: PropsWithC
 
 	return (
 		<AccordionItemContext.Provider value={{ loading, isDisabled, itemId, setItemId }}>
-			<div className={cn(['pt-3 last:pb-0'], className)}>{children}</div>
+			<div className={cn(['starterui-accordion pt-3 last:pb-0'], className)}>{children}</div>
 		</AccordionItemContext.Provider>
 	);
 };

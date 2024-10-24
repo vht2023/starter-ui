@@ -53,7 +53,7 @@ const CardFooter = ({ className, children }: PropsWithChildren<{ className?: str
 
 const Card = ({ id = 'default-card', showBorder = true, showDivider = false, radius = 'md', shadow = 'sm', className, children }: PropsWithChildren<Props>) => {
 	return (
-		<div id={id} className={cn(['w-full', showBorder && 'border', showDivider && 'divide-y', getCardRadius(radius), getCardShadow(shadow)], className)}>
+		<div id={id} className={cn(['starterui-card w-full', showBorder && 'border', showDivider && 'divide-y', getCardRadius(radius), getCardShadow(shadow)], className)}>
 			{children}
 		</div>
 	);
