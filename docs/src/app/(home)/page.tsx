@@ -2,7 +2,7 @@
 
 import './home.scss'
 
-import {Button} from '@starter-ui/core'
+import {Button} from '@core'
 import {ArrowRight} from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
@@ -29,7 +29,7 @@ const page = () => {
             </Link>
           </div>
           <Link href='docs/components' className='flex-shrink-0 tablet_max:w-full'>
-            <Button outline className='text-sm tablet_max:w-full'>
+            <Button outline className='text-sm transition-all tablet_max:w-full'>
               Explore components
               <ArrowRight size={18} />
             </Button>

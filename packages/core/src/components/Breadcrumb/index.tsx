@@ -47,8 +47,15 @@ const Breadcrumb: React.FC<Props> = ({ data, size = 'md', underline = 'hover', c
 							{index != 0 && <ChevronRight size={16} />}
 							{item.title && (
 								<>
-									{index === data.length - 1 || !item.url ? (
-										<span className={cn(['w-fit text-default', index === data.length - 1 && 'font-bold', size && getTextSize(size)], item?.className)}>{item.title}</span>
+									{index === data.length - 1 || !item.url || item?.isDisabled ? (
+										<span
+											className={cn(
+												['w-fit text-default', index === data.length - 1 && 'font-bold', size && getTextSize(size), item?.isDisabled && 'text-default/50'],
+												item?.className
+											)}
+										>
+											{item.title}
+										</span>
 									) : (
 										<a
 											href={item.url}

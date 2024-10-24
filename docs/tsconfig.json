@@ -19,9 +19,21 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@core": ["../packages/core/index.ts"],
+      "@theme": ["../packages/theme/index.ts"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/hooks/useEventListener.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/hooks/useEventListener.ts",
+    "../packages/core/**/*.ts",
+    "../packages/core/**/*.tsx",
+    "../packages/theme/**/*.ts",
+    "../packages/theme/**/*.tsx"
+  ],
   "exclude": ["node_modules"]
 }

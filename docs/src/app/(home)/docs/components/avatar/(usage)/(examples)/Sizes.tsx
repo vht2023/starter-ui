@@ -1,4 +1,4 @@
-import {Avatar} from '@starter-ui/core'
+import {Avatar} from '@core'
 import {motion} from 'framer-motion'
 import {useMemo, useState} from 'react'
 

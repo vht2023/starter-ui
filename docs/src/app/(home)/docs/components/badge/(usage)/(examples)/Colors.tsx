@@ -1,4 +1,4 @@
-import {Badge} from '@starter-ui/core'
+import {Badge} from '@core'
 import {motion} from 'framer-motion'
 import {useMemo, useState} from 'react'
 

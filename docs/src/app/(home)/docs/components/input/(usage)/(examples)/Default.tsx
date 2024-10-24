@@ -1,4 +1,4 @@
-import {Input} from '@starter-ui/core'
+import {Input} from '@core'
 import {motion} from 'framer-motion'
 import {useState} from 'react'
 

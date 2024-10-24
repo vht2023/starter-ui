@@ -40,7 +40,7 @@ const getCardShadow = (shadow: IShadows) => {
 };
 
 const CardHeader = ({ className, children }: PropsWithChildren<{ className?: string }>) => {
-	return <div className={cn(['p-2'], className)}>{children}</div>;
+	return <div className={cn(['p-2 font-bold text-lg'], className)}>{children}</div>;
 };
 
 const CardBody = ({ className, children }: PropsWithChildren<{ className?: string }>) => {

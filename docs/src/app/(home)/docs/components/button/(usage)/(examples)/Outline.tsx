@@ -1,4 +1,4 @@
-import {Button} from '@starter-ui/core'
+import {Button} from '@core'
 import {motion} from 'framer-motion'
 import {useMemo, useState} from 'react'
 
