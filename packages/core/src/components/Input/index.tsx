@@ -1,7 +1,7 @@
 import React, { ChangeEventHandler, HTMLInputTypeAttribute, ReactNode, useRef } from 'react';
 import { cn } from '../../libs/utils';
 import { ISizes } from '../../types/common';
-import Spinner from '../Spinner';
+import { Spinner } from '@components';
 
 export interface Props {
 	id?: string;
