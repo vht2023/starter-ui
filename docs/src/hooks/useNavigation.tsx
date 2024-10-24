@@ -102,9 +102,21 @@ const useSidebarNavigation = () => {
             sub: [],
           },
           {
+            name: 'Carousel',
+            href: ENUM_ROUTES.COMPONENTS_CAROUSEL,
+            active: pathname === ENUM_ROUTES.COMPONENTS_CAROUSEL,
+            sub: [],
+          },
+          {
             name: 'Checkbox',
             href: ENUM_ROUTES.COMPONENTS_CHECKBOX,
             active: pathname === ENUM_ROUTES.COMPONENTS_CHECKBOX,
+            sub: [],
+          },
+          {
+            name: 'Divider',
+            href: ENUM_ROUTES.COMPONENTS_DIVIDER,
+            active: pathname === ENUM_ROUTES.COMPONENTS_DIVIDER,
             sub: [],
           },
           {

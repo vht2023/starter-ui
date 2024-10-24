@@ -19,9 +19,7 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@core": ["../packages/core/index.ts"],
-      "@theme": ["../packages/theme/index.ts"]
+      "@/*": ["./src/*"]
     }
   },
   "include": [

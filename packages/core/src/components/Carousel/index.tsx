@@ -20,7 +20,7 @@ const Carousel: React.FC<Props> = ({
 	active,
 	data = [],
 	autoplay = false,
-	autoplaySpeed = 1000,
+	autoplaySpeed = 3000,
 	showIndicators = true,
 	className,
 	indicatorsClassName,
@@ -66,7 +66,11 @@ const Carousel: React.FC<Props> = ({
 				{data.map((item, index) => (
 					<div
 						key={index}
-						className={cn(['flex-shrink-0 w-full h-full flex items-center justify-center', index === currentIndex && 'starterui-carousel-content-actived', item?.className])}
+						className={cn([
+							'relative flex-shrink-0 w-full h-full flex items-center justify-center',
+							index === currentIndex && 'starterui-carousel-content-actived',
+							item?.className,
+						])}
 					>
 						{item.content}
 					</div>
