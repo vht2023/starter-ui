@@ -86,6 +86,28 @@
 	animation: starterui-slide-out 0.3s backwards;
 }
 
+.starterui-progress::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	transform: translateX(-100%);
+	animation: starterui-loading 1.5s ease-out infinite;
+}
+
+.starterui-progress-status::before {
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: -1px;
+	height: 10px;
+	width: 10px;
+	z-index: -1;
+	transform: translateX(-50%) rotate(45deg);
+}
+
 @keyframes starterui-checkbox {
 	50% {
 		transform: scale(0.9);
@@ -111,5 +133,12 @@
 	to {
 		transform: translateX(-100%);
 		opacity: 0;
+	}
+}
+
+@keyframes starterui-loading {
+	100% {
+		transform: translateX(0%);
+		opacity: 0.5;
 	}
 }

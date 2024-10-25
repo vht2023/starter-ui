@@ -83,11 +83,7 @@ const getAlertCloseIcons = (type: IAlertTypes, onClose?: () => void) => {
 				</div>
 			);
 		default:
-			return (
-				<div className='ms-2 -mr-1.5 flex-shrink-0 p-1 cursor-pointer rounded-lg hover:bg-muted/15' onClick={onClose}>
-					<X size={18} />
-				</div>
-			);
+			return null;
 	}
 };
 

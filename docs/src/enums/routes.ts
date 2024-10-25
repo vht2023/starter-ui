@@ -18,6 +18,7 @@ export enum ENUM_ROUTES {
   COMPONENTS_CHECKBOX = '/docs/components/checkbox',
   COMPONENTS_DIVIDER = '/docs/components/divider',
   COMPONENTS_INPUT = '/docs/components/input',
+  COMPONENTS_PROGRESS = '/docs/components/progress',
   COMPONENTS_SKELETON = '/docs/components/skeleton',
   COMPONENTS_SPINNER = '/docs/components/spinner',
 }

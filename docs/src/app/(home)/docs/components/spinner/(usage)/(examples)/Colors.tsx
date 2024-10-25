@@ -11,7 +11,7 @@ const Colors = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex-center h-60 w-full gap-3 overflow-auto rounded-md border p-3'>
+      <div className='flex-center h-60 w-full gap-3 overflow-auto rounded-md border p-3 scrollbar-thin'>
         <Spinner isLoading />
         <Spinner isLoading color='primary' />
         <Spinner isLoading color='secondary' />

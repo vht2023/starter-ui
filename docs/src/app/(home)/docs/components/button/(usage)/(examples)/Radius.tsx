@@ -11,7 +11,7 @@ const Radius = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex-center h-40 w-full flex-wrap gap-3 overflow-auto rounded-md border p-3'>
+      <div className='flex-center h-40 w-full flex-wrap gap-3 overflow-auto rounded-md border p-3 scrollbar-thin'>
         <Button radius='full'>Full</Button>
         <Button radius='lg'>Large</Button>
         <Button radius='md'>Medium</Button>

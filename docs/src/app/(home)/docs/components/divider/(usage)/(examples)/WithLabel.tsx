@@ -11,7 +11,7 @@ const WithLabel = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex-center h-fit w-full gap-3 overflow-auto rounded-md border p-3'>
+      <div className='flex-center h-fit w-full gap-3 overflow-auto rounded-md border p-3 scrollbar-thin'>
         <div className='h-full w-full px-10 tablet_max:px-0'>
           <div>Divider with label.</div>
           <Divider label='Text' labelClassName='text-sm' />

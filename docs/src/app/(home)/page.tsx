@@ -7,11 +7,12 @@ import {ArrowRight} from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 
+import {ReactLoading} from '@/components/common'
 import LinearBackground from '@/components/common/LinearBackground'
 
 const page = () => {
   return (
-    <div className='relative h-full w-full pt-20 tablet_max:pt-10'>
+    <div className='relative h-full w-full pt-16 tablet_max:pt-10'>
       <div className='tailwind-version mx-auto mb-6 w-fit text-xs'>
         Tailwind CSS Version V3.4.13 <span />
       </div>
@@ -35,6 +36,9 @@ const page = () => {
             </Button>
           </Link>
         </div>
+      </div>
+      <div className='flex-center mt-10 tablet_max:mb-4'>
+        <ReactLoading />
       </div>
       <LinearBackground />
     </div>

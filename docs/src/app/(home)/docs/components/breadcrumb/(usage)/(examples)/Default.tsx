@@ -26,7 +26,7 @@ const Default = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex-center h-40 w-full overflow-auto rounded-md border p-3'>
+      <div className='flex-center h-40 w-full overflow-auto rounded-md border p-3 scrollbar-thin'>
         <div className='w-full'>
           <Breadcrumb data={breadcrumbs} />
         </div>

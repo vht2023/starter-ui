@@ -21,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en' className='scroll-smooth'>
-      <body className={cn('w-full font-sans antialiased scrollbar-track-white/10 scrollbar-thumb-white/10', inter.className, inter.variable)}>{children}</body>
+    <html lang='en' className='overflow-y-auto scrollbar-thin'>
+      <body className={cn('w-full font-sans antialiased', inter.className, inter.variable)}>{children}</body>
     </html>
   )
 }

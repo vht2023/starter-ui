@@ -13,8 +13,6 @@ interface Props {
 
 const getBadgeColors = (color: IColors, outline: boolean) => {
 	switch (color) {
-		case 'default':
-			return `text-default bg-grey ${outline && 'border-default'}`;
 		case 'primary':
 			return `text-white bg-primary ${outline && 'border-primary text-primary'}`;
 		case 'secondary':

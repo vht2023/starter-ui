@@ -10,7 +10,7 @@ const Sidebar = () => {
   const paths = useSidebarNavigation()
 
   return (
-    <div className='space-y-8'>
+    <div className='h-full space-y-8'>
       {paths.map((menu, index) => (
         <div key={index} className='space-y-4 text-base'>
           {menu?.href ? (

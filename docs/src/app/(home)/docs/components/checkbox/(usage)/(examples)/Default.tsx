@@ -11,7 +11,7 @@ const Default = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex-center h-40 w-full overflow-auto rounded-md border p-3'>
+      <div className='flex-center h-40 w-full overflow-auto rounded-md border p-3 scrollbar-thin'>
         <Checkbox id='checkbox-default' label='Default' />
       </div>
     ),

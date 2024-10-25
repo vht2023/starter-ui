@@ -11,7 +11,7 @@ const Sizes = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex-center h-60 w-full gap-3 overflow-auto rounded-md border p-3'>
+      <div className='flex-center h-60 w-full gap-3 overflow-auto rounded-md border p-3 scrollbar-thin'>
         <Spinner isLoading size='sm' />
         <Spinner isLoading size='md' />
         <Spinner isLoading size='lg' />

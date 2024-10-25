@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import {colors} from '@starter-ui/theme'
 import {Config} from 'tailwindcss'
 import plugin from 'tailwindcss/plugin'
@@ -45,7 +46,7 @@ const config: Config = {
   },
   plugins: [
     require('tailwindcss-animate'),
-    require('tailwind-scrollbar'),
+    require('tailwind-scrollbar')({nocompatible: true}),
     plugin(function ({addComponents, addUtilities}) {
       addComponents({
         '.flex-between': {
