@@ -12,5 +12,6 @@ import Input from './Input';
 import Progress from './Progress';
 import Skeleton from './Skeleton';
 import Spinner from './Spinner';
+import Switch from './Switch';
 
-export { Accordion, Alert, Avatar, Badge, Breadcrumb, Button, Card, Carousel, Checkbox, Divider, Input, Progress, Skeleton, Spinner };
+export { Accordion, Alert, Avatar, Badge, Breadcrumb, Button, Card, Carousel, Checkbox, Divider, Input, Progress, Skeleton, Spinner, Switch };

@@ -45,7 +45,7 @@ const Checkbox: React.FC<Props> = ({ id = 'default-checkbox', color = 'default',
 				disabled={disabled}
 				onChange={(e) => onChange?.(e.target.checked)}
 				onClick={onClick}
-				className='starterui-input-checkbox hidden invisible peer'
+				className='starterui-input-checkbox hidden invisible'
 			/>
 			<label htmlFor={id} className={cn(['starterui-label-checkbox select-none cursor-pointer', disabled && 'opacity-50 cursor-default'])}>
 				<span
