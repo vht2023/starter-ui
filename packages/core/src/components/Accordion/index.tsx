@@ -30,7 +30,7 @@ const Accordion = ({
 	return (
 		<div id={id} className={cn(['w-full', showDivider && 'divide-y'], className)}>
 			<AccordionContext.Provider value={{ mode, selectedKeys, disabledKeys, activatedKeys, setActivatedKeys }}>
-				<AccordionContainer onChange={(ids) => onChange && onChange(ids)}>{children}</AccordionContainer>
+				<AccordionContainer onChange={(ids) => onChange?.(ids)}>{children}</AccordionContainer>
 			</AccordionContext.Provider>
 		</div>
 	);

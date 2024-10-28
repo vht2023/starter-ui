@@ -15,7 +15,7 @@ export interface Props {
 	placeholder?: string;
 	autoComplete?: string;
 	autoFocus?: boolean;
-	allowClearSearch?: boolean;
+	allowClearInput?: boolean;
 	isReadOnly?: boolean;
 	helperText?: string;
 	labelClassName?: string;
@@ -62,7 +62,7 @@ const Input: React.FC<Props> = ({
 	required = false,
 	disabled = false,
 	autoFocus = false,
-	allowClearSearch = true,
+	allowClearInput = true,
 	isReadOnly = false,
 	placeholder = 'Placeholder',
 	autoComplete = '',

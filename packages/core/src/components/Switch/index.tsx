@@ -18,13 +18,13 @@ const getSwitchColors = (color: IColors, disabled: boolean) => {
 		case 'primary':
 			return `group-has-[:checked]:before:bg-primary group-has-[:checked]:shadow-[0_0_0_2px_rgba(0,111,238,0.5),_0_0_8px_rgba(0,111,238,0.7)]`;
 		case 'secondary':
-			return `${!disabled && ''} group-has-[:checked]:before:bg-secondary group-has-[:checked]:shadow-[0_0_0_2px_rgba(120,40,200,0.5),_0_0_8px_rgba(120,40,200,0.7)]`;
+			return `group-has-[:checked]:before:bg-secondary group-has-[:checked]:shadow-[0_0_0_2px_rgba(120,40,200,0.5),_0_0_8px_rgba(120,40,200,0.7)]`;
 		case 'success':
-			return `${!disabled && ''} group-has-[:checked]:before:bg-success group-has-[:checked]:shadow-[0_0_0_2px_rgba(23,201,100,0.5),_0_0_8px_rgba(23,201,100,0.7)]`;
+			return `group-has-[:checked]:before:bg-success group-has-[:checked]:shadow-[0_0_0_2px_rgba(23,201,100,0.5),_0_0_8px_rgba(23,201,100,0.7)]`;
 		case 'warning':
-			return `${!disabled && ''} group-has-[:checked]:before:bg-warning group-has-[:checked]:shadow-[0_0_0_2px_rgba(245,165,36,0.5),_0_0_8px_rgba(245,165,36,0.7)]`;
+			return `group-has-[:checked]:before:bg-warning group-has-[:checked]:shadow-[0_0_0_2px_rgba(245,165,36,0.5),_0_0_8px_rgba(245,165,36,0.7)]`;
 		case 'error':
-			return `${!disabled && ''} group-has-[:checked]:before:bg-error group-has-[:checked]:shadow-[0_0_0_2px_rgba(220,38,38,0.5),_0_0_8px_rgba(220,38,38,0.7)]`;
+			return `group-has-[:checked]:before:bg-error group-has-[:checked]:shadow-[0_0_0_2px_rgba(220,38,38,0.5),_0_0_8px_rgba(220,38,38,0.7)]`;
 		default:
 			return `group-has-[:checked]:before:bg-default group-has-[:checked]:shadow-[0_0_0_2px_rgba(17,24,28,0.5),_0_0_8px_rgba(17,24,28,0.7)]`;
 	}
