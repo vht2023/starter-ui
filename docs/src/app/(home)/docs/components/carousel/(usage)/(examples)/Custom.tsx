@@ -44,7 +44,7 @@ const Colors = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex-center h-96 w-full overflow-auto rounded-md border p-3 scrollbar-thin tablet_max:h-72'>
+      <div className='flex-center h-96 w-full overflow-auto rounded-md border p-3 tablet_max:h-72'>
         <Carousel
           autoplay
           autoplaySpeed={2000}

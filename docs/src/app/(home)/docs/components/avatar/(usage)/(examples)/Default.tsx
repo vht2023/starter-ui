@@ -11,7 +11,7 @@ const Default = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex-center h-40 w-full gap-6 overflow-auto rounded-md border p-6 pt-10 scrollbar-thin'>
+      <div className='flex-center h-40 w-full gap-6 overflow-auto rounded-md border p-6 pt-10'>
         <Avatar name='Starter UI' />
         <Avatar src='https://hoanghamobile.com/tin-tuc/wp-content/uploads/2023/09/hinh-nen-luffy.jpg' />
       </div>

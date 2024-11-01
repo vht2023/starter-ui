@@ -12,7 +12,7 @@ const Controlled = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex h-40 w-full flex-col flex-wrap justify-center gap-3 overflow-auto rounded-md border p-3 py-8 scrollbar-thin tablet_max:block tablet_max:space-y-3 tablet_max:px-10 tablet_max:py-3'>
+      <div className='flex h-40 w-full flex-col flex-wrap justify-center gap-3 overflow-auto rounded-md border p-3 py-8 tablet_max:block tablet_max:space-y-3 tablet_max:px-10 tablet_max:py-3'>
         <Checkbox id='checkbox-primary-controlled' color='primary' label='Controlled' checked={checked} onChange={setChecked} />
         <Checkbox id='checkbox-primary-disabled' color='primary' label='Disabled' disabled />
       </div>

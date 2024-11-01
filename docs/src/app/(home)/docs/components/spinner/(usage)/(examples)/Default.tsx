@@ -11,7 +11,7 @@ const Default = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex-center h-60 w-full overflow-auto rounded-md border p-3 scrollbar-thin'>
+      <div className='flex-center h-40 w-full overflow-auto rounded-md border p-3'>
         <Spinner isLoading />
       </div>
     ),

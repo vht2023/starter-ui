@@ -11,7 +11,7 @@ const Default = () => {
   const [value, setValue] = useState<string>('')
 
   const viewPreview = (
-    <div className='flex-center h-60 w-full overflow-auto rounded-md border p-3 scrollbar-thin'>
+    <div className='flex-center h-60 w-full overflow-auto rounded-md border p-3'>
       <Input label='Label' value={value} onChange={(e) => setValue(e.target.value)} />
     </div>
   )

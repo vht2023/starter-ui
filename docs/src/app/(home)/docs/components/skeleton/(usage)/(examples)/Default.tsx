@@ -11,8 +11,8 @@ const Default = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='h-fit max-h-40 w-full overflow-auto rounded-md border px-3 py-10 scrollbar-thin'>
-        <div className='space-y-1.5'>
+      <div className='h-fit max-h-40 w-full overflow-auto rounded-md border px-3 py-10'>
+        <div className='w-fit space-y-1.5'>
           <Skeleton />
           <Skeleton className='w-60' />
           <Skeleton className='w-80' />

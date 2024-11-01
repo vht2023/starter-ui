@@ -37,7 +37,7 @@ const layout = ({
   return (
     <div className='relative mx-auto h-full w-3/4 pb-20 tablet_max:w-full'>
       {/* Desktop Sidebar */}
-      <aside className='fixed z-10 mb-4 mt-10 max-h-[calc(100%-116px)] w-72 overflow-hidden transition-all scrollbar-thin hover:overflow-auto tablet_max:hidden'>
+      <aside className='fixed z-10 mt-10 max-h-[calc(100%-132px)] w-72 overflow-hidden pb-2 transition-all hover:overflow-auto tablet_max:hidden'>
         <Sidebar />
       </aside>
 
@@ -48,7 +48,7 @@ const layout = ({
         </div>
       </div>
       {openSidebar && (
-        <div ref={sidebarRef} className='fixed z-20 flex h-full w-72 justify-between border-r px-3 pt-4 backdrop-blur-lg'>
+        <div ref={sidebarRef} className='no-scrollbar fixed z-20 flex h-[calc(100vh-60px)] w-72 justify-between overflow-y-auto border-r px-3 pb-3 pt-4 backdrop-blur-2xl'>
           <Sidebar />
           <X onClick={() => setOpenSidebar(false)} />
         </div>

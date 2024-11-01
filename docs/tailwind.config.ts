@@ -46,7 +46,6 @@ const config: Config = {
   },
   plugins: [
     require('tailwindcss-animate'),
-    require('tailwind-scrollbar')({nocompatible: true}),
     plugin(function ({addComponents, addUtilities}) {
       addComponents({
         '.flex-between': {
@@ -76,14 +75,44 @@ const config: Config = {
         '.overflow-y-auto': {
           'scroll-behavior': 'smooth',
           'scrollbar-width': 'thin',
+          '&::-webkit-scrollbar': {
+            width: '6px',
+            height: '6px',
+          },
+          '&::-webkit-scrollbar-track': {
+            'background-color': '#d1d1d1',
+          },
+          '&::-webkit-scrollbar-thumb': {
+            'background-color': '#808080',
+          },
         },
         '.overflow-x-auto': {
           'scroll-behavior': 'smooth',
           'scrollbar-width': 'thin',
+          '&::-webkit-scrollbar': {
+            width: '6px',
+            height: '6px',
+          },
+          '&::-webkit-scrollbar-track': {
+            'background-color': '#d1d1d1',
+          },
+          '&::-webkit-scrollbar-thumb': {
+            'background-color': '#808080',
+          },
         },
         '.overflow-auto': {
           'scroll-behavior': 'smooth',
           'scrollbar-width': 'thin',
+          '&::-webkit-scrollbar': {
+            width: '6px',
+            height: '6px',
+          },
+          '&::-webkit-scrollbar-track': {
+            'background-color': '#d1d1d1',
+          },
+          '&::-webkit-scrollbar-thumb': {
+            'background-color': '#808080',
+          },
         },
       })
     }),

@@ -11,7 +11,7 @@ const Colors = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex-center h-60 w-full gap-3 overflow-auto rounded-md border p-3 scrollbar-thin'>
+      <div className='flex-center min-h-60 w-full gap-3 overflow-auto rounded-md border p-3'>
         <div className='h-full w-full px-10 tablet_max:px-0'>
           <div>Divider with default color.</div>
           <Divider />

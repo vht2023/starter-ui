@@ -13,7 +13,7 @@ const layout = ({
   children: React.ReactNode
 }>) => {
   return (
-    <div className='relative min-h-[calc(100vh-60px)] w-full'>
+    <div className='relative h-full min-h-[calc(100vh-60px)] w-full overflow-auto'>
       <Header />
       <div className='mt-[60px] h-full min-h-screen w-full'>{children}</div>
       <Footer />

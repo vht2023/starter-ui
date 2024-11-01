@@ -11,7 +11,7 @@ const Outline = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex-center h-40 w-full flex-wrap gap-3 overflow-auto rounded-md border p-3 scrollbar-thin'>
+      <div className='flex-center min-h-40 w-full flex-wrap gap-3 overflow-auto rounded-md border p-3'>
         <Button outline>Default</Button>
         <Button outline color='primary'>
           Primary

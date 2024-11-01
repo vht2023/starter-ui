@@ -19,7 +19,7 @@ const ViewCode: React.FC<Props> = ({id, code, language = 'tsx', theme = themes.p
   return (
     <CodeBlock code={code} language={language} theme={theme}>
       <div className='flex w-full gap-1 rounded-lg bg-black p-3 pr-1.5'>
-        <CodeBlock.Code className='no-scrollbar h-full max-h-[500px] min-h-7 w-full overflow-auto scrollbar-thin tablet_max:text-sm'>
+        <CodeBlock.Code className='no-scrollbar h-full max-h-[500px] min-h-7 w-full overflow-auto tablet_max:text-sm'>
           <CodeBlock.LineContent>
             <CodeBlock.Token />
           </CodeBlock.LineContent>

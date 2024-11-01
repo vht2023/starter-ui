@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en' className='overflow-y-auto scrollbar-thin'>
+    <html lang='en'>
       <body className={cn('w-full font-sans antialiased', inter.className, inter.variable)}>{children}</body>
     </html>
   )

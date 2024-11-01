@@ -11,7 +11,7 @@ const Custom = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex h-fit max-h-60 w-full flex-wrap gap-6 overflow-auto rounded-md border p-3 scrollbar-thin tablet_max:flex-col'>
+      <div className='flex h-fit max-h-60 w-full flex-wrap gap-6 overflow-auto rounded-md border p-3 tablet_max:flex-col'>
         <div className='space-y-1.5'>
           <div className='text-sm'>Card Skeleton</div>
           <div>

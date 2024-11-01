@@ -12,7 +12,7 @@ const Orthers = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex h-96 w-full flex-col justify-center gap-3 overflow-auto rounded-md border px-10 py-3 scrollbar-thin tablet_max:px-3'>
+      <div className='flex h-96 w-full flex-col justify-center gap-3 overflow-auto rounded-md border px-10 py-3 tablet_max:px-3'>
         <div className='w-2/3 space-y-6 tablet_max:w-full'>
           <Input label='Disabled input' disabled />
           <Input label='Loading input' isLoading />

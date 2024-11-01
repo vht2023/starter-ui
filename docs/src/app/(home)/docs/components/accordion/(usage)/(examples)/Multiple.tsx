@@ -11,7 +11,7 @@ const Multiple = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='h-80 w-full overflow-auto rounded-md border p-6 pt-10 scrollbar-thin'>
+      <div className='h-80 w-full overflow-auto rounded-md border p-6 pt-10'>
         <div>
           <Accordion mode='multiple'>
             <Accordion.Item id='1'>

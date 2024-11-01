@@ -11,7 +11,7 @@ const Default = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex-center h-fit w-full overflow-auto rounded-md border p-3 scrollbar-thin'>
+      <div className='flex-center h-fit w-full overflow-auto rounded-md border p-3'>
         <div className='h-full w-full px-10 tablet_max:px-0'>
           <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</div>
           <Divider />

@@ -11,7 +11,7 @@ const Outlines = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='h-96 w-full space-y-3 overflow-auto rounded-md border p-3 scrollbar-thin tablet_max:h-60'>
+      <div className='h-96 w-full space-y-3 overflow-auto rounded-md border p-3 tablet_max:h-60'>
         <Alert outline>Default alert! Change a few things up and try submitting again.</Alert>
         <Alert type='info' outline>
           Info alert! Change a few things up and try submitting again.

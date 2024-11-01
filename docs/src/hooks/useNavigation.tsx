@@ -26,6 +26,12 @@ const useHeaderNavigation = () => {
         active: pathname.startsWith(ENUM_ROUTES.COMPONENTS),
         sub: [],
       },
+      {
+        name: 'Showcases',
+        href: ENUM_ROUTES.SHOWCASES,
+        active: pathname.startsWith(ENUM_ROUTES.SHOWCASES),
+        sub: [],
+      },
     ],
     [pathname]
   )
@@ -132,6 +138,12 @@ const useSidebarNavigation = () => {
             sub: [],
           },
           {
+            name: 'Radio',
+            href: ENUM_ROUTES.COMPONENTS_RADIO,
+            active: pathname === ENUM_ROUTES.COMPONENTS_RADIO,
+            sub: [],
+          },
+          {
             name: 'Skeleton',
             href: ENUM_ROUTES.COMPONENTS_SKELETON,
             active: pathname === ENUM_ROUTES.COMPONENTS_SKELETON,
@@ -141,6 +153,12 @@ const useSidebarNavigation = () => {
             name: 'Spinner',
             href: ENUM_ROUTES.COMPONENTS_SPINNER,
             active: pathname === ENUM_ROUTES.COMPONENTS_SPINNER,
+            sub: [],
+          },
+          {
+            name: 'Switch',
+            href: ENUM_ROUTES.COMPONENTS_SWITCH,
+            active: pathname === ENUM_ROUTES.COMPONENTS_SWITCH,
             sub: [],
           },
         ],

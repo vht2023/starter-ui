@@ -11,7 +11,7 @@ const Sizes = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex-center h-60 w-full flex-wrap gap-3 overflow-auto rounded-md border p-3 scrollbar-thin'>
+      <div className='flex-center max-h-96 min-h-60 w-full flex-wrap gap-3 overflow-auto rounded-md border p-3'>
         <div className='flex flex-col items-center gap-3'>
           <Button size='sm'>Small</Button>
           <Button size='md'>Medium</Button>

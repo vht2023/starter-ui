@@ -11,7 +11,7 @@ const Default = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex h-40 w-full flex-col justify-center overflow-auto rounded-md border p-3 scrollbar-thin'>
+      <div className='flex h-40 w-full flex-col justify-center overflow-auto rounded-md border p-3'>
         <Alert>Default alert! Change a few things up and try submitting again.</Alert>
       </div>
     ),

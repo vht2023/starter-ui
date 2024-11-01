@@ -19,6 +19,11 @@ export enum ENUM_ROUTES {
   COMPONENTS_DIVIDER = '/docs/components/divider',
   COMPONENTS_INPUT = '/docs/components/input',
   COMPONENTS_PROGRESS = '/docs/components/progress',
+  COMPONENTS_RADIO = '/docs/components/radio',
   COMPONENTS_SKELETON = '/docs/components/skeleton',
   COMPONENTS_SPINNER = '/docs/components/spinner',
+  COMPONENTS_SWITCH = '/docs/components/switch',
+
+  // CHALLENGES
+  SHOWCASES = '/showcases',
 }

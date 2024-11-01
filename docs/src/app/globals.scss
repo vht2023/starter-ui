@@ -2,26 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+*,
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  @apply bg-[#d1d1d1];
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply bg-[#808080];
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 @layer base {
   html {
-    height: 100vh;
+    min-height: 100vh;
     font-family: var(--font-inter);
     @apply bg-white;
-  }
-
-  .scrollbar-thin::-webkit-scrollbar {
-    @apply scrollbar-w-1 scrollbar-h-1;
-  }
-
-  .scrollbar-thin::-webkit-scrollbar-track {
-    @apply rounded-xl bg-[#f1f1f1];
-  }
-
-  .scrollbar-thin::-webkit-scrollbar-thumb {
-    @apply rounded-xl bg-[#a09c99];
-  }
-
-  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-    @apply bg-[#a8a8a8];
   }
 }

@@ -11,7 +11,7 @@ const Colors = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex-center h-40 w-full flex-wrap gap-6 gap-y-0 overflow-auto rounded-md border p-3 py-8 scrollbar-thin tablet_max:block tablet_max:space-y-3 tablet_max:px-10 tablet_max:py-3'>
+      <div className='flex-center min-h-40 w-full flex-wrap gap-6 gap-y-0 overflow-auto rounded-md border p-3 py-8 tablet_max:block tablet_max:space-y-3 tablet_max:px-10 tablet_max:py-3'>
         <Checkbox id='checkbox-default-color' label='Default' />
         <Checkbox id='checkbox-primary-color' color='primary' label='Primary' />
         <Checkbox id='checkbox-secondary-color' color='secondary' label='Secondary' />
