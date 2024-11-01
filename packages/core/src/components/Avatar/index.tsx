@@ -4,6 +4,7 @@ import { User } from 'lucide-react';
 import { cn } from '../../libs/utils';
 
 interface Props {
+	id?: string;
 	src?: string;
 	name?: string;
 	alt?: string;
@@ -124,13 +125,26 @@ const AvatarWithName: React.FC<{
 	);
 };
 
-const Avatar: React.FC<Props> = ({ src, name, alt = 'alt-avatar', color = 'default', size = 32, radius = 'full', bordered = false, disabled = false, className = '', onClick }) => {
+const Avatar: React.FC<Props> = ({
+	id = 'starterui-default-avatar',
+	src,
+	name,
+	alt = 'alt-avatar',
+	color = 'default',
+	size = 32,
+	radius = 'full',
+	bordered = false,
+	disabled = false,
+	className = '',
+	onClick,
+}) => {
 	if (!src && !name) return <AvatarDefault color={color} size={size} radius={radius} bordered={bordered} disabled={disabled} className={className} />;
 
 	if (!src && name) return <AvatarWithName name={name} color={color} size={size} radius={radius} bordered={bordered} disabled={disabled} className={className} />;
 
 	return (
 		<img
+			id={id}
 			style={{
 				width: size,
 				height: size,

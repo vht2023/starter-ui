@@ -35,7 +35,7 @@ const Controlled = () => {
             +
           </Button>
         </div>
-        <div className='grid w-full grid-cols-2 gap-6'>
+        <div className='grid w-full grid-cols-2 gap-6 px-3 tablet_max:grid-cols-none tablet_max:grid-rows-2 tablet_max:gap-3 tablet_max:py-6'>
           <div className='flex-center'>
             <Progress id='line-progress' percent={percent} color='primary' type='line' showStatus />
           </div>

@@ -11,8 +11,9 @@ import Divider from './Divider';
 import Input from './Input';
 import Progress from './Progress';
 import Radio from './Radio';
+import SearchInput from './SearchInput';
 import Skeleton from './Skeleton';
 import Spinner from './Spinner';
 import Switch from './Switch';
 
-export { Accordion, Alert, Avatar, Badge, Breadcrumb, Button, Card, Carousel, Checkbox, Divider, Input, Progress, Radio, Skeleton, Spinner, Switch };
+export { Accordion, Alert, Avatar, Badge, Breadcrumb, Button, Card, Carousel, Checkbox, Divider, Input, Progress, Radio, SearchInput, Skeleton, Spinner, Switch };

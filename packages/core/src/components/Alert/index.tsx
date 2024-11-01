@@ -4,6 +4,7 @@ import { cn } from '../../libs/utils';
 import { CircleCheck, CircleX, Info, TriangleAlert, X } from 'lucide-react';
 
 interface Props {
+	id?: string;
 	type?: IAlertTypes;
 	outline?: boolean;
 	closeable?: boolean;
@@ -87,9 +88,10 @@ const getAlertCloseIcons = (type: IAlertTypes, onClose?: () => void) => {
 	}
 };
 
-const Alert = ({ type = 'default', outline = false, closeable = true, className, children, onClose }: PropsWithChildren<Props>) => {
+const Alert = ({ id = 'starterui-default-alert', type = 'default', outline = false, closeable = true, className, children, onClose }: PropsWithChildren<Props>) => {
 	return (
 		<div
+			id={id}
 			className={cn(['starterui-alert p-4 rounded-lg flex items-start font-medium text-base', type && getAlertTypes(type), outline && getAlertOutlines(type)], className)}
 			role='alert'
 		>

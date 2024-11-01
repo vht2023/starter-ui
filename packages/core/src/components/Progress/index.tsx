@@ -95,7 +95,7 @@ const getStylesWithInsideLabel = () => {
 };
 
 const Progress: React.FC<Props> = ({
-	id = 'default-progress',
+	id = 'starterui-default-progress',
 	percent = 0,
 	size = 'md',
 	color = 'default',

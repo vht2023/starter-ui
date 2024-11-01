@@ -13,7 +13,7 @@ import {cn} from '@/libs/utils'
 
 const martian = Martian_Mono({subsets: ['latin']})
 
-const CURRENT_VERSION = '1.0.31'
+const CURRENT_VERSION = '1.0.33'
 
 const Header = () => {
   const pathname = usePathname()

@@ -53,7 +53,7 @@ const getInputSizes = (size: ISizes) => {
 };
 
 const Input: React.FC<Props> = ({
-	id = 'default-input',
+	id = 'starterui-default-input',
 	type = 'text',
 	label = '',
 	value = '',
@@ -87,7 +87,7 @@ const Input: React.FC<Props> = ({
 	};
 
 	return (
-		<div className={className}>
+		<div className={cn(['starterui-input-wrapper', className])}>
 			{/* LABEL */}
 			{label && (
 				<label htmlFor={id} className={cn(['mb-1.5 block w-fit font-700 text-default', required && 'starterui-required', size && getLabelSizes(size)], labelClassName)}>
@@ -111,12 +111,12 @@ const Input: React.FC<Props> = ({
 					autoFocus={autoFocus}
 					className={cn(
 						[
-							'starterui-input block w-full rounded-md border border-muted text-default outline-none placeholder:text-muted/50 focus:border-primary focus:ring-primary transition-all ease-in-out',
+							'starterui-input block w-full placeholder-gray-500 rounded-md border border-muted text-default outline-none placeholder:text-muted/50 focus:border-primary focus:ring-primary transition-all ease-in-out',
 							size && getInputSizes(size),
 							prefix && 'pl-8',
 							suffix && 'pr-8',
 							helperText && 'border-error',
-							disabled ? 'bg-disabled' : 'bg-white',
+							disabled ? 'bg-disabled/50' : 'bg-white',
 						],
 						inputClassName
 					)}
@@ -148,7 +148,7 @@ const Input: React.FC<Props> = ({
 				{/* LOADING */}
 				{isLoading && (
 					<div className='absolute inset-y-0 right-0 z-10 flex items-center pr-3'>
-						<Spinner size={size} isLoading />
+						<Spinner size='sm' isLoading />
 					</div>
 				)}
 			</div>

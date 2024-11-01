@@ -85,7 +85,7 @@ const getButtonRadius = (radius: IRadius) => {
 };
 
 const Button = ({
-	id = 'buttonId',
+	id = 'starterui-default-button',
 	color = 'default',
 	size = 'md',
 	type = 'button',
@@ -123,7 +123,7 @@ const Button = ({
 			onClick={onClick}
 			className={cn(
 				[
-					'starterui-button flex items-center justify-center whitespace-nowrap text-center font-medium transition-all transform box-border',
+					'starterui-button flex items-center justify-center whitespace-nowrap text-center font-medium transition-all transform',
 					getButtonColors(color, !disabled && !isLoading && !outline, outline),
 					getButtonSizes(size, isIconOnly),
 					getButtonRadius(radius),

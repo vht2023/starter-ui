@@ -48,7 +48,7 @@ const layout = ({
         </div>
       </div>
       {openSidebar && (
-        <div ref={sidebarRef} className='no-scrollbar fixed z-20 flex h-[calc(100vh-60px)] w-72 justify-between overflow-y-auto border-r px-3 pb-3 pt-4 backdrop-blur-2xl'>
+        <div ref={sidebarRef} className='no-scrollbar fixed z-20 flex h-[calc(100vh-60px)] w-72 justify-between overflow-y-auto border-r px-3 pb-10 pt-4 backdrop-blur-2xl'>
           <Sidebar />
           <X onClick={() => setOpenSidebar(false)} />
         </div>

@@ -41,7 +41,7 @@ const getDividerTypes = (type: IDividerTypes) => {
 	}
 };
 
-const Divider: React.FC<Props> = ({ id = 'divider-default', label, type = 'solid', color = 'default', className, labelClassName }) => {
+const Divider: React.FC<Props> = ({ id = 'starterui-default-divider', label, type = 'solid', color = 'default', className, labelClassName }) => {
 	return (
 		<div id={id} className='starterui-divider inline-flex items-center justify-center w-full'>
 			<div className={cn(['w-full h-0 border-b my-3', type && getDividerTypes(type), color && getDividerColors(color)], className)} />

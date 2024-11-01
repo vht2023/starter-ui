@@ -3,6 +3,7 @@ import { IColors, ISizes } from '../../types/common';
 import { cn } from '../../libs/utils';
 
 interface Props {
+	id?: string;
 	isLoading?: boolean;
 	size?: ISizes;
 	color?: IColors | 'white';
@@ -12,7 +13,7 @@ interface Props {
 const getSpinnerSizes = (size: ISizes) => {
 	switch (size) {
 		case 'sm':
-			return 'w-3 h-3';
+			return 'w-3 h-3 border';
 		case 'md':
 			return 'w-4 h-4';
 		case 'lg':
@@ -42,9 +43,10 @@ const getSpinnerColors = (color: IColors | 'white') => {
 	}
 };
 
-const Spinner: React.FC<Props> = ({ isLoading = true, size = 'md', color = 'default', className }) => {
+const Spinner: React.FC<Props> = ({ id = 'starterui-default-spinner', isLoading = true, size = 'md', color = 'default', className }) => {
 	return (
 		<div
+			id={id}
 			className={cn(
 				[
 					'starterui-spinner animate-spin rounded-full border-2 border-solid',

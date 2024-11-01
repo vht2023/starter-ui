@@ -30,7 +30,7 @@ const getCheckboxColors = (color: IColors, disabled: boolean) => {
 	}
 };
 
-const Checkbox: React.FC<Props> = ({ id = 'default-checkbox', color = 'default', label, checked, disabled = false, className, onChange, onClick }) => {
+const Checkbox: React.FC<Props> = ({ id = 'starterui-default-checkbox', color = 'default', label, checked, disabled = false, className, onChange, onClick }) => {
 	const getLabel = () => {
 		if (typeof label === 'string') {
 			return <span>{label}</span>;

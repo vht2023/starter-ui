@@ -3,7 +3,9 @@ export const importCode = 'import { Input } from "@starter-ui/core"'
 export const demoCodeDefault = `
 const [value, setValue] = useState<string>('')
 
-<Input label='Label' value={value} onChange={(e) => setValue(e.target.value)} />
+return (
+  <Input label='Label' value={value} onChange={(e) => setValue(e.target.value)} />
+)
 `
 
 export const demoCodeSizes = `

@@ -31,7 +31,7 @@ const getSwitchColors = (color: IColors) => {
 	}
 };
 
-const Switch: React.FC<Props> = ({ id = 'default-switch', color = 'default', label, checked, disabled = false, className, onChange, onClick }) => {
+const Switch: React.FC<Props> = ({ id = 'starterui-default-switch', color = 'default', label, checked, disabled = false, className, onChange, onClick }) => {
 	return (
 		<div id={id} className={cn(['starterui-switch flex items-center gap-1.5', className])}>
 			<label className='starterui-switch-group group relative w-10 h-5'>

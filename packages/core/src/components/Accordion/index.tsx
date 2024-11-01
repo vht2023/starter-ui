@@ -16,7 +16,7 @@ interface Props {
 }
 
 const Accordion = ({
-	id = 'accordion-collapse',
+	id = 'starterui-collapse-accordion',
 	mode = 'single',
 	selectedKeys = [],
 	disabledKeys = [],

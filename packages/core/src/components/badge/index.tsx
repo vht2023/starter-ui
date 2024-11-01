@@ -4,6 +4,7 @@ import { IColors, ISizes } from '../../types/common';
 import { cn } from '../../libs/utils';
 
 interface Props {
+	id?: string;
 	className?: string;
 	color?: IColors;
 	size?: ISizes;
@@ -41,9 +42,10 @@ const getBadgeSizes = (size: ISizes, outline: boolean) => {
 	}
 };
 
-const Badge = ({ color = 'default', size = 'sm', className, disabled = false, outline = false, children }: PropsWithChildren<Props>) => {
+const Badge = ({ id = 'starterui-default-badge', color = 'default', size = 'sm', className, disabled = false, outline = false, children }: PropsWithChildren<Props>) => {
 	return (
 		<div
+			id={id}
 			className={cn(
 				[
 					'starterui-badge inline-flex items-center justify-start w-fit h-fit whitespace-nowrap',

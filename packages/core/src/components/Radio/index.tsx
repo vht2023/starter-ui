@@ -13,7 +13,7 @@ interface Props {
 	onChange?: (value?: string) => void;
 }
 
-const Radio = ({ id = 'default-radio-group', color = 'default', selectedKey, disabledKeys = [], className, onChange, children }: PropsWithChildren<Props>) => {
+const Radio = ({ id = 'starterui-default-radio-group', color = 'default', selectedKey, disabledKeys = [], className, onChange, children }: PropsWithChildren<Props>) => {
 	const [activatedKey, setActivatedKey] = useState<string | undefined>(selectedKey);
 
 	return (

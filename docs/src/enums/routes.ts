@@ -20,6 +20,7 @@ export enum ENUM_ROUTES {
   COMPONENTS_INPUT = '/docs/components/input',
   COMPONENTS_PROGRESS = '/docs/components/progress',
   COMPONENTS_RADIO = '/docs/components/radio',
+  COMPONENTS_SEARCH_INPUT = '/docs/components/search-input',
   COMPONENTS_SKELETON = '/docs/components/skeleton',
   COMPONENTS_SPINNER = '/docs/components/spinner',
   COMPONENTS_SWITCH = '/docs/components/switch',

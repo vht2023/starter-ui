@@ -128,6 +128,17 @@
 	}
 }
 
+.starterui-search-input-wrapper {
+	.starterui-search-input-underlined {
+		position: absolute;
+		height: 2px;
+		bottom: 0;
+		left: 0;
+		background: linear-gradient(90deg, #ff6464 0%, #ffbf59 50%, #47c9ff 100%);
+		transition: width 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+	}
+}
+
 @keyframes starterui-checkbox {
 	50% {
 		transform: scale(0.9);

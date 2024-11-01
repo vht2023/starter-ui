@@ -16,7 +16,7 @@ interface Props {
 }
 
 const Carousel: React.FC<Props> = ({
-	id = 'carousel-default',
+	id = 'starterui-default-carousel',
 	active,
 	data = [],
 	autoplay = false,

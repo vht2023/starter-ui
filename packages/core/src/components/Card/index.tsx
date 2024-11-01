@@ -51,7 +51,7 @@ const CardFooter = ({ className, children }: PropsWithChildren<{ className?: str
 	return <div className={cn(['p-2'], className)}>{children}</div>;
 };
 
-const Card = ({ id = 'default-card', showBorder = true, showDivider = false, radius = 'md', shadow = 'sm', className, children }: PropsWithChildren<Props>) => {
+const Card = ({ id = 'starterui-default-card', showBorder = true, showDivider = false, radius = 'md', shadow = 'sm', className, children }: PropsWithChildren<Props>) => {
 	return (
 		<div id={id} className={cn(['starterui-card w-full', showBorder && 'border', showDivider && 'divide-y', getCardRadius(radius), getCardShadow(shadow)], className)}>
 			{children}

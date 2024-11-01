@@ -4,6 +4,7 @@ import { cn } from '../../libs/utils';
 import { ChevronRight } from 'lucide-react';
 
 interface Props {
+	id?: string;
 	data: { title: string | React.ReactElement; url: string; isDisabled?: boolean; className?: string }[];
 	size?: ISizes;
 	underline?: IUnderlines;
@@ -35,11 +36,11 @@ const getUnderline = (underline: IUnderlines) => {
 	}
 };
 
-const Breadcrumb: React.FC<Props> = ({ data, size = 'md', underline = 'hover', className, onClick }) => {
+const Breadcrumb: React.FC<Props> = ({ id = 'starterui-default-breadcrumbs', data, size = 'md', underline = 'hover', className, onClick }) => {
 	if (data && data.length === 0) return null;
 
 	return (
-		<nav className='starterui-breadcrumb' aria-label='Breadcrumb'>
+		<nav id={id} className='starterui-breadcrumb' aria-label='Breadcrumb'>
 			<ol className={cn(['inline-flex items-center space-x-1 leading-none'], className)}>
 				{data.map((item, index) => (
 					<React.Fragment key={index}>
