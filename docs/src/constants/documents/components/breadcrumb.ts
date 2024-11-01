@@ -16,7 +16,7 @@ const breadcrumbs = [
   },
 ]
 
-<Breadcrumb data={breadcrumbs} />
+return <Breadcrumb data={breadcrumbs} />
 `
 
 export const demoCodeCustom = `
@@ -45,5 +45,5 @@ const breadcrumbs = [
   },
 ]
 
-<Breadcrumb size='sm' data={breadcrumbs} underline='all' />
+return <Breadcrumb size='sm' data={breadcrumbs} underline='all' />
 `

@@ -21,13 +21,15 @@ const data = [
 
 const [active, setActive] = useState<string>(data[0].id)
 
-<Carousel
-  active={active}
-  data={data}
-  onChange={(id) => {
-    setActive(id)
-  }}
-/>
+return (
+  <Carousel
+    active={active}
+    data={data}
+    onChange={(id) => {
+      setActive(id)
+    }}
+  />
+)
 `
 
 export const demoCodeCustom = `

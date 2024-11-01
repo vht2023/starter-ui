@@ -16,18 +16,20 @@ export const demoCodeColor = `
 export const demoCodeControlled = `
 const [checked, setChecked] = useState<boolean>(false)
 
-<Checkbox 
-  id='checkbox-primary-controlled' 
-  color='primary' 
-  label='Controlled' 
-  checked={checked} 
-  onChange={setChecked}
-/>
+return (
+  <Checkbox 
+    id='checkbox-primary-controlled' 
+    color='primary' 
+    label='Controlled' 
+    checked={checked} 
+    onChange={setChecked}
+  />
 
-<Checkbox 
-  id='checkbox-primary-disabled' 
-  color='primary' 
-  label='Disabled' 
-  disabled 
-/>
+  <Checkbox 
+    id='checkbox-primary-disabled' 
+    color='primary' 
+    label='Disabled' 
+    disabled 
+  />
+)
 `

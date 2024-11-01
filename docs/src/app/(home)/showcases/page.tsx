@@ -7,7 +7,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className='grid auto-cols-max grid-flow-col gap-6'>
+    <div className='showcases grid auto-cols-max grid-flow-col gap-6'>
       <Card>
         <Card.Body>
           <div className='mastery'>

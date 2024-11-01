@@ -37,23 +37,25 @@ export const demoCodeMultiple = `
 export const demoCodeControlled = `
 const [selectedKeys, setSelectedKeys] = useState<string[]>([])
 
-<Accordion
-  mode='multiple'
-  disabledKeys={['3']}
-  selectedKeys={selectedKeys}
-  onChange={(keys) => setSelectedKeys(keys)}
->
-  <Accordion.Item id='1'>
-    <Accordion.Header>Accordion 1</Accordion.Header>
-    <Accordion.Content>Content 1</Accordion.Content>
-  </Accordion.Item>
-  <Accordion.Item id='2'>
-    <Accordion.Header>Accordion 2</Accordion.Header>
-    <Accordion.Content>Content 2</Accordion.Content>
-  </Accordion.Item>
-  <Accordion.Item id='3'>
-    <Accordion.Header>Disabled Accordion 3</Accordion.Header>
-    <Accordion.Content>Content 3</Accordion.Content>
-  </Accordion.Item>
-</Accordion>
+return (
+  <Accordion
+    mode='multiple'
+    disabledKeys={['3']}
+    selectedKeys={selectedKeys}
+    onChange={(keys) => setSelectedKeys(keys)}
+  >
+    <Accordion.Item id='1'>
+      <Accordion.Header>Accordion 1</Accordion.Header>
+      <Accordion.Content>Content 1</Accordion.Content>
+    </Accordion.Item>
+    <Accordion.Item id='2'>
+      <Accordion.Header>Accordion 2</Accordion.Header>
+      <Accordion.Content>Content 2</Accordion.Content>
+    </Accordion.Item>
+    <Accordion.Item id='3'>
+      <Accordion.Header>Disabled Accordion 3</Accordion.Header>
+      <Accordion.Content>Content 3</Accordion.Content>
+    </Accordion.Item>
+  </Accordion>
+)
 `
