@@ -63,7 +63,7 @@ const page = () => {
         </Card.Body>
       </Card>
       <Card>
-        <Card.Body className='flex-center relative h-full w-[300px] justify-end bg-black px-10'>
+        <Card.Body className='flex-center relative h-full w-[300px] justify-end rounded-lg bg-black px-10'>
           <button className='planet'>
             <div className='blackhole'>
               <span className='rocket-path'>

@@ -12,7 +12,7 @@ import LinearBackground from '@/components/common/LinearBackground'
 
 const page = () => {
   return (
-    <div className='relative h-full w-full pt-16 tablet_max:pt-10'>
+    <div className='starter-home relative h-full w-full pt-10 tablet_max:pt-6'>
       <div className='tailwind-version mx-auto mb-6 w-fit text-xs'>
         Tailwind CSS Version V3.4.13 <span />
       </div>
