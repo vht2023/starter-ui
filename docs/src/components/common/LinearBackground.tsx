@@ -2,7 +2,7 @@ const LinearBackground = () => {
   return (
     <div className='absolute inset-x-0 -top-40 -z-50 h-[calc(100%-60px)] w-full tablet_max:-top-40'>
       <svg
-        className='mx-auto w-full -scale-y-90 opacity-60 contrast-150 tablet_max:h-full tablet_max:-scale-y-150'
+        className='mx-auto w-full -scale-y-90 opacity-60 contrast-150 tablet_max:h-[calc(100%-80px)] tablet_max:-scale-y-150'
         viewBox='0 0 1440 800'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'

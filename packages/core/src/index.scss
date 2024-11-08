@@ -139,6 +139,34 @@
 	}
 }
 
+.starterui-popover-wrapper {
+	.starterui-popover-content {
+		.starterui-popover-overlay::before {
+			position: absolute;
+			content: '';
+			width: 8px;
+			height: 8px;
+			background-color: #ffffff;
+			background-position: center;
+			box-shadow: 1px 0 1px -1px rgb(0 0 0 / 0.1), 1px 1px 1px -1px rgb(0 0 0 / 0.1);
+		}
+	}
+}
+
+.starterui-tooltip-wrapper {
+	.starterui-tooltip-content {
+		.starterui-tooltip-overlay::before {
+			position: absolute;
+			content: '';
+			width: 8px;
+			height: 8px;
+			background-color: #ffffff;
+			background-position: center;
+			box-shadow: 1px 0 1px -1px rgb(0 0 0 / 0.1), 1px 1px 1px -1px rgb(0 0 0 / 0.1);
+		}
+	}
+}
+
 @keyframes starterui-checkbox {
 	50% {
 		transform: scale(0.9);

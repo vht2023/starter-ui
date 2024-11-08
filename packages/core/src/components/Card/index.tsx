@@ -14,11 +14,11 @@ interface Props {
 const getCardRadius = (radius: IRadius) => {
 	switch (radius) {
 		case 'sm':
-			return 'rounded-md';
+			return 'rounded-sm';
 		case 'md':
-			return 'rounded-lg';
+			return 'rounded-md';
 		case 'lg':
-			return 'rounded-xl';
+			return 'rounded-lg';
 		case 'full':
 			return 'rounded-full';
 		default:
@@ -29,11 +29,11 @@ const getCardRadius = (radius: IRadius) => {
 const getCardShadow = (shadow: IShadows) => {
 	switch (shadow) {
 		case 'sm':
-			return 'shadow';
+			return 'shadow-md hover:shadow-lg';
 		case 'md':
-			return 'shadow-lg';
+			return 'shadow-lg hover:shadow-xl';
 		case 'lg':
-			return 'shadow-xl';
+			return 'shadow-xl hover:shadow-2xl';
 		default:
 			return 'shadow-none';
 	}
@@ -51,9 +51,15 @@ const CardFooter = ({ className, children }: PropsWithChildren<{ className?: str
 	return <div className={cn(['p-2'], className)}>{children}</div>;
 };
 
-const Card = ({ id = 'starterui-default-card', showBorder = true, showDivider = false, radius = 'md', shadow = 'sm', className, children }: PropsWithChildren<Props>) => {
+const Card = ({ id = 'starterui-default-card', showBorder = true, showDivider = false, radius = 'md', shadow = 'md', className, children }: PropsWithChildren<Props>) => {
 	return (
-		<div id={id} className={cn(['starterui-card w-full', showBorder && 'border', showDivider && 'divide-y', getCardRadius(radius), getCardShadow(shadow)], className)}>
+		<div
+			id={id}
+			className={cn(
+				['starterui-card w-full transition-all', showBorder && 'border border-grey-light/50', showDivider && 'divide-y', getCardRadius(radius), getCardShadow(shadow)],
+				className
+			)}
+		>
 			{children}
 		</div>
 	);

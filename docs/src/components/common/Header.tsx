@@ -13,7 +13,7 @@ import {cn} from '@/libs/utils'
 
 const martian = Martian_Mono({subsets: ['latin']})
 
-const CURRENT_VERSION = '1.0.33'
+const CURRENT_VERSION = '1.0.34'
 
 const Header = () => {
   const pathname = usePathname()
@@ -27,13 +27,15 @@ const Header = () => {
   return (
     <div className='fixed left-0 top-0 z-50 h-[60px] min-h-[60px] w-full border-b backdrop-blur-lg tablet_max:h-fit tablet_max:min-h-[60px] tablet_max:border-none'>
       <div className='mx-auto h-full min-h-[60px] w-3/4 tablet_max:w-full tablet_max:border-b'>
-        <div className='flex h-full min-h-[60px] items-center gap-16 tablet_max:px-4'>
+        <div className='flex h-full min-h-[60px] items-center gap-20 tablet_max:px-4'>
           {/* LOGO */}
           <div className='relative flex h-full flex-col justify-center'>
             <Link href={ENUM_ROUTES.HOME} className={`${martian.className} w-fit flex-none text-2xl font-bold tracking-tighter tablet_max:text-xl`}>
               starter|ui
             </Link>
-            <div className='absolute -end-12 top-1.5 w-fit rounded-full border-b p-1 px-1.5 text-xs font-medium leading-none shadow-xl'>{CURRENT_VERSION}</div>
+            <div className='absolute -end-14 top-1.5 w-fit rounded-full border-b bg-grey-light/50 px-2 py-1.5 text-[11px] leading-none text-default/90 shadow-xl tablet_max:-top-2'>
+              v{CURRENT_VERSION}
+            </div>
           </div>
           {/* Desktop Header */}
           <div className='flex h-full w-full grow items-center gap-6 tablet_max:hidden'>
@@ -52,7 +54,7 @@ const Header = () => {
           {/* Social Links */}
           <div className='flex h-full items-center gap-3 tablet_max:hidden'>
             <Link href='https://github.com/vht2023/starter-ui' target='_blank' className='opacity-70 transition-all hover:opacity-100'>
-              <div className='rounded-md'>
+              <div className='rounded-md border p-1.5'>
                 <svg width='22px' height='22px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
                   <g id='SVGRepo_bgCarrier' strokeWidth='0' />
                   <g id='SVGRepo_tracerCarrier' strokeLinecap='round' strokeLinejoin='round' />
@@ -68,7 +70,7 @@ const Header = () => {
               </div>
             </Link>
             <Link href='https://www.npmjs.com/package/@starter-ui/core' target='_blank' className='opacity-70 transition-all hover:opacity-100'>
-              <div className='rounded-md'>
+              <div className='rounded-md border p-1.5'>
                 <svg fill='#000000' width='24px' height='24px' viewBox='0 0 512 512' id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg'>
                   <g id='SVGRepo_bgCarrier' strokeWidth='0' />
                   <g id='SVGRepo_tracerCarrier' strokeLinecap='round' strokeLinejoin='round' />

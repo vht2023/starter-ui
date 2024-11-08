@@ -14,7 +14,7 @@ const page = () => {
   return (
     <div className='starter-home relative h-full w-full pt-10 tablet_max:pt-6'>
       <div className='tailwind-version mx-auto mb-6 w-fit text-xs'>
-        Tailwind CSS Version V3.4.13 <span />
+        Tailwind CSS Version v3.4.13 <span />
       </div>
       <div className='mx-auto w-3/4 space-y-6 px-20 text-center tablet_max:w-full tablet_max:px-6'>
         <div className='font-[family-name:var(--font-geist-sans)] text-5xl font-semibold tablet_max:text-4xl'>
