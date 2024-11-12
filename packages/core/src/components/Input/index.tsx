@@ -1,6 +1,6 @@
 import React, { ChangeEventHandler, HTMLInputTypeAttribute, ReactNode, useRef } from 'react';
 import { cn } from '../../libs/utils';
-import { ISizes } from '../../types/common';
+import { IColors, IRadius, ISizes } from '../../types/common';
 import Spinner from '../Spinner';
 
 export interface Props {
@@ -10,13 +10,15 @@ export interface Props {
 	value?: string | number | undefined;
 	isLoading?: boolean;
 	size?: ISizes;
+	radius?: IRadius;
+	color?: IColors;
 	required?: boolean;
 	disabled?: boolean;
 	placeholder?: string;
 	autoComplete?: string;
 	autoFocus?: boolean;
-	allowClearInput?: boolean;
 	isReadOnly?: boolean;
+	isError?: boolean;
 	helperText?: string;
 	labelClassName?: string;
 	inputClassName?: string;
@@ -52,6 +54,40 @@ const getInputSizes = (size: ISizes) => {
 	}
 };
 
+const getInputRadius = (radius: IRadius) => {
+	switch (radius) {
+		case 'sm':
+			return 'rounded-md';
+		case 'md':
+			return 'rounded-lg';
+		case 'lg':
+			return 'rounded-xl';
+		case 'full':
+			return 'rounded-full';
+		case 'none':
+			return 'rounded-none';
+		default:
+			return '';
+	}
+};
+
+const getInputColors = (color: IColors) => {
+	switch (color) {
+		case 'primary':
+			return `hover:border-primary-light focus:border-primary-light focus:ring focus:ring-primary/5`;
+		case 'secondary':
+			return `hover:border-secondary-light focus:border-secondary-light focus:ring focus:ring-secondary/5`;
+		case 'success':
+			return `hover:border-success-light focus:border-success-light focus:ring focus:ring-success/5`;
+		case 'warning':
+			return `hover:border-warning-light focus:border-warning-light focus:ring focus:ring-warning/5`;
+		case 'error':
+			return `hover:border-error-light focus:border-error-light focus:ring focus:ring-error/5`;
+		default:
+			return `hover:border-default focus:border-default focus:ring focus:ring-default/5`;
+	}
+};
+
 const Input: React.FC<Props> = ({
 	id = 'starterui-default-input',
 	type = 'text',
@@ -59,11 +95,13 @@ const Input: React.FC<Props> = ({
 	value = '',
 	isLoading,
 	size = 'md',
+	radius = 'sm',
+	color = 'default',
 	required = false,
 	disabled = false,
 	autoFocus = false,
-	allowClearInput = true,
 	isReadOnly = false,
+	isError = false,
 	placeholder = 'Placeholder',
 	autoComplete = '',
 	helperText = '',
@@ -90,16 +128,17 @@ const Input: React.FC<Props> = ({
 		<div className={cn(['starterui-input-wrapper', className])}>
 			{/* LABEL */}
 			{label && (
-				<label htmlFor={id} className={cn(['mb-1.5 block w-fit font-700 text-default', required && 'starterui-required', size && getLabelSizes(size)], labelClassName)}>
+				<label
+					htmlFor={id}
+					className={cn(['starterui-input-label mb-1.5 block w-fit text-default', required && 'starterui-required', size && getLabelSizes(size)], labelClassName)}
+				>
 					{label}
 				</label>
 			)}
 			<div className='relative'>
 				{/* PREFIX ICON */}
 				{prefix && (
-					<div className={cn(['pointer-events-none absolute inset-y-0 left-0 flex items-center ps-2.5 start-0', helperText && '[&_svg]:text-error'], prefixClassName)}>
-						{prefix}
-					</div>
+					<div className={cn(['pointer-events-none absolute inset-y-0 left-0 flex items-center ps-2.5 start-0', isError && '[&_svg]:text-error'], prefixClassName)}>{prefix}</div>
 				)}
 
 				{/* INPUT */}
@@ -111,12 +150,14 @@ const Input: React.FC<Props> = ({
 					autoFocus={autoFocus}
 					className={cn(
 						[
-							'starterui-input block w-full placeholder-gray-500 rounded-md border border-muted text-default outline-none placeholder:text-muted/50 focus:border-primary focus:ring-primary transition-all ease-in-out',
-							size && getInputSizes(size),
+							'starterui-input block w-full placeholder-gray-500 border border-muted/50 text-default outline-none placeholder:text-muted/50 transition-all ease-in-out',
+							getInputSizes(size),
+							getInputRadius(radius),
+							!disabled && getInputColors(color),
 							prefix && 'pl-8',
 							suffix && 'pr-8',
-							helperText && 'border-error',
 							disabled ? 'bg-disabled/50' : 'bg-white',
+							isError && 'border-error hover:border-error focus:border-error focus:ring-error/5',
 						],
 						inputClassName
 					)}
@@ -135,7 +176,7 @@ const Input: React.FC<Props> = ({
 				{/* suffix ICON */}
 				{suffix && !isLoading && (
 					<div
-						className={cn(['absolute inset-y-0 right-0 z-10 flex cursor-pointer items-center pe-2.5 end-0', helperText && '[&_svg]:text-error'], suffixClassName)}
+						className={cn(['absolute inset-y-0 right-0 z-10 flex cursor-pointer items-center pe-2.5 end-0', isError && '[&_svg]:text-error'], suffixClassName)}
 						onClick={suffixOnClick}
 					>
 						{suffix}
@@ -143,7 +184,9 @@ const Input: React.FC<Props> = ({
 				)}
 
 				{/* HELPER TEXT */}
-				{helperText && <p className='starterui-input-helperText absolute right-0 top-full z-10 mt-1 flex cursor-pointer items-center text-xs text-error'>{helperText}</p>}
+				{helperText && (
+					<p className={cn(['starterui-input-helperText absolute right-0 top-full z-10 mt-1 flex cursor-pointer items-center text-xs', isError && 'text-error'])}>{helperText}</p>
+				)}
 
 				{/* LOADING */}
 				{isLoading && (

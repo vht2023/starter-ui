@@ -18,14 +18,15 @@ const Sidebar = () => {
               {menu.name}
             </Link>
           ) : (
-            <div className='font-semibold'>{menu.name}</div>
+            <div className='font-bold'>{menu.name}</div>
           )}
           <div className='flex flex-col gap-3'>
             {menu.sub.map((sub, subIndex) =>
               sub?.href && !sub?.disabled ? (
-                <Link key={subIndex} href={sub?.href} className={cn(['group relative w-fit text-sm font-normal text-muted/95', sub.active && 'font-medium text-default'])}>
+                <Link key={subIndex} href={sub?.href} className={cn(['group relative w-fit text-sm font-normal text-default transition-all', sub.active && 'font-medium'])}>
                   {sub.name}
-                  <span className='absolute bottom-0.5 left-0 h-[1px] w-0 bg-default transition-all group-hover:w-full' />
+                  {sub.active && <span className='absolute bottom-0.5 left-0 h-[1px] w-full bg-default/70' />}
+                  <span className='absolute bottom-0.5 left-0 h-[1px] w-0 bg-default/70 transition-all group-hover:w-full' />
                 </Link>
               ) : (
                 <span key={subIndex} className={cn(['w-fit cursor-not-allowed text-sm font-normal text-muted/35', sub.active && 'font-medium text-default'])}>

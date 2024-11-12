@@ -6,9 +6,9 @@ const layout = ({
   children: React.ReactNode
 }>) => {
   return (
-    <div className='relative mx-auto h-full w-3/4 pb-20 tablet_max:w-full'>
+    <div className='relative mx-auto h-full w-full px-10 pb-20 tablet_max:px-4'>
       {/* Main */}
-      <main className='h-full pt-10 tablet_max:m-0 tablet_max:pt-3'>{children}</main>
+      <main className='h-full pt-10 tablet_max:m-0 tablet_max:pt-6'>{children}</main>
     </div>
   )
 }

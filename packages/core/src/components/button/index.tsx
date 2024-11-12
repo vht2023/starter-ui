@@ -17,7 +17,7 @@ interface Props {
 	startIcon?: ReactNode | null;
 	endIcon?: ReactNode | null;
 	className?: string;
-	onClick?: () => void;
+	onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const getButtonColors = (color: IColors, shouldHover: boolean, outline: boolean) => {
@@ -58,12 +58,10 @@ const getButtonSizes = (size: ISizes, isIconOnly: boolean) => {
 	switch (size) {
 		case 'sm':
 			return `text-sm rounded-md ${isIconOnly ? 'p-2' : 'px-4 py-2'}`;
-		case 'md':
-			return `text-base rounded-lg ${isIconOnly ? 'p-3' : 'px-6 py-3'}`;
 		case 'lg':
 			return `text-lg rounded-xl ${isIconOnly ? 'p-4' : 'px-8 py-4'}`;
 		default:
-			return `text-sm rounded-md ${isIconOnly ? 'p-2' : 'px-4 py-2'}`;
+			return `text-base rounded-lg ${isIconOnly ? 'p-3' : 'px-6 py-3'}`;
 	}
 };
 

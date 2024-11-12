@@ -6,7 +6,7 @@ import Usage from './(usage)'
 const Input = () => {
   return (
     <React.Fragment>
-      <div className='w-full space-y-6 px-10'>
+      <div className='w-full space-y-6'>
         <div className='space-y-3'>
           <div className='text-4xl font-bold'>Input</div>
           <div>

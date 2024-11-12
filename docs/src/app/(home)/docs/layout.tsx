@@ -35,7 +35,7 @@ const layout = ({
   }, [pathname])
 
   return (
-    <div className='relative mx-auto h-full w-3/4 pb-20 tablet_max:w-full'>
+    <div className='relative mx-auto h-full w-full px-10 pb-20 tablet_max:px-0'>
       {/* Desktop Sidebar */}
       <aside className='fixed z-10 mt-10 max-h-[calc(100%-132px)] w-72 overflow-hidden pb-2 transition-all hover:overflow-auto tablet_max:hidden'>
         <Sidebar />
@@ -48,7 +48,10 @@ const layout = ({
         </div>
       </div>
       {openSidebar && (
-        <div ref={sidebarRef} className='no-scrollbar fixed z-20 flex h-[calc(100vh-60px)] w-72 justify-between overflow-y-auto border-r px-3 pb-10 pt-4 backdrop-blur-2xl'>
+        <div
+          ref={sidebarRef}
+          className='no-scrollbar fixed z-20 flex h-[calc(100vh-60px)] w-72 justify-between overflow-y-auto border-r px-3 pb-10 pt-4 shadow-md backdrop-blur-3xl'
+        >
           <Sidebar />
           <X onClick={() => setOpenSidebar(false)} />
         </div>
@@ -57,7 +60,7 @@ const layout = ({
       {/* Main */}
       <main className='ml-72 h-full pt-10 tablet_max:m-0 tablet_max:pt-3'>
         <Breadcrumbs />
-        <div>{children}</div>
+        <div className='w-full px-10 pl-14 tablet_max:px-8'>{children}</div>
       </main>
     </div>
   )

@@ -139,7 +139,7 @@ const Dropdown = ({
 			>
 				<ul
 					className={cn([
-						'starterui-dropdown-overlay max-h-[400px] overflow-y-auto p-1.5 text-sm text-default list-none shadow rounded-md bg-white',
+						'starterui-dropdown-overlay max-h-96 overflow-y-auto p-1.5 text-sm text-default list-none shadow rounded-md bg-white',
 						bordered && 'border',
 						overlayClassName,
 					])}

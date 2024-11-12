@@ -1,6 +1,6 @@
 .starterui-required {
 	position: relative;
-	::after {
+	&::after {
 		content: '*';
 		position: absolute;
 		left: 100%;

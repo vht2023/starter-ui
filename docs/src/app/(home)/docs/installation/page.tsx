@@ -38,7 +38,7 @@ import ''@starter-ui/core'/index.css'
 const page = () => {
   return (
     <React.Fragment>
-      <div className='w-full space-y-6 px-10'>
+      <div className='w-full space-y-6'>
         <div className='space-y-3'>
           <div className='text-4xl font-bold'>Installation</div>
           <div className='text-muted'>How to install dependencies and structure your app.</div>

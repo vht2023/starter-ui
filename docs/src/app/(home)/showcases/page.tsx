@@ -7,9 +7,9 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className='showcases grid auto-cols-max grid-flow-col gap-6'>
+    <div className='showcases grid h-full auto-cols-max grid-flow-col gap-6 tablet_max:flex tablet_max:flex-col tablet_max:flex-wrap'>
       <Card>
-        <Card.Body>
+        <Card.Body className='flex-center h-full w-full'>
           <div className='mastery'>
             <div className='text'>
               <strong>YOU WIN</strong>
@@ -63,7 +63,7 @@ const page = () => {
         </Card.Body>
       </Card>
       <Card>
-        <Card.Body className='flex-center relative h-full w-[300px] justify-end rounded-lg bg-black px-10'>
+        <Card.Body className='flex-center relative h-full w-[300px] justify-end rounded-lg bg-black px-10 tablet_max:h-[200px] tablet_max:w-full'>
           <button className='planet'>
             <div className='blackhole'>
               <span className='rocket-path'>

@@ -20,7 +20,7 @@ const Breadcrumbs = () => {
   if (total === 1) return null
 
   return (
-    <div className='mb-4 pl-10'>
+    <div className='mb-4 pl-14 tablet_max:pl-8'>
       <Breadcrumb data={data} size='sm' />
     </div>
   )

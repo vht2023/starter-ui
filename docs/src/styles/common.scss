@@ -28,7 +28,7 @@
   height: inherit;
   border-radius: 50%;
   transform: rotateX(70deg);
-  animation: 1s spin linear infinite;
+  animation: 1s starterui-spinner linear infinite;
 }
 
 .starterui-loader:after {
@@ -57,7 +57,7 @@
   }
 }
 
-@keyframes spin {
+@keyframes starterui-spinner {
   0%,
   100% {
     box-shadow: 0.2em 0px 0 0px currentcolor;

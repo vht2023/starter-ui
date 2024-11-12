@@ -47,15 +47,14 @@ const Spinner: React.FC<Props> = ({ id = 'starterui-default-spinner', isLoading 
 	return (
 		<div
 			id={id}
-			className={cn(
-				[
-					'starterui-spinner animate-spin rounded-full border-2 border-solid',
-					size && getSpinnerSizes(size),
-					color && getSpinnerColors(color),
-					isLoading ? 'block border-t-transparent' : 'hidden',
-				],
-				className
-			)}
+			className={cn([
+				'starterui-spinner animate-spin rounded-full border-2 border-solid',
+				size && getSpinnerSizes(size),
+				color && getSpinnerColors(color),
+				isLoading ? 'block' : 'hidden',
+				className,
+				'border-t-transparent',
+			])}
 		/>
 	);
 };

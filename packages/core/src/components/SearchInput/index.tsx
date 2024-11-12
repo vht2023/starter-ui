@@ -7,7 +7,7 @@ import Button from '../Button';
 
 export interface Props {
 	id?: string;
-	value?: string | number | undefined;
+	value?: string;
 	isLoading?: boolean;
 	size?: ISizes;
 	disabled?: boolean;
@@ -38,11 +38,11 @@ const getInputSizes = (size: ISizes) => {
 const getInputVariants = (variant?: 'flat' | 'underlined' | 'bordered') => {
 	switch (variant) {
 		case 'bordered':
-			return 'border-default focus:ring focus:ring-default/10';
+			return 'border-default focus:ring focus:ring-default/5';
 		case 'underlined':
 			return 'focus:outline-none border-transparent';
 		default:
-			return 'focus:border-default border-transparent focus:ring focus:ring-default/10';
+			return 'focus:border-default border-transparent focus:ring focus:ring-default/5';
 	}
 };
 
@@ -91,7 +91,7 @@ const SearchInput: React.FC<Props> = ({
 				autoFocus={autoFocus}
 				className={cn(
 					[
-						'starterui-search-input block w-full rounded-md border border-muted text-default outline-none shadow-md placeholder:text-muted/50 duration-300 transition-all ease-in-out',
+						'starterui-search-input block w-full rounded-md border border-muted text-default outline-none shadow-md placeholder:text-muted/50 transition-all ease-in-out',
 						size && getInputSizes(size),
 						getInputVariants(variant),
 						disabled ? 'bg-disabled/50' : 'bg-white',
@@ -113,7 +113,7 @@ const SearchInput: React.FC<Props> = ({
 					<div className='p-1'>
 						<Spinner size='sm' isLoading />
 					</div>
-				) : (
+				) : value.length > 0 ? (
 					<Button
 						isIconOnly
 						outline
@@ -127,7 +127,7 @@ const SearchInput: React.FC<Props> = ({
 					>
 						<X size={14} />
 					</Button>
-				)}
+				) : null}
 			</div>
 
 			{variant === 'underlined' && <span className='starterui-search-input-underlined w-0 group-has-[:focus]:w-full' />}
