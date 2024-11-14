@@ -3,6 +3,13 @@ import React, {useMemo} from 'react'
 
 import {useBreadcrumbs} from '@/hooks'
 
+const formatTitleBreadcrumb = (title: string) => {
+  return title
+    .split('-')
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(' ')
+}
+
 const Breadcrumbs = () => {
   const breadcrumbs = useBreadcrumbs()
 
@@ -13,7 +20,7 @@ const Breadcrumbs = () => {
   }
 
   const data = breadcrumbs.map((item, index) => ({
-    title: item.charAt(0).toUpperCase() + item.slice(1),
+    title: formatTitleBreadcrumb(item),
     url: getHref(index + 1),
   }))
 
