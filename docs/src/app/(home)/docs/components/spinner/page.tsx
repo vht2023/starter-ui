@@ -1,7 +1,14 @@
+'use client'
+
 import React from 'react'
 
-import Import from './(import)'
-import Usage from './(usage)'
+import Import from '@/components/common/Import'
+import Usage from '@/components/common/Usage'
+import {importCode} from '@/constants/documents/components/spinner'
+
+import Colors from './(usage)/Colors'
+import Default from './(usage)/Default'
+import Sizes from './(usage)/Sizes'
 
 const Spinner = () => {
   return (
@@ -14,8 +21,21 @@ const Spinner = () => {
             user experience whenever data is being fetched from your server.
           </div>
         </div>
-        <Import />
-        <Usage />
+        <Import code={importCode} />
+        <Usage>
+          <div className='space-y-3'>
+            <div className='text-xl font-bold'>Default</div>
+            <Default />
+          </div>
+          <div className='space-y-3'>
+            <div className='text-xl font-bold'>Colors</div>
+            <Colors />
+          </div>
+          <div className='space-y-3'>
+            <div className='text-xl font-bold'>Sizes</div>
+            <Sizes />
+          </div>
+        </Usage>
       </div>
     </React.Fragment>
   )

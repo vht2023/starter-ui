@@ -38,7 +38,7 @@ const data = [
   },
 ]
 
-const Colors = () => {
+const Custom = () => {
   const [showCode, setShowCode] = useState<boolean>(false)
   const [active, setActive] = useState<string>(data[0].id)
 
@@ -77,4 +77,4 @@ const Colors = () => {
   )
 }
 
-export default Colors
+export default Custom

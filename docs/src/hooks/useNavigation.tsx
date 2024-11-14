@@ -22,7 +22,7 @@ const useHeaderNavigation = () => {
       },
       {
         name: 'Components',
-        href: ENUM_ROUTES.COMPONENTS,
+        href: ENUM_ROUTES.COMPONENTS_ACCORDION,
         active: pathname.startsWith(ENUM_ROUTES.COMPONENTS),
         sub: [],
       },
@@ -63,7 +63,6 @@ const useSidebarNavigation = () => {
       },
       {
         name: 'Components',
-        href: ENUM_ROUTES.COMPONENTS,
         sub: [
           {
             name: 'Accordion',

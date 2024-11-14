@@ -15,7 +15,7 @@ const layout = ({
   return (
     <div className='relative h-full min-h-[calc(100vh-60px)] w-full overflow-auto'>
       <Header />
-      <div className='mt-[60px] h-full min-h-screen w-full'>{children}</div>
+      <div className='static mt-[60px] h-full min-h-screen w-full'>{children}</div>
       <Footer />
       <AppProgressBar height='4px' color='#27272a' startPosition={0.5} options={{showSpinner: false}} shallowRouting />
       <ToastContainer />

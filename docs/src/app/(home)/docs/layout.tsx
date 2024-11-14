@@ -6,6 +6,7 @@ import React, {useEffect, useRef, useState} from 'react'
 
 import Breadcrumbs from '@/components/common/Breadcrumbs'
 import Sidebar from '@/components/common/Sidebar'
+import {DocumentsContextProvider} from '@/contexts/DocumentsContext'
 
 const layout = ({
   children,
@@ -50,7 +51,7 @@ const layout = ({
       {openSidebar && (
         <div
           ref={sidebarRef}
-          className='no-scrollbar fixed z-20 flex h-[calc(100vh-60px)] w-72 justify-between overflow-y-auto border-r px-3 pb-10 pt-4 shadow-md backdrop-blur-3xl'
+          className='no-scrollbar fixed z-20 flex h-[calc(100vh-60px)] w-72 justify-between overflow-y-auto border-r px-3 pb-20 pt-4 shadow-md backdrop-blur-3xl'
         >
           <Sidebar />
           <X onClick={() => setOpenSidebar(false)} />
@@ -59,8 +60,10 @@ const layout = ({
 
       {/* Main */}
       <main className='ml-72 h-full pt-10 tablet_max:m-0 tablet_max:pt-3'>
-        <Breadcrumbs />
-        <div className='w-full px-10 pl-14 tablet_max:px-8'>{children}</div>
+        <DocumentsContextProvider>
+          <Breadcrumbs />
+          <div className='w-full px-10 pl-14 tablet_max:px-8'>{children}</div>
+        </DocumentsContextProvider>
       </main>
     </div>
   )

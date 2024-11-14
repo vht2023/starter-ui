@@ -2,7 +2,18 @@
 
 import React from 'react'
 
-import {ComponentDocumentsContextProvider} from '@/contexts/ComponentDocumentsContext'
+import OnThisPage from '@/components/common/OnThisPage'
+
+const listHashesData = [
+  {
+    value: '#import',
+    name: 'Import',
+  },
+  {
+    value: '#usage',
+    name: 'Usage',
+  },
+]
 
 const layout = ({
   children,
@@ -10,9 +21,10 @@ const layout = ({
   children: React.ReactNode
 }>) => {
   return (
-    <ComponentDocumentsContextProvider>
-      <div className='flex w-full'>{children}</div>
-    </ComponentDocumentsContextProvider>
+    <div className='flex w-full'>
+      <div className='w-full flex-auto pr-6 tablet_max:p-0'>{children}</div>
+      <OnThisPage data={listHashesData} />
+    </div>
   )
 }
 

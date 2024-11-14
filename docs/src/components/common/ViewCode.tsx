@@ -2,10 +2,10 @@
 
 import {ClipboardCheck, Copy} from 'lucide-react'
 import {PrismTheme, themes} from 'prism-react-renderer'
-import React, {useContext} from 'react'
+import React from 'react'
 import {CodeBlock} from 'react-code-block'
 
-import ComponentDocumentsContext from '@/contexts/ComponentDocumentsContext'
+import useDocumentsContext from '@/hooks/useDocumentsContext'
 
 interface Props {
   id: string
@@ -15,7 +15,8 @@ interface Props {
 }
 
 const ViewCode: React.FC<Props> = ({id, code, language = 'tsx', theme = themes.palenight}) => {
-  const {idCoppied, copyCode} = useContext(ComponentDocumentsContext)
+  const {idCoppied, copyCode} = useDocumentsContext()
+
   return (
     <CodeBlock code={code} language={language} theme={theme}>
       <div className='flex w-full gap-1 rounded-lg bg-black p-3 pr-1.5'>

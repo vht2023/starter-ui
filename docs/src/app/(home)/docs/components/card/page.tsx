@@ -1,7 +1,13 @@
+'use client'
+
 import React from 'react'
 
-import Import from './(import)'
-import Usage from './(usage)'
+import Import from '@/components/common/Import'
+import Usage from '@/components/common/Usage'
+import {importCode} from '@/constants/documents/components/card'
+
+import Custom from './(usage)/Custom'
+import Default from './(usage)/Default'
 
 const Card = () => {
   return (
@@ -14,8 +20,17 @@ const Card = () => {
             such as for your blog, application, user profiles, and more.
           </div>
         </div>
-        <Import />
-        <Usage />
+        <Import code={importCode} />
+        <Usage>
+          <div className='space-y-3'>
+            <div className='text-xl font-bold'>Default</div>
+            <Default />
+          </div>
+          <div className='space-y-3'>
+            <div className='text-xl font-bold'>Custom</div>
+            <Custom />
+          </div>
+        </Usage>
       </div>
     </React.Fragment>
   )

@@ -1,7 +1,14 @@
+'use client'
+
 import React from 'react'
 
-import Import from './(import)'
-import Usage from './(usage)'
+import Import from '@/components/common/Import'
+import Usage from '@/components/common/Usage'
+import {importCode} from '@/constants/documents/components/input'
+
+import Default from './(usage)/Default'
+import Orthers from './(usage)/Orthers'
+import Sizes from './(usage)/Sizes'
 
 const Input = () => {
   return (
@@ -14,8 +21,21 @@ const Input = () => {
             such as text, email, number, password, URL, phone number, and more.
           </div>
         </div>
-        <Import />
-        <Usage />
+        <Import code={importCode} />
+        <Usage>
+          <div className='space-y-3'>
+            <div className='text-xl font-bold'>Default</div>
+            <Default />
+          </div>
+          <div className='space-y-3'>
+            <div className='text-xl font-bold'>Sizes</div>
+            <Sizes />
+          </div>
+          <div className='space-y-3'>
+            <div className='text-xl font-bold'>Orthers</div>
+            <Orthers />
+          </div>
+        </Usage>
       </div>
     </React.Fragment>
   )
