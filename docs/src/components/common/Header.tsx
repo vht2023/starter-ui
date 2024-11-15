@@ -14,12 +14,13 @@ import {cn} from '@/libs/utils'
 
 const martian = Martian_Mono({subsets: ['latin']})
 
-const CURRENT_VERSION = '1.1.0'
+const CURRENT_VERSION = '1.1.1'
 
 const Header = () => {
   const pathname = usePathname()
   const paths = useHeaderNavigation()
   const [toggle, setToggle] = useState<boolean>(false)
+  const [searchValue, setSearchValue] = useState<string>('')
 
   useEffect(() => {
     setToggle(false)
@@ -84,7 +85,13 @@ const Header = () => {
                 </div>
               </Link>
             </div>
-            <SearchInput inputClassName='placeholder:text-sm placeholder:text-muted/80 bg-white/50' className='w-[200px]' placeholder='Search components...' />
+            <SearchInput
+              inputClassName='placeholder:text-sm placeholder:text-muted/80 bg-white/50'
+              className='w-[200px]'
+              placeholder='Search components...'
+              value={searchValue}
+              onChange={(val) => setSearchValue(val)}
+            />
           </div>
           {/* Mobile Menu Header */}
           <div className='hidden h-full w-full tablet_max:flex tablet_max:items-center tablet_max:justify-end'>

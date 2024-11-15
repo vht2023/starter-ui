@@ -26,22 +26,27 @@ interface PortalProps {
 }
 
 function DrawerPortal({ id, children, onClose }: PropsWithChildren<PortalProps>) {
-	// create div element only once using ref
 	const containerRef = useRef<HTMLDivElement | null>(null);
+	const portalsRef = useRef<HTMLElement>();
 
 	if (!containerRef.current) containerRef.current = document.createElement('div');
 
-	const root = document.getElementById('root')!;
-	const el = containerRef.current!;
+	if (!document?.getElementById('portals')) {
+		portalsRef.current = document.createElement('div');
+		portalsRef.current.id = 'portals';
+		document.body.appendChild(portalsRef.current);
+	} else portalsRef.current = document?.getElementById('portals')!;
+
+	const el = containerRef?.current!;
 
 	useEffect(() => {
 		el.id = id;
-		root.appendChild(el);
+		if (portalsRef.current) portalsRef.current.appendChild(el);
 
 		return () => {
-			root.removeChild(el);
+			if (portalsRef.current && portalsRef.current.hasChildNodes()) portalsRef.current?.removeChild(el);
 		};
-	}, []);
+	}, [portalsRef.current]);
 
 	return ReactDOM.createPortal(
 		<KeyboardListener
@@ -49,7 +54,7 @@ function DrawerPortal({ id, children, onClose }: PropsWithChildren<PortalProps>)
 			onClose={() => {
 				onClose();
 			}}
-			portals={root}
+			portals={portalsRef?.current}
 		>
 			{children}
 		</KeyboardListener>,

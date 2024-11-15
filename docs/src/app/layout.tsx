@@ -22,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={cn('w-full font-sans antialiased', inter.className, inter.variable)}>{children}</body>
+      <body className={cn('w-full font-sans antialiased', inter.className, inter.variable)}>
+        <div id='portals' />
+        {children}
+      </body>
     </html>
   )
 }

@@ -125,6 +125,12 @@ const useSidebarNavigation = () => {
             sub: [],
           },
           {
+            name: 'Drawer',
+            href: ENUM_ROUTES.COMPONENTS_DRAWER,
+            active: pathname === ENUM_ROUTES.COMPONENTS_DRAWER,
+            sub: [],
+          },
+          {
             name: 'Input',
             href: ENUM_ROUTES.COMPONENTS_INPUT,
             active: pathname === ENUM_ROUTES.COMPONENTS_INPUT,

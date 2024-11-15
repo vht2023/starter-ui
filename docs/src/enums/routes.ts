@@ -17,6 +17,7 @@ export enum ENUM_ROUTES {
   COMPONENTS_CAROUSEL = '/docs/components/carousel',
   COMPONENTS_CHECKBOX = '/docs/components/checkbox',
   COMPONENTS_DIVIDER = '/docs/components/divider',
+  COMPONENTS_DRAWER = '/docs/components/drawer',
   COMPONENTS_INPUT = '/docs/components/input',
   COMPONENTS_PROGRESS = '/docs/components/progress',
   COMPONENTS_RADIO = '/docs/components/radio',
