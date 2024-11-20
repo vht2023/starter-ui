@@ -26,7 +26,7 @@ interface PortalProps {
 }
 
 function DrawerPortal({ id, children, onClose }: PropsWithChildren<PortalProps>) {
-	const containerRef = useRef<HTMLDivElement | null>(null);
+	const containerRef = useRef<HTMLDivElement>();
 	const portalsRef = useRef<HTMLElement>();
 
 	if (!containerRef.current) containerRef.current = document.createElement('div');
@@ -41,12 +41,12 @@ function DrawerPortal({ id, children, onClose }: PropsWithChildren<PortalProps>)
 
 	useEffect(() => {
 		el.id = id;
-		if (portalsRef.current) portalsRef.current.appendChild(el);
+		portalsRef.current?.appendChild(el);
 
 		return () => {
-			if (portalsRef.current && portalsRef.current.hasChildNodes()) portalsRef.current?.removeChild(el);
+			portalsRef.current?.removeChild(el);
 		};
-	}, [portalsRef.current]);
+	}, []);
 
 	return ReactDOM.createPortal(
 		<KeyboardListener
@@ -102,7 +102,7 @@ const Drawer = ({
 			<div
 				ref={drawerContainerRef}
 				className={cn([
-					'starterui-drawer fixed z-50 h-screen bg-white top-0 p-4 pt-3 overflow-hidden transition-transform duration-300 w-96 border space-y-3 shadow',
+					'starterui-drawer fixed z-[999] h-screen bg-white top-0 p-4 pt-3 overflow-hidden transition-transform duration-300 w-96 border space-y-3 shadow',
 					placement === 'right' ? 'right-0' : 'left-0',
 					getPlacementClassName(show, placement),
 					className,

@@ -1,6 +1,5 @@
 import React, { ChangeEventHandler, HTMLInputTypeAttribute, ReactNode, useRef } from 'react';
 import { cn } from '../../libs/utils';
-import { IColors, IRadius, ISizes } from '../../types/common';
 import Spinner from '../Spinner';
 
 export interface Props {
@@ -9,9 +8,9 @@ export interface Props {
 	label?: string;
 	value?: string | number | undefined;
 	isLoading?: boolean;
-	size?: ISizes;
-	radius?: IRadius;
-	color?: IColors;
+	size?: string;
+	radius?: string;
+	color?: string;
 	required?: boolean;
 	disabled?: boolean;
 	placeholder?: string;
@@ -34,7 +33,7 @@ export interface Props {
 	suffixOnClick?: () => void;
 }
 
-const getLabelSizes = (size: ISizes) => {
+const getLabelSizes = (size: string) => {
 	switch (size) {
 		case 'sm':
 			return 'text-sm';
@@ -43,7 +42,7 @@ const getLabelSizes = (size: ISizes) => {
 	}
 };
 
-const getInputSizes = (size: ISizes) => {
+const getInputSizes = (size: string) => {
 	switch (size) {
 		case 'sm':
 			return 'px-2.5 py-1.5 text-sm placeholder:text-sm';
@@ -54,7 +53,7 @@ const getInputSizes = (size: ISizes) => {
 	}
 };
 
-const getInputRadius = (radius: IRadius) => {
+const getInputRadius = (radius: string) => {
 	switch (radius) {
 		case 'sm':
 			return 'rounded-md';
@@ -71,7 +70,7 @@ const getInputRadius = (radius: IRadius) => {
 	}
 };
 
-const getInputColors = (color: IColors) => {
+const getInputColors = (color: string) => {
 	switch (color) {
 		case 'primary':
 			return `hover:border-primary-light focus:border-primary-light focus:ring focus:ring-primary/5`;

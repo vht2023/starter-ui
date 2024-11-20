@@ -131,9 +131,27 @@ const useSidebarNavigation = () => {
             sub: [],
           },
           {
+            name: 'Dropdown',
+            href: ENUM_ROUTES.COMPONENTS_DROPDOWN,
+            active: pathname === ENUM_ROUTES.COMPONENTS_DROPDOWN,
+            sub: [],
+          },
+          {
             name: 'Input',
             href: ENUM_ROUTES.COMPONENTS_INPUT,
             active: pathname === ENUM_ROUTES.COMPONENTS_INPUT,
+            sub: [],
+          },
+          {
+            name: 'Modal',
+            href: ENUM_ROUTES.COMPONENTS_MODAL,
+            active: pathname === ENUM_ROUTES.COMPONENTS_MODAL,
+            sub: [],
+          },
+          {
+            name: 'Popover',
+            href: ENUM_ROUTES.COMPONENTS_POPOVER,
+            active: pathname === ENUM_ROUTES.COMPONENTS_POPOVER,
             sub: [],
           },
           {
@@ -152,6 +170,12 @@ const useSidebarNavigation = () => {
             name: 'Search Input',
             href: ENUM_ROUTES.COMPONENTS_SEARCH_INPUT,
             active: pathname === ENUM_ROUTES.COMPONENTS_SEARCH_INPUT,
+            sub: [],
+          },
+          {
+            name: 'Select',
+            href: ENUM_ROUTES.COMPONENTS_SELECT,
+            active: pathname === ENUM_ROUTES.COMPONENTS_SELECT,
             sub: [],
           },
           {

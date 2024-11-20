@@ -1,17 +1,16 @@
 import { ReactNode } from 'react';
-import { IColors, IDividerTypes } from '../../types/common';
 import { cn } from '../../libs/utils';
 
 interface Props {
 	id?: string;
 	label?: ReactNode | string;
-	type?: IDividerTypes;
-	color?: IColors | 'gray';
+	type?: string;
+	color?: string;
 	className?: string;
 	labelClassName?: string;
 }
 
-const getDividerColors = (color: IColors | 'gray') => {
+const getDividerColors = (color: string) => {
 	switch (color) {
 		case 'primary':
 			return 'border-primary';
@@ -30,7 +29,7 @@ const getDividerColors = (color: IColors | 'gray') => {
 	}
 };
 
-const getDividerTypes = (type: IDividerTypes) => {
+const getDividerTypes = (type: string) => {
 	switch (type) {
 		case 'dashed':
 			return 'border-dashed';

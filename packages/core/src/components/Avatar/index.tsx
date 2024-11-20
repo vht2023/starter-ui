@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import { IColors, IRadius } from '../../types/common';
 import { User } from 'lucide-react';
 import { cn } from '../../libs/utils';
 
@@ -8,9 +7,9 @@ interface Props {
 	src?: string;
 	name?: string;
 	alt?: string;
-	color?: IColors;
+	color?: string;
 	size?: number;
-	radius?: IRadius;
+	radius?: string;
 	bordered?: boolean;
 	disabled?: boolean;
 	fallback?: ReactNode;
@@ -18,7 +17,7 @@ interface Props {
 	onClick?: () => void;
 }
 
-const getAvatarRadius = (radius: IRadius) => {
+const getAvatarRadius = (radius: string) => {
 	switch (radius) {
 		case 'sm':
 			return 'rounded-md';
@@ -35,7 +34,7 @@ const getAvatarRadius = (radius: IRadius) => {
 	}
 };
 
-const getAvatarColor = (color: IColors) => {
+const getAvatarColor = (color: string) => {
 	switch (color) {
 		case 'default':
 			return 'border-default ring-default';
@@ -55,9 +54,9 @@ const getAvatarColor = (color: IColors) => {
 };
 
 const AvatarDefault: React.FC<{
-	color: IColors;
+	color: string;
 	size: number;
-	radius: IRadius;
+	radius: string;
 	bordered: boolean;
 	disabled: boolean;
 	className: string;
@@ -91,9 +90,9 @@ const AvatarDefault: React.FC<{
 
 const AvatarWithName: React.FC<{
 	name: string;
-	color: IColors;
+	color: string;
 	size: number;
-	radius: IRadius;
+	radius: string;
 	bordered: boolean;
 	disabled: boolean;
 	className: string;

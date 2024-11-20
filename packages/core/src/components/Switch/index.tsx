@@ -1,20 +1,18 @@
 import { ReactNode } from 'react';
-import { IColors } from '../../types/common';
 import { cn } from '../../libs/utils';
-import { div } from 'framer-motion/client';
 
 interface Props {
 	id: string;
 	label?: ReactNode | string;
 	checked?: boolean;
 	disabled?: boolean;
-	color?: IColors;
+	color?: string;
 	className?: string;
 	onChange?: (value: boolean) => void;
 	onClick?: (e: any) => void;
 }
 
-const getSwitchColors = (color: IColors) => {
+const getSwitchColors = (color: string) => {
 	switch (color) {
 		case 'primary':
 			return `group-has-[:checked]:before:bg-primary group-has-[:checked]:shadow-[0_0_0_2px_rgba(0,111,238,0.5),_0_0_8px_rgba(0,111,238,0.7)]`;

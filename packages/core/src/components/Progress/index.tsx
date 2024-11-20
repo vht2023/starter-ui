@@ -1,12 +1,11 @@
 import React, { ReactNode, useMemo } from 'react';
-import { IColors, ISizes } from '../../types/common';
 import { cn } from '../../libs/utils';
 
 interface Props {
 	id?: string;
 	percent: number;
-	size?: ISizes;
-	color?: IColors;
+	size?: string;
+	color?: string;
 	type?: 'line' | 'circle';
 	radius?: 'full' | 'none';
 	insideLabel?: ReactNode;
@@ -15,7 +14,7 @@ interface Props {
 	progressClassName?: string;
 }
 
-const getLineProgressSizes = (size: ISizes) => {
+const getLineProgressSizes = (size: string) => {
 	switch (size) {
 		case 'sm':
 			return 'h-1.5 after:h-1.5';
@@ -27,7 +26,7 @@ const getLineProgressSizes = (size: ISizes) => {
 	}
 };
 
-const getCircleProgressSizes = (size: ISizes) => {
+const getCircleProgressSizes = (size: string) => {
 	switch (size) {
 		case 'sm':
 			return 'w-20 h-20';
@@ -39,7 +38,7 @@ const getCircleProgressSizes = (size: ISizes) => {
 	}
 };
 
-const getLineProgressColors = (color: IColors) => {
+const getLineProgressColors = (color: string) => {
 	switch (color) {
 		case 'primary':
 			return 'bg-primary text-white after:bg-primary-light';
@@ -56,7 +55,7 @@ const getLineProgressColors = (color: IColors) => {
 	}
 };
 
-const getCircleProgressColors = (color: IColors) => {
+const getCircleProgressColors = (color: string) => {
 	switch (color) {
 		case 'primary':
 			return 'text-primary';
@@ -73,7 +72,7 @@ const getCircleProgressColors = (color: IColors) => {
 	}
 };
 
-const getProgressStatusColors = (color: IColors) => {
+const getProgressStatusColors = (color: string) => {
 	switch (color) {
 		case 'primary':
 			return 'bg-primary text-white before:bg-primary';

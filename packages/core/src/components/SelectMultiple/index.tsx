@@ -1,7 +1,6 @@
 import { ReactNode, useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { cn } from '../../libs/utils';
 import { useOnClickOutside } from '../../hooks/useOnClickOutside';
-import { IColors, IRadius, ISizes } from '../../types/common';
 import Button from '../Button';
 import { FileSearch, X } from 'lucide-react';
 import Spinner from '../Spinner';
@@ -30,9 +29,9 @@ export interface Props {
 	helperText?: string;
 	clearable?: boolean;
 	position?: 'top' | 'bottom';
-	color?: IColors;
-	radius?: IRadius;
-	size?: ISizes;
+	color?: string;
+	radius?: string;
+	size?: string;
 	selectorIcon?: ReactNode;
 	className?: string;
 	labelClassName?: string;
@@ -42,7 +41,7 @@ export interface Props {
 	onBlur?: () => void;
 }
 
-const getSelectColors = (color: IColors, isActivated: boolean) => {
+const getSelectColors = (color: string, isActivated: boolean) => {
 	switch (color) {
 		case 'primary':
 			return `hover:border-primary-light focus:ring focus:ring-primary/5 ${isActivated && 'border-primary-light ring ring-primary/5'}`;
@@ -59,7 +58,7 @@ const getSelectColors = (color: IColors, isActivated: boolean) => {
 	}
 };
 
-const getSelectRadius = (radius: IRadius) => {
+const getSelectRadius = (radius: string) => {
 	switch (radius) {
 		case 'md':
 			return 'rounded-lg';
@@ -74,7 +73,7 @@ const getSelectRadius = (radius: IRadius) => {
 	}
 };
 
-const getSelectSizes = (size: ISizes) => {
+const getSelectSizes = (size: string) => {
 	switch (size) {
 		case 'sm':
 			return 'text-sm px-2.5 py-1.5';
@@ -85,7 +84,7 @@ const getSelectSizes = (size: ISizes) => {
 	}
 };
 
-const getLabelSizes = (size: ISizes) => {
+const getLabelSizes = (size: string) => {
 	switch (size) {
 		case 'sm':
 			return 'text-sm';
@@ -114,7 +113,7 @@ const getPositionStyle = (position: 'top' | 'bottom', ref: HTMLDivElement | null
 	} else return {};
 };
 
-const getSelectItemColors = (color: IColors, isActivated: boolean, isDisabled?: boolean) => {
+const getSelectItemColors = (color: string, isActivated: boolean, isDisabled?: boolean) => {
 	if (isDisabled) {
 		return 'opacity-50';
 	} else {
@@ -135,7 +134,7 @@ const getSelectItemColors = (color: IColors, isActivated: boolean, isDisabled?: 
 	}
 };
 
-const getLabelSelectItemColors = (color: IColors) => {
+const getLabelSelectItemColors = (color: string) => {
 	switch (color) {
 		case 'primary':
 			return 'bg-primary-light/30';
@@ -398,7 +397,7 @@ const SelectMultiple: React.FC<Props> = ({
 };
 
 const SelectedItems: React.FC<{
-	color: IColors;
+	color: string;
 	optionsByKey: { [key: string]: ISelectOptionType };
 	selectedItems: ISelectOptionType[];
 	onRemoveSelectedItem: (valueItem: string) => void;

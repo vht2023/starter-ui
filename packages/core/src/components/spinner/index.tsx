@@ -1,16 +1,15 @@
 import React from 'react';
-import { IColors, ISizes } from '../../types/common';
 import { cn } from '../../libs/utils';
 
 interface Props {
 	id?: string;
 	isLoading?: boolean;
-	size?: ISizes;
-	color?: IColors | 'white';
+	size?: string;
+	color?: string;
 	className?: string;
 }
 
-const getSpinnerSizes = (size: ISizes) => {
+const getSpinnerSizes = (size: string) => {
 	switch (size) {
 		case 'sm':
 			return 'w-3 h-3 border';
@@ -24,7 +23,7 @@ const getSpinnerSizes = (size: ISizes) => {
 	}
 };
 
-const getSpinnerColors = (color: IColors | 'white') => {
+const getSpinnerColors = (color: string) => {
 	switch (color) {
 		case 'default':
 			return 'border-default';

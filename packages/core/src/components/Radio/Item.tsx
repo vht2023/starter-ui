@@ -1,7 +1,6 @@
-import { createContext, PropsWithChildren, ReactNode, SetStateAction, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, PropsWithChildren, SetStateAction, useContext, useEffect, useMemo, useState } from 'react';
 import { cn } from '../../libs/utils';
 import { RadioContext } from './Container';
-import { IColors } from '../../types/common';
 
 export const RadioItemContext = createContext<{
 	isDisabled: boolean;
@@ -13,7 +12,7 @@ export const RadioItemContext = createContext<{
 	setItemId: () => '',
 });
 
-const getRadioColors = (color: IColors) => {
+const getRadioColors = (color: string) => {
 	switch (color) {
 		case 'primary':
 			return 'group-has-[:checked]:bg-primary group-has-[:checked]:border-transparent group-has-[:checked]:shadow-[0_0_16px_rgba(0,111,238,0.5)] group-hover:scale-[1.1] group-hover:border-primary/70 group-hover:shadow-[0_0_16px_rgba(0,111,238,0.5)]';

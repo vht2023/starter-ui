@@ -11,7 +11,7 @@ const Colors = () => {
 
   const viewPreview = useMemo(
     () => (
-      <div className='flex-center h-40 w-full flex-wrap gap-3 overflow-auto rounded-md border p-3 tablet_max:!py-6'>
+      <div className='flex-center h-40 w-full flex-wrap gap-3 overflow-auto rounded-md border p-3 tablet_max:py-6'>
         <Badge>Default</Badge>
         <Badge color='primary'>Primary</Badge>
         <Badge color='secondary'>Secondary</Badge>

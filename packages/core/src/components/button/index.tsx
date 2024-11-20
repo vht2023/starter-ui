@@ -1,15 +1,14 @@
 import React, { PropsWithChildren, ReactNode } from 'react';
 
-import { IButtonTypes, IColors, IRadius, ISizes } from '../../types/common';
 import { cn } from '../../libs/utils';
 import Spinner from '../Spinner';
 
 interface Props {
 	id?: string;
-	color?: IColors;
-	size?: ISizes;
-	type?: IButtonTypes;
-	radius?: IRadius;
+	color?: string;
+	size?: string;
+	type?: 'button' | 'submit' | 'reset';
+	radius?: string;
 	disabled?: boolean;
 	outline?: boolean;
 	isIconOnly?: boolean; // ONLY ICON
@@ -20,7 +19,7 @@ interface Props {
 	onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-const getButtonColors = (color: IColors, shouldHover: boolean, outline: boolean) => {
+const getButtonColors = (color: string, shouldHover: boolean, outline: boolean) => {
 	switch (color) {
 		case 'primary':
 			return `[&_div]:text-white bg-primary focus:ring-primary/40 ${shouldHover && 'hover:bg-primary-dark'} ${outline && 'border-primary [&_div]:text-primary'}`;
@@ -37,7 +36,7 @@ const getButtonColors = (color: IColors, shouldHover: boolean, outline: boolean)
 	}
 };
 
-const buttonOutline = (color: IColors) => {
+const buttonOutline = (color: string) => {
 	switch (color) {
 		case 'primary':
 			return 'border-primary [&_div]:text-primary';
@@ -54,7 +53,7 @@ const buttonOutline = (color: IColors) => {
 	}
 };
 
-const getButtonSizes = (size: ISizes, isIconOnly: boolean) => {
+const getButtonSizes = (size: string, isIconOnly: boolean) => {
 	switch (size) {
 		case 'sm':
 			return `text-sm rounded-md ${isIconOnly ? 'p-2' : 'px-4 py-2'}`;
@@ -65,7 +64,7 @@ const getButtonSizes = (size: ISizes, isIconOnly: boolean) => {
 	}
 };
 
-const getButtonRadius = (radius: IRadius) => {
+const getButtonRadius = (radius: string) => {
 	switch (radius) {
 		case 'sm':
 			return 'rounded-md';

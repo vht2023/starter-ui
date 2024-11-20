@@ -1,7 +1,6 @@
 import { ReactNode, useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { cn } from '../../libs/utils';
 import { useOnClickOutside } from '../../hooks/useOnClickOutside';
-import { IColors, IRadius, ISizes } from '../../types/common';
 import Button from '../Button';
 import { FileSearch, X } from 'lucide-react';
 import Spinner from '../Spinner';
@@ -30,9 +29,9 @@ export interface Props {
 	helperText?: string;
 	clearable?: boolean;
 	position?: 'top' | 'bottom';
-	color?: IColors;
-	radius?: IRadius;
-	size?: ISizes;
+	color?: string;
+	radius?: string;
+	size?: string;
 	selectorIcon?: ReactNode;
 	className?: string;
 	labelClassName?: string;
@@ -42,7 +41,7 @@ export interface Props {
 	onBlur?: () => void;
 }
 
-const getSelectColors = (color: IColors, isActivated: boolean) => {
+const getSelectColors = (color: string, isActivated: boolean) => {
 	switch (color) {
 		case 'primary':
 			return `hover:border-primary-light focus:ring focus:ring-primary/5 ${isActivated && 'border-primary-light'}`;
@@ -59,7 +58,7 @@ const getSelectColors = (color: IColors, isActivated: boolean) => {
 	}
 };
 
-const getSelectRadius = (radius: IRadius) => {
+const getSelectRadius = (radius: string) => {
 	switch (radius) {
 		case 'md':
 			return 'rounded-lg';
@@ -74,7 +73,7 @@ const getSelectRadius = (radius: IRadius) => {
 	}
 };
 
-const getSelectSizes = (size: ISizes) => {
+const getSelectSizes = (size: string) => {
 	switch (size) {
 		case 'sm':
 			return 'text-sm px-2.5 py-1.5';
@@ -85,7 +84,7 @@ const getSelectSizes = (size: ISizes) => {
 	}
 };
 
-const getLabelSizes = (size: ISizes) => {
+const getLabelSizes = (size: string) => {
 	switch (size) {
 		case 'sm':
 			return 'text-sm';
@@ -114,7 +113,7 @@ const getPositionStyle = (position: 'top' | 'bottom', ref: HTMLDivElement | null
 	} else return {};
 };
 
-const getSelectItemColors = (color: IColors, isActivated: boolean, isDisabled?: boolean) => {
+const getSelectItemColors = (color: string, isActivated: boolean, isDisabled?: boolean) => {
 	if (isDisabled) {
 		return 'opacity-50';
 	} else {
@@ -236,11 +235,11 @@ const Select: React.FC<Props> = ({
 					disabled={disabled || isLoading}
 					onClick={onClickSelectButton}
 					className={cn([
-						'starterui-select-button inline-flex items-center justify-between whitespace-nowrap transition-all bg-transparent border border-muted/50 w-full',
+						'starterui-select-button inline-flex items-center justify-between whitespace-nowrap transition-all bg-transparent border border-muted/50 w-full min-w-[200px]',
 						getSelectRadius(radius),
 						getSelectSizes(size),
 						((!disabled && !isLoading) || show) && getSelectColors(color, show),
-						value.length === 0 && '[&>span]:text-muted/70',
+						value.length === 0 ? '[&>span]:text-muted/70' : '[&>span]:text-default',
 						disabled ? 'cursor-not-allowed opacity-60' : 'cursor-default',
 						isError && 'border-error hover:border-error focus:ring-error/5',
 						buttonClassName,
@@ -316,7 +315,9 @@ const Select: React.FC<Props> = ({
 								onClick={() => (!option?.disabled ? onSelectOption(option) : undefined)}
 								className={cn(['starterui-select-item', option?.disabled ? 'cursor-not-allowed' : 'cursor-pointer'])}
 							>
-								<div className={cn(['rounded-md py-2 px-3', getSelectItemColors(color, option.value === value, option?.disabled), option.className])}>{option.name}</div>
+								<div className={cn(['rounded-md py-2 px-3 text-default', getSelectItemColors(color, option.value === value, option?.disabled), option.className])}>
+									{option.name}
+								</div>
 							</li>
 						))}
 					</ul>

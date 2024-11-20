@@ -34,7 +34,7 @@ interface PortalProps {
 }
 
 function ModalPortal({ id, children, onClose }: PropsWithChildren<PortalProps>) {
-	const containerRef = useRef<HTMLDivElement | null>(null);
+	const containerRef = useRef<HTMLDivElement>();
 	const portalsRef = useRef<HTMLElement>();
 
 	if (!containerRef.current) containerRef.current = document.createElement('div');
@@ -49,12 +49,12 @@ function ModalPortal({ id, children, onClose }: PropsWithChildren<PortalProps>) 
 
 	useEffect(() => {
 		el.id = id;
-		if (portalsRef.current) portalsRef.current.appendChild(el);
+		portalsRef.current?.appendChild(el);
 
 		return () => {
-			if (portalsRef.current && portalsRef.current.hasChildNodes()) portalsRef.current?.removeChild(el);
+			portalsRef.current?.removeChild(el);
 		};
-	}, [portalsRef.current]);
+	}, []);
 
 	return ReactDOM.createPortal(
 		<KeyboardListener
@@ -113,7 +113,7 @@ const Modal = ({
 			<div
 				ref={modalContainerRef}
 				className={cn([
-					'starterui-modal fixed z-50 -translate-y-1/2 left-1/2 -translate-x-1/2 transition-all duration-300 overflow-hidden bg-white p-4 pt-3 min-w-[480px] max-h-[calc(100vh-80px)] border rounded-md shadow-md space-y-4',
+					'starterui-modal fixed z-[999] -translate-y-1/2 left-1/2 -translate-x-1/2 transition-all duration-300 overflow-hidden bg-white p-4 pt-3 min-w-[480px] max-h-[calc(100vh-80px)] border rounded-md shadow-md space-y-4',
 					show ? 'top-1/2' : '-top-full',
 					className,
 				])}

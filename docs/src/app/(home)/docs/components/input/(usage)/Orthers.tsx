@@ -1,7 +1,7 @@
 import {Input} from '@starter-ui/core'
 import {motion} from 'framer-motion'
 import {CheckCheck, UserRoundSearch} from 'lucide-react'
-import {useMemo, useState} from 'react'
+import {useState} from 'react'
 
 import ViewCode from '@/components/common/ViewCode'
 import {demoCodeOrthers} from '@/constants/documents/components/input'
@@ -9,19 +9,25 @@ import {cn} from '@/libs/utils'
 
 const Orthers = () => {
   const [showCode, setShowCode] = useState<boolean>(false)
+  const [value1, setValue1] = useState<string>('')
+  const [value2, setValue2] = useState<string>('')
 
-  const viewPreview = useMemo(
-    () => (
-      <div className='flex h-96 w-full flex-col justify-center gap-3 overflow-auto rounded-md border px-10 py-3 tablet_max:px-3'>
-        <div className='w-2/3 space-y-6 tablet_max:w-full'>
-          <Input id='disabled-input' label='Disabled input' disabled />
-          <Input id='loading-input' label='Loading input' isLoading />
-          <Input id='required-input' label='Required and Error input' required helperText='Some error message!' />
-          <Input id='prefix-suffix-input' label='Prefix and Suffix' prefix={<UserRoundSearch size={16} />} suffix={<CheckCheck size={16} />} />
-        </div>
+  const viewPreview = (
+    <div className='flex h-96 w-full flex-col justify-center gap-3 overflow-auto rounded-md border px-10 py-3 tablet_max:px-3'>
+      <div className='w-2/3 space-y-6 tablet_max:w-full'>
+        <Input id='disabled-input' label='Disabled input' disabled />
+        <Input id='loading-input' label='Loading input' isLoading />
+        <Input id='required-input' label='Required and Error input' required helperText='Some error message!' value={value1} onChange={(e) => setValue1(e.target.value)} />
+        <Input
+          id='prefix-suffix-input'
+          label='Prefix and Suffix'
+          prefix={<UserRoundSearch size={16} />}
+          suffix={<CheckCheck size={16} />}
+          value={value2}
+          onChange={(e) => setValue2(e.target.value)}
+        />
       </div>
-    ),
-    []
+    </div>
   )
 
   return (

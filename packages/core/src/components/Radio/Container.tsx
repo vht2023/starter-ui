@@ -1,8 +1,7 @@
 import { createContext, PropsWithChildren, useContext, useEffect } from 'react';
-import { IColors } from '../../types/common';
 
 export const RadioContext = createContext<{
-	color: IColors;
+	color: string;
 	selectedKey?: string;
 	disabledKeys?: string[];
 	activatedKey?: string;

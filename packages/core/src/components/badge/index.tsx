@@ -1,18 +1,17 @@
 import { PropsWithChildren } from 'react';
 
-import { IColors, ISizes } from '../../types/common';
 import { cn } from '../../libs/utils';
 
 interface Props {
 	id?: string;
 	className?: string;
-	color?: IColors;
-	size?: ISizes;
+	color?: string;
+	size?: string;
 	disabled?: boolean;
 	outline?: boolean;
 }
 
-const getBadgeColors = (color: IColors, outline: boolean) => {
+const getBadgeColors = (color: string, outline: boolean) => {
 	switch (color) {
 		case 'primary':
 			return `text-white bg-primary ${outline && 'border-primary text-primary'}`;
@@ -29,7 +28,7 @@ const getBadgeColors = (color: IColors, outline: boolean) => {
 	}
 };
 
-const getBadgeSizes = (size: ISizes, outline: boolean) => {
+const getBadgeSizes = (size: string, outline: boolean) => {
 	switch (size) {
 		case 'sm':
 			return 'text-sm px-2 py-1.5 rounded-md';

@@ -1,7 +1,6 @@
 import { PropsWithChildren, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import { cn } from '../../libs/utils';
 import { useOnClickOutside } from '../../hooks/useOnClickOutside';
-import { IPlacementTypes } from '../../types/common';
 
 interface Props {
 	id?: string;
@@ -9,7 +8,7 @@ interface Props {
 	open?: boolean;
 	bordered?: boolean;
 	showArrow?: boolean;
-	placement?: IPlacementTypes;
+	placement?: string;
 	trigger?: 'click' | 'hover';
 	content?: ReactNode;
 	className?: string;
@@ -20,7 +19,7 @@ interface Props {
 	onClickOutside?: () => void;
 }
 
-const getPlacementClassName = (placement: IPlacementTypes) => {
+const getPlacementClassName = (placement: string) => {
 	switch (placement) {
 		case 'top':
 			return 'left-1/2 -translate-x-1/2 pb-2.5';
@@ -51,7 +50,7 @@ const getPlacementClassName = (placement: IPlacementTypes) => {
 	}
 };
 
-const getPlacementStyle = (placement: IPlacementTypes, ref: HTMLDivElement | null) => {
+const getPlacementStyle = (placement: string, ref: HTMLDivElement | null) => {
 	if (ref) {
 		switch (placement) {
 			case 'top':
@@ -68,7 +67,7 @@ const getPlacementStyle = (placement: IPlacementTypes, ref: HTMLDivElement | nul
 	} else return {};
 };
 
-const getPlacementArrowClassName = (placement: IPlacementTypes, show: boolean) => {
+const getPlacementArrowClassName = (placement: string, show: boolean) => {
 	if (show) {
 		switch (placement) {
 			case 'top':

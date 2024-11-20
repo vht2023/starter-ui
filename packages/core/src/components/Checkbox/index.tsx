@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react';
-import { IColors } from '../../types/common';
 import { cn } from '../../libs/utils';
 
 interface Props {
@@ -7,13 +6,13 @@ interface Props {
 	label?: ReactNode | string;
 	checked?: boolean;
 	disabled?: boolean;
-	color?: IColors;
+	color?: string;
 	className?: string;
 	onChange?: (value: boolean) => void;
 	onClick?: (e: any) => void;
 }
 
-const getCheckboxColors = (color: IColors, disabled: boolean) => {
+const getCheckboxColors = (color: string, disabled: boolean) => {
 	switch (color) {
 		case 'primary':
 			return `${!disabled && 'group-hover:border-primary'} before:bg-primary group-has-[:checked]:bg-primary group-has-[:checked]:border-primary`;

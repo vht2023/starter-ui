@@ -9,8 +9,6 @@ import {cn} from '@/libs/utils'
 const Sidebar = () => {
   const paths = useSidebarNavigation()
 
-  console.log(paths)
-
   return (
     <div className='h-fit space-y-8'>
       {paths.map((menu, index) => (
@@ -28,7 +26,10 @@ const Sidebar = () => {
                 <Link
                   key={subIndex}
                   href={sub?.href}
-                  className={cn(['group relative w-fit translate-x-0 text-sm font-normal text-default transition-all hover:translate-x-1.5', sub.active && 'font-medium'])}
+                  className={cn([
+                    'group relative w-fit translate-x-0 text-sm font-normal text-default transition-all hover:translate-x-1.5',
+                    sub.active && 'translate-x-1.5 font-medium',
+                  ])}
                 >
                   {sub.name}
                   {sub.active && <span className='absolute bottom-0.5 left-0 h-[1px] w-full bg-default/70' />}

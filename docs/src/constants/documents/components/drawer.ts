@@ -4,9 +4,33 @@ export const demoCodeDefault = `
 const [showDrawer, setShowDrawer] = useState<boolean>(false)
 
 return (
-  <Drawer id='starterui-default-drawer' show={showDrawer} onHide={() => setShowDrawer(false)}>
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque veniam dicta labore veritatis temporibus voluptates cum, voluptatum quas reiciendis, praesentium,
-    commodi architecto laborum nulla. Nobis ab quo laborum! Laborum, tempora!
+  <Drawer
+    id='starterui-default-drawer'
+    show={showDrawer}
+    onHide={() => setShowDrawer(false)}
+  >
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+    Doloremque veniam dicta labore veritatis temporibus voluptates cum,
+    voluptatum quas reiciendis, praesentium, commodi architecto laborum 
+    nulla. Nobis ab quo laborum! Laborum, tempora!
+  </Drawer>
+)
+`
+
+export const demoCodePlacement = `
+const [showDrawer, setShowDrawer] = useState<boolean>(false)
+
+return (
+  <Drawer
+    id='starterui-default-drawer'
+    show={showDrawer}
+    onHide={() => setShowDrawer(false)}
+    placement='left'
+  >
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+    Doloremque veniam dicta labore veritatis temporibus voluptates cum,
+    voluptatum quas reiciendis, praesentium, commodi architecto laborum 
+    nulla. Nobis ab quo laborum! Laborum, tempora!
   </Drawer>
 )
 `

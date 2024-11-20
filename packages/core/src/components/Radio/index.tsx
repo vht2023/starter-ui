@@ -1,5 +1,4 @@
 import { PropsWithChildren, useState } from 'react';
-import { IColors } from '../../types/common';
 import { cn } from '../../libs/utils';
 import RadioContainer, { RadioContext } from './Container';
 import Item from './Item';
@@ -8,7 +7,7 @@ interface Props {
 	id?: string;
 	selectedKey?: string;
 	disabledKeys?: string[];
-	color?: IColors;
+	color?: string;
 	className?: string;
 	onChange?: (value?: string) => void;
 }

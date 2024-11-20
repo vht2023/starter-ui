@@ -1,18 +1,17 @@
 import { PropsWithChildren } from 'react';
-import { IAlertTypes } from '../../types/common';
 import { cn } from '../../libs/utils';
 import { CircleCheck, CircleX, Info, TriangleAlert, X } from 'lucide-react';
 
 interface Props {
 	id?: string;
-	type?: IAlertTypes;
+	type?: string;
 	outline?: boolean;
 	closeable?: boolean;
 	className?: string;
 	onClose?: () => void;
 }
 
-const getAlertTypes = (type: IAlertTypes) => {
+const getAlertTypes = (type: string) => {
 	switch (type) {
 		case 'info':
 			return 'bg-primary-light/30 text-primary-dark';
@@ -27,7 +26,7 @@ const getAlertTypes = (type: IAlertTypes) => {
 	}
 };
 
-const getAlertOutlines = (type: IAlertTypes) => {
+const getAlertOutlines = (type: string) => {
 	switch (type) {
 		case 'info':
 			return 'border border-primary-light';
@@ -42,7 +41,7 @@ const getAlertOutlines = (type: IAlertTypes) => {
 	}
 };
 
-const getAlertIcons = (type: IAlertTypes) => {
+const getAlertIcons = (type: string) => {
 	switch (type) {
 		case 'info':
 			return <Info size={18} />;
@@ -57,7 +56,7 @@ const getAlertIcons = (type: IAlertTypes) => {
 	}
 };
 
-const getAlertCloseIcons = (type: IAlertTypes, onClose?: () => void) => {
+const getAlertCloseIcons = (type: string, onClose?: () => void) => {
 	switch (type) {
 		case 'info':
 			return (

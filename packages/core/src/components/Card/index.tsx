@@ -1,17 +1,16 @@
 import { PropsWithChildren } from 'react';
 import { cn } from '../../libs/utils';
-import { IRadius, IShadows } from '../../types/common';
 
 interface Props {
 	id?: string;
 	showBorder?: boolean;
 	showDivider?: boolean;
-	shadow?: IShadows;
-	radius?: IRadius;
+	shadow?: string;
+	radius?: string;
 	className?: string;
 }
 
-const getCardRadius = (radius: IRadius) => {
+const getCardRadius = (radius: string) => {
 	switch (radius) {
 		case 'sm':
 			return 'rounded-sm';
@@ -26,7 +25,7 @@ const getCardRadius = (radius: IRadius) => {
 	}
 };
 
-const getCardShadow = (shadow: IShadows) => {
+const getCardShadow = (shadow: string) => {
 	switch (shadow) {
 		case 'sm':
 			return 'shadow-md hover:shadow-lg';

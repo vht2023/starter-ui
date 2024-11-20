@@ -38,7 +38,7 @@ const layout = ({
   return (
     <div className='relative mx-auto h-full w-full px-10 pb-20 tablet_max:px-0'>
       {/* Desktop Sidebar */}
-      <aside className='fixed z-10 mt-10 max-h-[calc(100%-132px)] w-72 overflow-hidden pb-2 transition-all hover:overflow-auto tablet_max:hidden'>
+      <aside className='fixed z-10 mt-10 max-h-[calc(100%-132px)] w-72 overflow-hidden bg-white pb-2 transition-all hover:overflow-auto tablet_max:hidden'>
         <Sidebar />
       </aside>
 

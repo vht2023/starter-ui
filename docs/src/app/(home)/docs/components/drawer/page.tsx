@@ -1,12 +1,14 @@
 'use client'
 
+import dynamic from 'next/dynamic'
 import React from 'react'
 
 import Import from '@/components/common/Import'
 import Usage from '@/components/common/Usage'
 import {importCode} from '@/constants/documents/components/drawer'
 
-import Default from './(usage)/Default'
+const Default = dynamic(() => import('./(usage)/Default'), {ssr: false})
+const Placement = dynamic(() => import('./(usage)/Placement'), {ssr: false})
 
 const Divider = () => {
   return (
@@ -21,6 +23,10 @@ const Divider = () => {
           <div className='space-y-3'>
             <div className='text-xl font-bold'>Default</div>
             <Default />
+          </div>
+          <div className='space-y-3'>
+            <div className='text-xl font-bold'>Placement</div>
+            <Placement />
           </div>
         </Usage>
       </div>

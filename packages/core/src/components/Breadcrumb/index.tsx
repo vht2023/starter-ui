@@ -1,18 +1,17 @@
 import React from 'react';
-import { ISizes, IUnderlines } from '../../types/common';
 import { cn } from '../../libs/utils';
 import { ChevronRight } from 'lucide-react';
 
 interface Props {
 	id?: string;
 	data: { title: string | React.ReactElement; url: string; isDisabled?: boolean; className?: string }[];
-	size?: ISizes;
-	underline?: IUnderlines;
+	size?: string;
+	underline?: string;
 	className?: string;
 	onClick?: (url: string) => () => void;
 }
 
-const getTextSize = (size: ISizes) => {
+const getTextSize = (size: string) => {
 	switch (size) {
 		case 'sm':
 			return 'text-sm';
@@ -25,7 +24,7 @@ const getTextSize = (size: ISizes) => {
 	}
 };
 
-const getUnderline = (underline: IUnderlines) => {
+const getUnderline = (underline: string) => {
 	switch (underline) {
 		case 'hover':
 			return `hover:underline`;

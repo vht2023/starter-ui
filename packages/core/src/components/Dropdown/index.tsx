@@ -36,9 +36,9 @@ const DropdownContext = createContext<{
 const getAlignClassName = (align: 'center' | 'start' | 'end') => {
 	switch (align) {
 		case 'start':
-			return 'left-0';
+			return 'left-0 -translate-x-1';
 		case 'end':
-			return 'right-0';
+			return 'right-0 translate-x-1';
 		default:
 			return 'left-1/2 -translate-x-1/2';
 	}
@@ -47,9 +47,9 @@ const getAlignClassName = (align: 'center' | 'start' | 'end') => {
 const getPositionClassName = (position: 'top' | 'bottom') => {
 	switch (position) {
 		case 'bottom':
-			return 'top-[calc(100%-2px)] pt-2.5';
+			return 'top-full pt-1.5';
 		default:
-			return '';
+			return 'pb-4';
 	}
 };
 
@@ -57,7 +57,7 @@ const getPositionStyle = (position: 'top' | 'bottom', ref: HTMLDivElement | null
 	if (ref) {
 		switch (position) {
 			case 'top':
-				return { top: -ref?.offsetHeight - 10 };
+				return { top: -ref?.offsetHeight + 10 };
 			default:
 				return {};
 		}

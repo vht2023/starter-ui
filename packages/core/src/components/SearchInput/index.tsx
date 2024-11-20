@@ -1,6 +1,5 @@
-import React, { ChangeEventHandler, HTMLInputTypeAttribute, ReactNode, useRef } from 'react';
+import React, { useRef } from 'react';
 import { cn } from '../../libs/utils';
-import { ISizes } from '../../types/common';
 import Spinner from '../Spinner';
 import { Search, X } from 'lucide-react';
 import Button from '../Button';
@@ -9,7 +8,7 @@ export interface Props {
 	id?: string;
 	value?: string;
 	isLoading?: boolean;
-	size?: ISizes;
+	size?: string;
 	disabled?: boolean;
 	placeholder?: string;
 	autoFocus?: boolean;
@@ -24,7 +23,7 @@ export interface Props {
 	onSearch?: () => void;
 }
 
-const getInputSizes = (size: ISizes) => {
+const getInputSizes = (size: string) => {
 	switch (size) {
 		case 'sm':
 			return 'px-6 py-1.5 text-sm placeholder:text-sm';
