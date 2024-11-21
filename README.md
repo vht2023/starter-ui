@@ -2,7 +2,7 @@
 </br>
 <p align="center">
   <a href="https://starterui.vercel.app">
-      <img width="100%" src="./docs/src/assets/images/logo.png" alt="nextui" />
+      <img width="33%" src="./docs/src/assets/images/logo-white.png" alt="starter-ui" />
   </a>
 </p>
 </br>
