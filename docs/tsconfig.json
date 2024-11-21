@@ -22,16 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "src/hooks/useEventListener.ts",
-    "../packages/core/**/*.ts",
-    "../packages/core/**/*.tsx",
-    "../packages/theme/**/*.ts",
-    "../packages/theme/**/*.tsx"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/hooks/useEventListener.ts"],
   "exclude": ["node_modules"]
 }

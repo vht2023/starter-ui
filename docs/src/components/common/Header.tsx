@@ -12,6 +12,8 @@ import {ENUM_ROUTES} from '@/enums/routes'
 import {useHeaderNavigation} from '@/hooks'
 import {cn} from '@/libs/utils'
 
+import Logo from './Logo'
+
 const martian = Martian_Mono({subsets: ['latin']})
 
 const CURRENT_VERSION = '1.1.10'
@@ -29,15 +31,15 @@ const Header = () => {
   return (
     <div className='fixed left-0 top-0 z-50 h-[60px] min-h-[60px] w-full border-b px-10 backdrop-blur-xl tablet_max:h-fit tablet_max:min-h-[60px] tablet_max:border-none tablet_max:px-0'>
       <div className='mx-auto h-full min-h-[60px] w-full tablet_max:w-full tablet_max:border-b'>
-        <div className='flex h-full min-h-[60px] items-center gap-20 tablet_max:px-4'>
+        <div className='flex h-full min-h-[60px] items-center gap-3 tablet_max:px-4'>
           {/* LOGO */}
-          <div className='relative flex h-full flex-col justify-center'>
-            <Link href={ENUM_ROUTES.HOME} className={`${martian.className} w-fit flex-none text-2xl font-bold tracking-tighter tablet_max:text-xl`}>
-              starter|ui
+          <div className='relative h-full tablet_max:h-[60px]'>
+            <Link href={ENUM_ROUTES.HOME} className={`${martian.className} flex-none`}>
+              <Logo />
             </Link>
-            <div className='absolute -end-12 top-2 w-fit rounded-full border-b bg-grey-light/50 px-2 py-1.5 text-[11px] leading-none text-default/90 shadow-xl tablet_max:-end-14 tablet_max:top-0'>
+            <span className='absolute end-8 top-2 w-fit rounded-full border-b bg-grey-light/50 px-2 py-1.5 text-[11px] leading-none tracking-normal text-default/90 shadow-xl tablet_max:top-1/2 tablet_max:-translate-y-1/2'>
               v{CURRENT_VERSION}
-            </div>
+            </span>
           </div>
           {/* Desktop Header */}
           <div className='flex h-full w-full grow items-center gap-6 tablet_max:hidden'>

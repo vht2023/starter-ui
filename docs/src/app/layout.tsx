@@ -12,7 +12,7 @@ const inter = Inter({subsets: ['latin'], variable: '--font-inter'})
 export const metadata: Metadata = {
   title: 'Starter UI',
   description: 'Starter UI Documents',
-  icons: './icon.ico',
+  icons: './icon.png',
 }
 
 export default function RootLayout({

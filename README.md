@@ -1,6 +1,8 @@
+</br>
+</br>
 <p align="center">
   <a href="https://starterui.vercel.app">
-      <h1 align="center">Starter UI</h1>
+      <img width="100%" src="./docs/src/assets/images/logo.png" alt="nextui" />
   </a>
 </p>
 </br>
