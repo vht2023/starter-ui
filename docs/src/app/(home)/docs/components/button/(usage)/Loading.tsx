@@ -13,6 +13,9 @@ const Loading = () => {
     () => (
       <div className='flex-center min-h-40 w-full flex-wrap gap-3 overflow-auto rounded-md border p-3'>
         <Button isLoading>Default</Button>
+        <Button isLoading color='black'>
+          Primary
+        </Button>
         <Button isLoading color='primary'>
           Primary
         </Button>

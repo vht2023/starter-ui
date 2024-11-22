@@ -2,14 +2,16 @@
 
 import {SearchInput} from '@starter-ui/core'
 import {motion} from 'framer-motion'
+import {FileSearch} from 'lucide-react'
 import {Martian_Mono} from 'next/font/google'
 import Link from 'next/link'
 import {usePathname} from 'next/navigation'
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useMemo, useState} from 'react'
 import {twMerge} from 'tailwind-merge'
 
+import {COMPONENTS_ROUTES} from '@/constants/routes'
 import {ENUM_ROUTES} from '@/enums/routes'
-import {useHeaderNavigation} from '@/hooks'
+import {useDebounce, useHeaderNavigation} from '@/hooks'
 import {cn} from '@/libs/utils'
 
 import Logo from './Logo'
@@ -23,6 +25,13 @@ const Header = () => {
   const paths = useHeaderNavigation()
   const [toggle, setToggle] = useState<boolean>(false)
   const [searchValue, setSearchValue] = useState<string>('')
+
+  const searchDebounce = useDebounce(searchValue)
+
+  const searchResult = useMemo(
+    () => (searchValue.length > 0 ? COMPONENTS_ROUTES.filter((cpn) => cpn.name.toLocaleLowerCase().includes(searchDebounce.toLocaleLowerCase())) : []),
+    [searchDebounce]
+  )
 
   useEffect(() => {
     setToggle(false)
@@ -87,13 +96,39 @@ const Header = () => {
                 </div>
               </Link>
             </div>
-            <SearchInput
-              inputClassName='placeholder:text-sm placeholder:text-muted/80 bg-white/50'
-              className='w-[200px]'
-              placeholder='Search components...'
-              value={searchValue}
-              onChange={(val) => setSearchValue(val)}
-            />
+            <div className='relative'>
+              <SearchInput
+                inputClassName='placeholder:text-sm placeholder:text-muted/80 bg-white/50'
+                className='w-[200px]'
+                placeholder='Search components...'
+                value={searchValue}
+                onChange={(val) => setSearchValue(val)}
+              />
+              <div
+                className={cn([
+                  'absolute left-1/2 top-full w-[calc(100%+8px)] -translate-x-1/2 overflow-hidden rounded-md p-1 pt-1.5 transition-all',
+                  searchDebounce.length > 0 ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-1 opacity-0',
+                ])}
+              >
+                <ul className='list-none overflow-y-auto rounded-md border bg-white p-1.5 text-sm text-default shadow'>
+                  {searchDebounce.length > 0 && searchResult.length === 0 && (
+                    <div className='flex flex-col items-center justify-center gap-1.5 p-8 text-sm'>
+                      <FileSearch className='text-muted' size={24} />
+                      <div className='text-muted'>Not Found</div>
+                    </div>
+                  )}
+                  {searchResult.map((cpn) => (
+                    <li
+                      key={cpn.href}
+                      className='group flex w-full cursor-pointer items-center gap-2 rounded-md p-2 text-default hover:bg-grey-light/70'
+                      onClick={() => setSearchValue('')}
+                    >
+                      <Link href={cpn.href}>{cpn.name}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
           {/* Mobile Menu Header */}
           <div className='hidden h-full w-full tablet_max:flex tablet_max:items-center tablet_max:justify-end'>

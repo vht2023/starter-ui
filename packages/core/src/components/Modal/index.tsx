@@ -113,8 +113,8 @@ const Modal = ({
 			<div
 				ref={modalContainerRef}
 				className={cn([
-					'starterui-modal fixed z-[999] -translate-y-1/2 left-1/2 -translate-x-1/2 transition-all duration-300 overflow-hidden bg-white p-4 pt-3 min-w-[480px] max-h-[calc(100vh-80px)] border rounded-md shadow-md space-y-4',
-					show ? 'top-1/2' : '-top-full',
+					'starterui-modal fixed z-[999] top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 transition-all duration-500 overflow-hidden bg-white p-4 pt-3 min-w-[480px] backdrop-blur max-h-[calc(100vh-80px)] border rounded-md shadow-md space-y-4',
+					show ? 'opacity-100 scale-100' : 'opacity-0 scale-0',
 					className,
 				])}
 			>

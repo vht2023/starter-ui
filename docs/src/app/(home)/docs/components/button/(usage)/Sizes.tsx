@@ -18,6 +18,17 @@ const Sizes = () => {
           <Button size='lg'>Large</Button>
         </div>
         <div className='flex flex-col items-center gap-3'>
+          <Button size='sm' color='black'>
+            Small
+          </Button>
+          <Button size='md' color='black'>
+            Medium
+          </Button>
+          <Button size='lg' color='black'>
+            Large
+          </Button>
+        </div>
+        <div className='flex flex-col items-center gap-3'>
           <Button size='sm' color='primary'>
             Small
           </Button>

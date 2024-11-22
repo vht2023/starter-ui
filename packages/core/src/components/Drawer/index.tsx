@@ -102,7 +102,7 @@ const Drawer = ({
 			<div
 				ref={drawerContainerRef}
 				className={cn([
-					'starterui-drawer fixed z-[999] h-screen bg-white top-0 p-4 pt-3 overflow-hidden transition-transform duration-300 w-96 border space-y-3 shadow',
+					'starterui-drawer fixed z-[999] h-screen bg-white top-0 p-4 pt-3 overflow-hidden transition-transform duration-500 w-96 border space-y-3 shadow',
 					placement === 'right' ? 'right-0' : 'left-0',
 					getPlacementClassName(show, placement),
 					className,

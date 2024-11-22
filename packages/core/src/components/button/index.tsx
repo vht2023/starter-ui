@@ -31,6 +31,8 @@ const getButtonColors = (color: string, shouldHover: boolean, outline: boolean) 
 			return `[&_div]:text-default bg-warning focus:ring-warning/40 ${shouldHover && 'hover:bg-warning-dark'} ${outline && 'border-warning [&_div]:text-warning'}`;
 		case 'error':
 			return `[&_div]:text-white bg-error focus:ring-error/40 ${shouldHover && 'hover:bg-error-dark'} ${outline && 'border-error [&_div]:text-error'}`;
+		case 'black':
+			return `[&_div]:text-white bg-default focus:ring-default/40 ${shouldHover && 'hover:bg-default/80'} ${outline && 'border-default [&_div]:text-default'}`;
 		default:
 			return `[&_div]:text-default bg-grey focus:ring-grey/40 ${shouldHover && 'hover:bg-grey-dark'} ${outline && 'border-default'}`;
 	}
@@ -56,22 +58,22 @@ const buttonOutline = (color: string) => {
 const getButtonSizes = (size: string, isIconOnly: boolean) => {
 	switch (size) {
 		case 'sm':
-			return `text-sm rounded-md ${isIconOnly ? 'p-2' : 'px-4 py-2'}`;
+			return `text-sm rounded-md ${isIconOnly ? 'p-2' : 'px-3 py-2'}`;
 		case 'lg':
-			return `text-lg rounded-xl ${isIconOnly ? 'p-4' : 'px-8 py-4'}`;
+			return `text-lg rounded-xl ${isIconOnly ? 'p-4' : 'px-6 py-3'}`;
 		default:
-			return `text-base rounded-lg ${isIconOnly ? 'p-3' : 'px-6 py-3'}`;
+			return `text-base rounded-lg ${isIconOnly ? 'p-3' : 'px-4 py-2.5'}`;
 	}
 };
 
 const getButtonRadius = (radius: string) => {
 	switch (radius) {
 		case 'sm':
-			return 'rounded-md';
+			return 'rounded-sm';
 		case 'md':
-			return 'rounded-lg';
+			return 'rounded-md';
 		case 'lg':
-			return 'rounded-xl';
+			return 'rounded-lg';
 		case 'full':
 			return 'rounded-full';
 		case 'none':
@@ -104,7 +106,7 @@ const Button = ({
 	const renderChildren = () => (
 		<div className={cn(['flex items-center justify-center w-full', isLoading && 'gap-2'])}>
 			<Spinner isLoading={isLoading} color={outline ? color : 'white'} />
-			<div className='flex items-center justify-center gap-2'>
+			<div className='flex items-center justify-center gap-2 text-center'>
 				{!isLoading && startIcon && startIcon}
 				{children}
 				{endIcon && endIcon}
@@ -120,7 +122,7 @@ const Button = ({
 			onClick={onClick}
 			className={cn(
 				[
-					'starterui-button flex items-center justify-center whitespace-nowrap text-center font-medium transition-all transform',
+					'starterui-button flex items-center justify-center whitespace-nowrap text-center font-normal transition-all transform',
 					getButtonColors(color, !disabled && !isLoading && !outline, outline),
 					getButtonSizes(size, isIconOnly),
 					getButtonRadius(radius),

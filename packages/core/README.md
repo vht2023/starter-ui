@@ -1,6 +1,8 @@
+</br>
+</br>
 <p align="center">
   <a href="https://starterui.vercel.app">
-      <h1 align="center">Starter UI</h1>
+      <img width="33%" src="./public/logo-white.png" alt="starter-ui" />
   </a>
 </p>
 </br>

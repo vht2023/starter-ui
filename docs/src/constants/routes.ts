@@ -2,29 +2,94 @@ import {ENUM_ROUTES} from '@/enums/routes'
 
 const DOCS_ROUTES = [ENUM_ROUTES.DOCS, ENUM_ROUTES.DOCS_INSTALLATION]
 const COMPONENTS_ROUTES = [
-  ENUM_ROUTES.COMPONENTS,
-  ENUM_ROUTES.COMPONENTS_ACCORDION,
-  ENUM_ROUTES.COMPONENTS_ALERT,
-  ENUM_ROUTES.COMPONENTS_AVATAR,
-  ENUM_ROUTES.COMPONENTS_BADGE,
-  ENUM_ROUTES.COMPONENTS_BREADCRUMB,
-  ENUM_ROUTES.COMPONENTS_BUTTON,
-  ENUM_ROUTES.COMPONENTS_CARD,
-  ENUM_ROUTES.COMPONENTS_CAROUSEL,
-  ENUM_ROUTES.COMPONENTS_CHECKBOX,
-  ENUM_ROUTES.COMPONENTS_DIVIDER,
-  ENUM_ROUTES.COMPONENTS_DRAWER,
-  ENUM_ROUTES.COMPONENTS_DROPDOWN,
-  ENUM_ROUTES.COMPONENTS_INPUT,
-  ENUM_ROUTES.COMPONENTS_MODAL,
-  ENUM_ROUTES.COMPONENTS_POPOVER,
-  ENUM_ROUTES.COMPONENTS_PROGRESS,
-  ENUM_ROUTES.COMPONENTS_RADIO,
-  ENUM_ROUTES.COMPONENTS_SEARCH_INPUT,
-  ENUM_ROUTES.COMPONENTS_SELECT,
-  ENUM_ROUTES.COMPONENTS_SKELETON,
-  ENUM_ROUTES.COMPONENTS_SPINNER,
-  ENUM_ROUTES.COMPONENTS_SWITCH,
+  {
+    name: 'Accordion',
+    href: ENUM_ROUTES.COMPONENTS_ACCORDION,
+  },
+  {
+    name: 'Alert',
+    href: ENUM_ROUTES.COMPONENTS_ALERT,
+  },
+  {
+    name: 'Avatar',
+    href: ENUM_ROUTES.COMPONENTS_AVATAR,
+  },
+  {
+    name: 'Badge',
+    href: ENUM_ROUTES.COMPONENTS_BADGE,
+  },
+  {
+    name: 'Breadcrumb',
+    href: ENUM_ROUTES.COMPONENTS_BREADCRUMB,
+  },
+  {
+    name: 'Button',
+    href: ENUM_ROUTES.COMPONENTS_BUTTON,
+  },
+  {
+    name: 'Card',
+    href: ENUM_ROUTES.COMPONENTS_CARD,
+  },
+  {
+    name: 'Carousel',
+    href: ENUM_ROUTES.COMPONENTS_CAROUSEL,
+  },
+  {
+    name: 'Checkbox',
+    href: ENUM_ROUTES.COMPONENTS_CHECKBOX,
+  },
+  {
+    name: 'Divider',
+    href: ENUM_ROUTES.COMPONENTS_DIVIDER,
+  },
+  {
+    name: 'Drawer',
+    href: ENUM_ROUTES.COMPONENTS_DRAWER,
+  },
+  {
+    name: 'Dropdown',
+    href: ENUM_ROUTES.COMPONENTS_DROPDOWN,
+  },
+  {
+    name: 'Input',
+    href: ENUM_ROUTES.COMPONENTS_INPUT,
+  },
+  {
+    name: 'Modal',
+    href: ENUM_ROUTES.COMPONENTS_MODAL,
+  },
+  {
+    name: 'Popover',
+    href: ENUM_ROUTES.COMPONENTS_POPOVER,
+  },
+  {
+    name: 'Progress',
+    href: ENUM_ROUTES.COMPONENTS_PROGRESS,
+  },
+  {
+    name: 'Radio',
+    href: ENUM_ROUTES.COMPONENTS_RADIO,
+  },
+  {
+    name: 'Search Input',
+    href: ENUM_ROUTES.COMPONENTS_SEARCH_INPUT,
+  },
+  {
+    name: 'Select',
+    href: ENUM_ROUTES.COMPONENTS_SELECT,
+  },
+  {
+    name: 'Skeleton',
+    href: ENUM_ROUTES.COMPONENTS_SKELETON,
+  },
+  {
+    name: 'Spinner',
+    href: ENUM_ROUTES.COMPONENTS_SPINNER,
+  },
+  {
+    name: 'Switch',
+    href: ENUM_ROUTES.COMPONENTS_SWITCH,
+  },
 ]
 
 export {COMPONENTS_ROUTES, DOCS_ROUTES}

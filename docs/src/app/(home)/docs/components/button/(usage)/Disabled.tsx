@@ -14,6 +14,9 @@ const Disabled = () => {
       <div className='flex-center min-h-40 w-full flex-col flex-wrap gap-3 overflow-auto rounded-md border p-3 tablet_max:h-60'>
         <div className='flex-center w-full flex-wrap gap-3'>
           <Button disabled>Default</Button>
+          <Button disabled color='black'>
+            Primary
+          </Button>
           <Button disabled color='primary'>
             Primary
           </Button>
