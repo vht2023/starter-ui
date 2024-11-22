@@ -16,7 +16,7 @@ const Default = () => {
         <Button size='sm' color='black' onClick={() => setShowDrawer(true)}>
           Show Drawer
         </Button>
-        <Drawer id='starterui-default-drawer' show={showDrawer} onHide={() => setShowDrawer(false)}>
+        <Drawer id='starterui-default-drawer' show={showDrawer} onHide={() => setShowDrawer(false)} className='tablet_max:w-[300px]'>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque veniam dicta labore veritatis temporibus voluptates cum, voluptatum quas reiciendis, praesentium,
           commodi architecto laborum nulla. Nobis ab quo laborum! Laborum, tempora!
         </Drawer>

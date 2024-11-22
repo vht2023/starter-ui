@@ -101,13 +101,13 @@ const Modal = ({
 
 	return (
 		<ModalPortal id={id} onClose={onHide}>
-			{show && showBackdrop && (
+			{showBackdrop && (
 				<Backdrop
 					onClick={() => {
 						onClickOutside?.();
 						onHide();
 					}}
-					className={backdropClassName}
+					className={cn(['transition-all duration-300', show ? 'opacity-50 z-50' : 'opacity-0 -z-50', backdropClassName])}
 				/>
 			)}
 			<div

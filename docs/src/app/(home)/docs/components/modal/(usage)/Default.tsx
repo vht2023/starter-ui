@@ -16,7 +16,7 @@ const Default = () => {
         <Button size='sm' color='black' onClick={() => setShowModal(true)}>
           Show Modal
         </Button>
-        <Modal id='starterui-default-modal' show={showModal} onHide={() => setShowModal(false)}>
+        <Modal id='starterui-default-modal' show={showModal} onHide={() => setShowModal(false)} className='tablet_max:w-[300px] tablet_max:min-w-[300px]'>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque veniam dicta labore veritatis temporibus voluptates cum, voluptatum quas reiciendis, praesentium,
           commodi architecto laborum nulla. Nobis ab quo laborum! Laborum, tempora!
         </Modal>
