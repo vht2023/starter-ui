@@ -15,6 +15,7 @@ export {
 	Input,
 	KeyboardListener,
 	Modal,
+	Pagination,
 	Popover,
 	Progress,
 	Radio,

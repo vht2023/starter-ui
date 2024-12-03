@@ -41,7 +41,7 @@ const Item = ({ id = '', className = '', children }: PropsWithChildren<{ id?: st
 	}, [id]);
 
 	return (
-		<div className={cn(['starterui-radio-item group relative', isDisabled ? 'cursor-default' : 'cursor-pointer'], className)}>
+		<div className={cn(['starterui-radio-item group relative', isDisabled ? 'cursor-default' : 'cursor-pointer', className])}>
 			<input
 				id={id}
 				type='radio'

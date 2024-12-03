@@ -174,7 +174,7 @@ const Popover = ({
 				<div
 					className={cn([
 						'starterui-popover-overlay overflow-y-auto p-2.5 text-sm text-default rounded-md bg-white shadow',
-						bordered && 'border before:border-r before:border-b',
+						bordered ? 'border before:border-r before:border-b' : '',
 						getPlacementArrowClassName(placement, showArrow),
 						overlayClassName,
 					])}

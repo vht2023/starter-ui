@@ -127,17 +127,21 @@ const Input: React.FC<Props> = ({
 		<div className={cn(['starterui-input-wrapper', className])}>
 			{/* LABEL */}
 			{label && (
-				<label
-					htmlFor={id}
-					className={cn(['starterui-input-label mb-1.5 block w-fit text-default', required && 'starterui-required', size && getLabelSizes(size)], labelClassName)}
-				>
+				<label htmlFor={id} className={cn(['starterui-input-label mb-1.5 block w-fit text-default', required ? 'starterui-required' : '', getLabelSizes(size), labelClassName])}>
 					{label}
 				</label>
 			)}
 			<div className='relative'>
 				{/* PREFIX ICON */}
 				{prefix && (
-					<div className={cn(['pointer-events-none absolute inset-y-0 left-0 flex items-center ps-2.5 start-0', isError && '[&_svg]:text-error'], prefixClassName)}>{prefix}</div>
+					<div
+						className={cn(
+							['pointer-events-none absolute inset-y-0 left-0 flex items-center ps-2.5 start-0', isError ? '[&_svg]:text-error' : '', prefixClassName],
+							prefixClassName
+						)}
+					>
+						{prefix}
+					</div>
 				)}
 
 				{/* INPUT */}
@@ -153,10 +157,10 @@ const Input: React.FC<Props> = ({
 							getInputSizes(size),
 							getInputRadius(radius),
 							!disabled && getInputColors(color),
-							prefix && 'pl-8',
-							suffix && 'pr-8',
+							prefix ? 'pl-8' : '',
+							suffix ? 'pr-8' : '',
 							disabled ? 'bg-disabled/50' : 'bg-white',
-							isError && 'border-error hover:border-error focus:border-error focus:ring-error/5',
+							isError ? 'border-error hover:border-error focus:border-error focus:ring-error/5' : '',
 						],
 						inputClassName
 					)}
@@ -175,7 +179,7 @@ const Input: React.FC<Props> = ({
 				{/* suffix ICON */}
 				{suffix && !isLoading && (
 					<div
-						className={cn(['absolute inset-y-0 right-0 z-10 flex cursor-pointer items-center pe-2.5 end-0', isError && '[&_svg]:text-error'], suffixClassName)}
+						className={cn(['absolute inset-y-0 right-0 z-10 flex cursor-pointer items-center pe-2.5 end-0', isError ? '[&_svg]:text-error' : '', suffixClassName])}
 						onClick={suffixOnClick}
 					>
 						{suffix}
@@ -184,7 +188,9 @@ const Input: React.FC<Props> = ({
 
 				{/* HELPER TEXT */}
 				{helperText && (
-					<p className={cn(['starterui-input-helperText absolute right-0 top-full z-10 mt-1 flex cursor-pointer items-center text-xs', isError && 'text-error'])}>{helperText}</p>
+					<p className={cn(['starterui-input-helperText absolute right-0 top-full z-10 mt-1 flex cursor-pointer items-center text-xs', isError ? 'text-error' : ''])}>
+						{helperText}
+					</p>
 				)}
 
 				{/* LOADING */}

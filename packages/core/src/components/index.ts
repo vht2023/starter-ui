@@ -14,6 +14,7 @@ import Dropdown from './Dropdown';
 import Input from './Input';
 import KeyboardListener from './KeyboardListener';
 import Modal from './Modal';
+import Pagination from './Pagination';
 import Popover from './Popover';
 import Progress from './Progress';
 import Radio from './Radio';
@@ -42,6 +43,7 @@ export {
 	Input,
 	KeyboardListener,
 	Modal,
+	Pagination,
 	Popover,
 	Progress,
 	Radio,

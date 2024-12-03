@@ -39,25 +39,29 @@ const getCardShadow = (shadow: string) => {
 };
 
 const CardHeader = ({ className, children }: PropsWithChildren<{ className?: string }>) => {
-	return <div className={cn(['p-3 font-bold text-lg'], className)}>{children}</div>;
+	return <div className={cn(['p-3 font-bold text-lg', className])}>{children}</div>;
 };
 
 const CardBody = ({ className, children }: PropsWithChildren<{ className?: string }>) => {
-	return <div className={cn(['p-3'], className)}>{children}</div>;
+	return <div className={cn(['p-3', className])}>{children}</div>;
 };
 
 const CardFooter = ({ className, children }: PropsWithChildren<{ className?: string }>) => {
-	return <div className={cn(['p-3'], className)}>{children}</div>;
+	return <div className={cn(['p-3', className])}>{children}</div>;
 };
 
 const Card = ({ id = 'starterui-default-card', showBorder = true, showDivider = false, radius = 'md', shadow = 'md', className, children }: PropsWithChildren<Props>) => {
 	return (
 		<div
 			id={id}
-			className={cn(
-				['starterui-card w-full transition-all', showBorder && 'border border-grey-light/50', showDivider && 'divide-y', getCardRadius(radius), getCardShadow(shadow)],
-				className
-			)}
+			className={cn([
+				'starterui-card w-full transition-all',
+				showBorder ? 'border border-grey-light/50' : '',
+				showDivider ? 'divide-y' : '',
+				getCardRadius(radius),
+				getCardShadow(shadow),
+				className,
+			])}
 		>
 			{children}
 		</div>

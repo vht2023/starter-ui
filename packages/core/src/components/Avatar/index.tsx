@@ -64,16 +64,14 @@ const AvatarDefault: React.FC<{
 }> = ({ color, size, radius, bordered, disabled, className, onClick }) => {
 	return (
 		<div
-			className={cn(
-				[
-					'starterui-avatar bg-gray-100 rounded-full flex items-center justify-center',
-					bordered && 'border-[1.5px]',
-					getAvatarColor(color),
-					getAvatarRadius(radius),
-					disabled && 'opacity-50 cursor-not-allowed',
-				],
-				className
-			)}
+			className={cn([
+				'starterui-avatar bg-gray-100 rounded-full flex items-center justify-center',
+				bordered ? 'border-[1.5px]' : '',
+				getAvatarColor(color),
+				getAvatarRadius(radius),
+				disabled ? 'opacity-50 cursor-not-allowed' : '',
+				className,
+			])}
 			onClick={() => {
 				if (disabled) return;
 				onClick?.();
@@ -100,16 +98,14 @@ const AvatarWithName: React.FC<{
 }> = ({ name, color, size, radius, bordered, disabled, className, onClick }) => {
 	return (
 		<div
-			className={cn(
-				[
-					'bg-gray-100 rounded-full inline-flex items-center justify-center p-2 w-fit h-fit',
-					bordered && 'border',
-					getAvatarColor(color),
-					getAvatarRadius(radius),
-					disabled && 'opacity-50 cursor-not-allowed',
-				],
-				className
-			)}
+			className={cn([
+				'bg-gray-100 rounded-full inline-flex items-center justify-center p-2 w-fit h-fit',
+				bordered ? 'border' : '',
+				getAvatarColor(color),
+				getAvatarRadius(radius),
+				disabled ? 'opacity-50 cursor-not-allowed' : '',
+				className,
+			])}
 			onClick={() => {
 				if (disabled) return;
 				onClick?.();
@@ -150,10 +146,14 @@ const Avatar: React.FC<Props> = ({
 			}}
 			src={src}
 			alt={alt}
-			className={cn(
-				['rounded-full object-cover object-center', bordered && 'ring-1 p-0.5', getAvatarColor(color), getAvatarRadius(radius), disabled && 'opacity-50 cursor-not-allowed'],
-				className
-			)}
+			className={cn([
+				'rounded-full object-cover object-center',
+				bordered && 'ring-1 p-0.5',
+				getAvatarColor(color),
+				getAvatarRadius(radius),
+				disabled ? 'opacity-50 cursor-not-allowed' : '',
+				className,
+			])}
 			onClick={() => {
 				if (disabled) return;
 				onClick?.();

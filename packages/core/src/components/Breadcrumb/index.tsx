@@ -40,7 +40,7 @@ const Breadcrumb: React.FC<Props> = ({ id = 'starterui-default-breadcrumbs', dat
 
 	return (
 		<nav id={id} className='starterui-breadcrumb' aria-label='Breadcrumb'>
-			<ol className={cn(['inline-flex items-center space-x-1 leading-none'], className)}>
+			<ol className={cn(['inline-flex items-center space-x-1 leading-none', className])}>
 				{data.map((item, index) => (
 					<React.Fragment key={index}>
 						<li className='flex items-center space-x-1' key={index} aria-current={index === data.length - 1}>
@@ -49,24 +49,25 @@ const Breadcrumb: React.FC<Props> = ({ id = 'starterui-default-breadcrumbs', dat
 								<>
 									{index === data.length - 1 || !item.url || item?.isDisabled ? (
 										<span
-											className={cn(
-												['w-fit text-default', index === data.length - 1 && 'font-bold', size && getTextSize(size), item?.isDisabled && 'text-default/50'],
-												item?.className
-											)}
+											className={cn([
+												'w-fit text-default',
+												index === data.length - 1 ? 'font-bold' : '',
+												getTextSize(size),
+												item?.isDisabled ? 'text-default/50' : '',
+												item?.className,
+											])}
 										>
 											{item.title}
 										</span>
 									) : (
 										<a
 											href={item.url}
-											className={cn(
-												[
-													'w-fit font-normal text-default hover:text-default/60 transition-all duration-200 underline-offset-1 decoration-1',
-													size && getTextSize(size),
-													underline && getUnderline(underline),
-												],
-												item?.className
-											)}
+											className={cn([
+												'w-fit font-normal text-default hover:text-default/60 transition-all duration-200 underline-offset-1 decoration-1',
+												getTextSize(size),
+												getUnderline(underline),
+												item?.className,
+											])}
 											onClick={onClick?.(item.url)}
 										>
 											{item.title}

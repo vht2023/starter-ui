@@ -11,7 +11,7 @@ const inter = Inter({subsets: ['latin'], variable: '--font-inter'})
 
 export const metadata: Metadata = {
   title: 'Starter UI',
-  description: 'Starter UI Documents',
+  description: 'Starter UI Documentation',
   icons: './icon.png',
 }
 

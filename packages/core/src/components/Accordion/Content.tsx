@@ -13,14 +13,12 @@ const Content = ({ className, children }: PropsWithChildren<{ className?: string
 	return (
 		<div
 			id={`accordion-body-${itemId}`}
-			className={cn(
-				[
-					'starterui-accordion-body overflow-hidden pt-3',
-					isOpen ? 'starterui-accordion-body-open pb-3' : 'starterui-accordion-body-close',
-					isDisabled && 'cursor-default opacity-50',
-				],
-				className
-			)}
+			className={cn([
+				'starterui-accordion-body overflow-hidden pt-3',
+				isOpen ? 'starterui-accordion-body-open pb-3' : 'starterui-accordion-body-close',
+				isDisabled ? 'cursor-default opacity-50' : '',
+				className,
+			])}
 		>
 			<div>{children}</div>
 		</div>

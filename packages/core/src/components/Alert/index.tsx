@@ -89,11 +89,7 @@ const getAlertCloseIcons = (type: string, onClose?: () => void) => {
 
 const Alert = ({ id = 'starterui-default-alert', type = 'default', outline = false, closeable = true, className, children, onClose }: PropsWithChildren<Props>) => {
 	return (
-		<div
-			id={id}
-			className={cn(['starterui-alert p-4 rounded-lg flex items-start font-medium text-base', type && getAlertTypes(type), outline && getAlertOutlines(type)], className)}
-			role='alert'
-		>
+		<div id={id} className={cn(['starterui-alert p-4 rounded-lg flex items-start font-medium text-base', getAlertTypes(type), getAlertOutlines(type), className])} role='alert'>
 			<div className='mt-[3px] flex-shrink-0 inline me-2'>{getAlertIcons(type)}</div>
 			<div className='grow'>{children}</div>
 			{closeable && getAlertCloseIcons(type, onClose)}

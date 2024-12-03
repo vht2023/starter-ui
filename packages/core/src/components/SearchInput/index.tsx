@@ -88,15 +88,13 @@ const SearchInput: React.FC<Props> = ({
 				type='text'
 				disabled={disabled || isLoading}
 				autoFocus={autoFocus}
-				className={cn(
-					[
-						'starterui-search-input block w-full rounded-md border border-muted text-default outline-none shadow-md placeholder:text-muted/50 transition-all ease-in-out',
-						size && getInputSizes(size),
-						getInputVariants(variant),
-						disabled ? 'bg-disabled/50' : 'bg-white',
-					],
-					inputClassName
-				)}
+				className={cn([
+					'starterui-search-input block w-full rounded-md border border-muted text-default outline-none shadow-md placeholder:text-muted/50 transition-all ease-in-out',
+					getInputSizes(size),
+					getInputVariants(variant),
+					disabled ? 'bg-disabled/50' : 'bg-white',
+					inputClassName,
+				])}
 				placeholder={placeholder}
 				onChange={(e) => onChange(e.target.value)}
 				value={value}
@@ -117,7 +115,7 @@ const SearchInput: React.FC<Props> = ({
 						isIconOnly
 						outline
 						type='reset'
-						className={cn(['border-none p-1 focus:ring-0', disabled && 'cursor-default'])}
+						className={cn(['border-none p-1 focus:ring-0', disabled ? 'cursor-default' : ''])}
 						onClick={() => {
 							onChange('');
 							onClearSearch?.();

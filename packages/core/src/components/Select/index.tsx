@@ -44,17 +44,17 @@ export interface Props {
 const getSelectColors = (color: string, isActivated: boolean) => {
 	switch (color) {
 		case 'primary':
-			return `hover:border-primary-light focus:ring focus:ring-primary/5 ${isActivated && 'border-primary-light'}`;
+			return `hover:border-primary-light focus:ring focus:ring-primary/5 ${isActivated ? 'border-primary-light' : ''}`;
 		case 'secondary':
-			return `hover:border-secondary-light focus:ring focus:ring-secondary/5 ${isActivated && 'border-secondary-light'}`;
+			return `hover:border-secondary-light focus:ring focus:ring-secondary/5 ${isActivated ? 'border-secondary-light' : ''}`;
 		case 'success':
-			return `hover:border-success-light focus:ring focus:ring-success/5 ${isActivated && 'border-success-light'}`;
+			return `hover:border-success-light focus:ring focus:ring-success/5 ${isActivated ? 'border-success-light' : ''}`;
 		case 'warning':
-			return `hover:border-warning-light focus:ring focus:ring-warning/5 ${isActivated && 'border-warning-light'}`;
+			return `hover:border-warning-light focus:ring focus:ring-warning/5 ${isActivated ? 'border-warning-light' : ''}`;
 		case 'error':
-			return `hover:border-error-light focus:ring focus:ring-error/5 ${isActivated && 'border-error-light'}`;
+			return `hover:border-error-light focus:ring focus:ring-error/5 ${isActivated ? 'border-error-light' : ''}`;
 		default:
-			return `hover:border-default focus:ring focus:ring-default/5 ${isActivated && 'border-default'}`;
+			return `hover:border-default focus:ring focus:ring-default/5 ${isActivated ? 'border-default' : ''}`;
 	}
 };
 
@@ -221,7 +221,7 @@ const Select: React.FC<Props> = ({
 		<div ref={selectRef} className={cn(['starterui-select-wrapper relative', className])}>
 			{/* LABEL */}
 			{label && (
-				<label htmlFor={id} className={cn(['starterui-select-label mb-1.5 block w-fit text-default', required && 'starterui-required', getLabelSizes(size), labelClassName])}>
+				<label htmlFor={id} className={cn(['starterui-select-label mb-1.5 block w-fit text-default', required ? 'starterui-required' : '', getLabelSizes(size), labelClassName])}>
 					{label}
 				</label>
 			)}
@@ -241,7 +241,7 @@ const Select: React.FC<Props> = ({
 						((!disabled && !isLoading) || show) && getSelectColors(color, show),
 						value.length === 0 ? '[&>span]:text-muted/70' : '[&>span]:text-default',
 						disabled ? 'cursor-not-allowed opacity-60' : 'cursor-default',
-						isError && 'border-error hover:border-error focus:ring-error/5',
+						isError ? 'border-error hover:border-error focus:ring-error/5' : '',
 						buttonClassName,
 					])}
 				>
@@ -254,7 +254,7 @@ const Select: React.FC<Props> = ({
 								isIconOnly
 								outline
 								type='reset'
-								className={cn(['border-none p-1 focus:ring-0', disabled && 'cursor-default'])}
+								className={cn(['border-none p-1 focus:ring-0', disabled ? 'cursor-default' : ''])}
 								onClick={(e) => {
 									onClearValue();
 									e.stopPropagation();
@@ -325,7 +325,7 @@ const Select: React.FC<Props> = ({
 
 				{/* HELPER TEXT */}
 				{helperText && (
-					<p className={cn(['starterui-input-helperText absolute right-0 top-full mt-1 flex cursor-pointer items-center text-xs', isError && 'text-error'])}>{helperText}</p>
+					<p className={cn(['starterui-input-helper-text absolute right-0 top-full mt-1 flex cursor-pointer items-center text-xs', isError ? 'text-error' : ''])}>{helperText}</p>
 				)}
 			</div>
 		</div>

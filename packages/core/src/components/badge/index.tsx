@@ -14,17 +14,17 @@ interface Props {
 const getBadgeColors = (color: string, outline: boolean) => {
 	switch (color) {
 		case 'primary':
-			return `text-white bg-primary ${outline && 'border-primary text-primary'}`;
+			return `text-white bg-primary ${outline ? 'border-primary text-primary' : ''}`;
 		case 'secondary':
-			return `text-white bg-secondary ${outline && 'border-secondary text-primary'}`;
+			return `text-white bg-secondary ${outline ? 'border-secondary text-primary' : ''}`;
 		case 'success':
-			return `text-default bg-success ${outline && 'border-success text-success'}`;
+			return `text-default bg-success ${outline ? 'border-success text-success' : ''}`;
 		case 'warning':
-			return `text-default bg-warning ${outline && 'border-warning text-warning'}`;
+			return `text-default bg-warning ${outline ? 'border-warning text-warning' : ''}`;
 		case 'error':
-			return `text-white bg-error ${outline && 'border-error text-error'}`;
+			return `text-white bg-error ${outline ? 'border-error text-error' : ''}`;
 		default:
-			return `text-default bg-grey ${outline && 'border-default'}`;
+			return `text-default bg-grey ${outline ? 'border-default' : ''}`;
 	}
 };
 
@@ -33,9 +33,9 @@ const getBadgeSizes = (size: string, outline: boolean) => {
 		case 'sm':
 			return 'text-sm px-2 py-1.5 rounded-md';
 		case 'md':
-			return `text-base px-3 py-2 rounded-lg ${outline && 'border-[1.5px]'}`;
+			return `text-base px-3 py-2 rounded-lg ${outline ? 'border-[1.5px]' : ''}`;
 		case 'lg':
-			return `text-lg px-4 py-3 rounded-xl ${outline && 'border-[2px]'}`;
+			return `text-lg px-4 py-3 rounded-xl ${outline ? 'border-[2px]' : ''}`;
 		default:
 			return 'text-sm px-2 py-1.5 rounded-md';
 	}
@@ -45,16 +45,14 @@ const Badge = ({ id = 'starterui-default-badge', color = 'default', size = 'sm',
 	return (
 		<div
 			id={id}
-			className={cn(
-				[
-					'starterui-badge inline-flex items-center justify-start w-fit h-fit whitespace-nowrap',
-					getBadgeColors(color, outline),
-					getBadgeSizes(size, outline),
-					outline && 'border bg-transparent',
-					disabled && 'cursor-not-allowed opacity-60',
-				],
-				className
-			)}
+			className={cn([
+				'starterui-badge inline-flex items-center justify-start w-fit h-fit whitespace-nowrap',
+				getBadgeColors(color, outline),
+				getBadgeSizes(size, outline),
+				outline ? 'border bg-transparent' : '',
+				disabled ? 'cursor-not-allowed opacity-60' : '',
+				className,
+			])}
 		>
 			{children}
 		</div>

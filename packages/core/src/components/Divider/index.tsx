@@ -43,8 +43,8 @@ const getDividerTypes = (type: string) => {
 const Divider: React.FC<Props> = ({ id = 'starterui-default-divider', label, type = 'solid', color = 'default', className, labelClassName }) => {
 	return (
 		<div id={id} className='starterui-divider inline-flex items-center justify-center w-full'>
-			<div className={cn(['w-full h-0 border-b my-3', type && getDividerTypes(type), color && getDividerColors(color)], className)} />
-			{label && <span className={cn(['absolute px-3 text-default -translate-x-1/2 bg-white left-1/2 leading-none'], labelClassName)}>{label}</span>}
+			<div className={cn(['w-full h-0 border-b my-3', getDividerTypes(type), getDividerColors(color), className])} />
+			{label && <span className={cn(['absolute px-3 text-default -translate-x-1/2 bg-white left-1/2 leading-none', labelClassName])}>{label}</span>}
 		</div>
 	);
 };

@@ -22,19 +22,19 @@ interface Props {
 const getButtonColors = (color: string, shouldHover: boolean, outline: boolean) => {
 	switch (color) {
 		case 'primary':
-			return `[&_div]:text-white bg-primary focus:ring-primary/40 ${shouldHover && 'hover:bg-primary-dark'} ${outline && 'border-primary [&_div]:text-primary'}`;
+			return `[&_div]:text-white bg-primary focus:ring-primary/40 ${shouldHover ? 'hover:bg-primary-dark' : ''} ${outline ? 'border-primary [&_div]:text-primary' : ''}`;
 		case 'secondary':
-			return `[&_div]:text-white bg-secondary focus:ring-secondary/40 ${shouldHover && 'hover:bg-secondary-dark'} ${outline && 'border-secondary [&_div]:text-primary'}`;
+			return `[&_div]:text-white bg-secondary focus:ring-secondary/40 ${shouldHover ? 'hover:bg-secondary-dark' : ''} ${outline ? 'border-secondary [&_div]:text-primary' : ''}`;
 		case 'success':
-			return `[&_div]:text-default bg-success focus:ring-success/40 ${shouldHover && 'hover:bg-success-dark'} ${outline && 'border-success [&_div]:text-success'}`;
+			return `[&_div]:text-default bg-success focus:ring-success/40 ${shouldHover ? 'hover:bg-success-dark' : ''} ${outline ? 'border-success [&_div]:text-success' : ''}`;
 		case 'warning':
-			return `[&_div]:text-default bg-warning focus:ring-warning/40 ${shouldHover && 'hover:bg-warning-dark'} ${outline && 'border-warning [&_div]:text-warning'}`;
+			return `[&_div]:text-default bg-warning focus:ring-warning/40 ${shouldHover ? 'hover:bg-warning-dark' : ''} ${outline ? 'border-warning [&_div]:text-warning' : ''}`;
 		case 'error':
-			return `[&_div]:text-white bg-error focus:ring-error/40 ${shouldHover && 'hover:bg-error-dark'} ${outline && 'border-error [&_div]:text-error'}`;
+			return `[&_div]:text-white bg-error focus:ring-error/40 ${shouldHover ? 'hover:bg-error-dark' : ''} ${outline ? 'border-error [&_div]:text-error' : ''}`;
 		case 'black':
-			return `[&_div]:text-white bg-default focus:ring-default/40 ${shouldHover && 'hover:bg-default/80'} ${outline && 'border-default [&_div]:text-default'}`;
+			return `[&_div]:text-white bg-default focus:ring-default/40 ${shouldHover ? 'hover:bg-default/80' : ''} ${outline ? 'border-default [&_div]:text-default' : ''}`;
 		default:
-			return `[&_div]:text-default bg-grey focus:ring-grey/40 ${shouldHover && 'hover:bg-grey-dark'} ${outline && 'border-default'}`;
+			return `[&_div]:text-default bg-grey focus:ring-grey/40 ${shouldHover ? 'hover:bg-grey-dark' : ''} ${outline ? 'border-default' : ''}`;
 	}
 };
 
@@ -104,7 +104,7 @@ const Button = ({
 
 	/* ======== ICON + CHILDREN ======== */
 	const renderChildren = () => (
-		<div className={cn(['flex items-center justify-center w-full', isLoading && 'gap-2'])}>
+		<div className={cn(['flex items-center justify-center w-full', isLoading ? 'gap-2' : ''])}>
 			<Spinner isLoading={isLoading} color={outline ? color : 'white'} />
 			<div className='flex items-center justify-center gap-2 text-center'>
 				{!isLoading && startIcon && startIcon}
@@ -120,20 +120,18 @@ const Button = ({
 			type={type}
 			disabled={disabled || isLoading}
 			onClick={onClick}
-			className={cn(
-				[
-					'starterui-button flex items-center justify-center whitespace-nowrap text-center font-normal transition-all transform',
-					getButtonColors(color, !disabled && !isLoading && !outline, outline),
-					getButtonSizes(size, isIconOnly),
-					getButtonRadius(radius),
-					outline && `bg-transparent border hover:opacity-70 ${buttonOutline(color)}`,
-					disabled && 'cursor-not-allowed opacity-60',
-					isLoading && 'cursor-wait opacity-70',
-					!disabled && !isLoading && 'active:scale-95 focus:ring-2',
-					isIconOnly ? 'min-w-fit' : 'min-w-20',
-				],
-				className
-			)}
+			className={cn([
+				'starterui-button flex items-center justify-center whitespace-nowrap text-center font-normal transition-all transform',
+				getButtonColors(color, !disabled && !isLoading && !outline, outline),
+				getButtonSizes(size, isIconOnly),
+				getButtonRadius(radius),
+				outline ? `bg-transparent border hover:opacity-70 ${buttonOutline(color)}` : '',
+				disabled ? 'cursor-not-allowed opacity-60' : '',
+				isLoading ? 'cursor-wait opacity-70' : '',
+				!disabled && !isLoading ? 'active:scale-95 focus:ring-2' : '',
+				isIconOnly ? 'min-w-fit' : 'min-w-20',
+				className,
+			])}
 		>
 			{isIconOnly ? renderOnlyIcon() : renderChildren()}
 		</button>

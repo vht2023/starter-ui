@@ -33,7 +33,7 @@ const Header = ({
 		<div
 			id={`accordion-header-${itemId}`}
 			onClick={onClickHeader}
-			className={cn(['flex items-center justify-between w-full cursor-pointer', loading && 'opacity-70 cursor-wait', isDisabled && 'cursor-default opacity-50'], className)}
+			className={cn(['flex items-center justify-between w-full cursor-pointer', loading ? 'opacity-70 cursor-wait' : '', isDisabled ? 'cursor-default opacity-50' : '', className])}
 		>
 			<div>
 				<div className='text-lg font-semibold'>{children}</div>
