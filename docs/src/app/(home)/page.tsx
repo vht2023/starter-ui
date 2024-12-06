@@ -23,7 +23,7 @@ const page = () => {
           </div>
           <div className='font-[family-name:var(--font-geist-sans)] text-3xl font-semibold tablet_max:text-2xl'>Build Faster, Launch Sooner!</div>
         </div>
-        <div className='px-20 text-muted tablet_max:px-6'>Start developing with over 100+ Free-to-use UI components built with the utility classes from Tailwind CSS.</div>
+        <div className='px-18 text-muted tablet_max:px-6'>Start developing with over 100+ Free-to-use UI components built with the utility classes from Tailwind CSS.</div>
         <div className='flex-center gap-6 tablet_max:w-full tablet_max:flex-col'>
           <div className='universe-button flex-shrink-0 tablet_max:w-full'>
             <Link href='docs'>

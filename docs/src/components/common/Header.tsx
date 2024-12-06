@@ -18,7 +18,7 @@ import Logo from './Logo'
 
 const martian = Martian_Mono({subsets: ['latin']})
 
-const CURRENT_VERSION = '1.1.12'
+const CURRENT_VERSION = '1.1.14'
 
 const Header = () => {
   const pathname = usePathname()

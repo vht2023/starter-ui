@@ -37,7 +37,7 @@ const page = () => {
         <div className='w-full space-y-6'>
           <div className='w-fit text-4xl font-bold tablet_max:leading-none'>Introduction</div>
           <div>
-            Welcome to the <span className='font-bold text-default'>Starter UI</span> documentation!
+            Welcome to the <span className='font-bold text-default'>Starter UI</span> documentations!
           </div>
           <div className='relative space-y-3'>
             <div id='what-is-starter-ui' className='absolute -top-16' />

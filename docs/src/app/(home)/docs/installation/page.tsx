@@ -13,7 +13,7 @@ import {colors} from '@starter-ui/theme'
 const config: Config = {
   content: [
     // ...
-     // make sure it's pointing to the ROOT node_module
+    // make sure it's pointing to the ROOT node_module
     './node_modules/'@starter-ui/core'/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
@@ -32,7 +32,7 @@ const starteruiCssCode = `
 // src/main.tsx <-- ReactJS -->
 // app/layout.tsx <-- NextJS app directory -->
 
-import '@starter-ui/core'/index.css'
+import '@starter-ui/core/index.css'
 ...
 `
 
@@ -107,7 +107,7 @@ const page = () => {
                   :
                 </div>
                 <div>
-                  <ViewCode id='installVite' code='npm create vite@latest' language='bash' theme={themes.synthwave84} />
+                  <ViewCode id='installVite' code='npm create vite@latest' language='bash' theme={themes.vsDark} />
                 </div>
               </div>
             </li>
@@ -122,7 +122,7 @@ const page = () => {
                   To install <span className='font-semibold'>Starter UI</span>, run one of the following commands in your terminal:
                 </div>
                 <div>
-                  <ViewCode id='installStarterUI' code='npm install @starter-ui/core @starter-ui/theme' language='bash' theme={themes.synthwave84} />
+                  <ViewCode id='installStarterUI' code='npm install @starter-ui/core @starter-ui/theme' language='bash' theme={themes.vsDark} />
                 </div>
               </div>
             </li>
@@ -134,14 +134,14 @@ const page = () => {
               </a>
               <div className='ml-5 space-y-1.5'>
                 <div>
-                  NextUI is built on top of Tailwind CSS, so you need to install Tailwind CSS first. You can follow the official{' '}
+                  <span className='font-semibold'>Starter UI</span> is built on top of Tailwind CSS, so you need to install Tailwind CSS first. You can follow the official{' '}
                   <a href='https://tailwindcss.com/docs/installation' className='text-link' target='_blank' rel='noreferrer'>
                     installation guide
                   </a>{' '}
-                  to install Tailwind CSS. Then you need to add the following code to your `tailwind.config.js` file:
+                  to install Tailwind CSS. Then you need to add the following code to your `tailwind.config.ts` file:
                 </div>
                 <div>
-                  <ViewCode id='tailwindCssCode' code={tailwindCssCode} language='typescript' theme={themes.synthwave84} />
+                  <ViewCode id='tailwindCssCode' code={tailwindCssCode} language='typescript' theme={themes.vsDark} />
                 </div>
               </div>
             </li>
@@ -153,7 +153,7 @@ const page = () => {
               </a>
               <div className='ml-5 space-y-1.5'>
                 <div className='mt-1.5'>
-                  <ViewCode id='starteruiCssCode' code={starteruiCssCode} language='typescript' theme={themes.synthwave84} />
+                  <ViewCode id='starteruiCssCode' code={starteruiCssCode} language='typescript' theme={themes.vsDark} />
                 </div>
               </div>
             </li>

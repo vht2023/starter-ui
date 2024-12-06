@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@starter-ui/core": "^1.1.13",
+    "@starter-ui/core": "^1.1.14",
     "@starter-ui/theme": "^1.0.3",
     "clsx": "^2.1.1",
     "framer-motion": "^11.5.4",

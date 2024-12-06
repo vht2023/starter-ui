@@ -149,6 +149,12 @@ const useSidebarNavigation = () => {
             sub: [],
           },
           {
+            name: 'Pagination',
+            href: ENUM_ROUTES.COMPONENTS_PAGINATION,
+            active: pathname === ENUM_ROUTES.COMPONENTS_PAGINATION,
+            sub: [],
+          },
+          {
             name: 'Popover',
             href: ENUM_ROUTES.COMPONENTS_POPOVER,
             active: pathname === ENUM_ROUTES.COMPONENTS_POPOVER,

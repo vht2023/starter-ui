@@ -59,6 +59,10 @@ const COMPONENTS_ROUTES = [
     href: ENUM_ROUTES.COMPONENTS_MODAL,
   },
   {
+    name: 'Pagination',
+    href: ENUM_ROUTES.COMPONENTS_PAGINATION,
+  },
+  {
     name: 'Popover',
     href: ENUM_ROUTES.COMPONENTS_POPOVER,
   },

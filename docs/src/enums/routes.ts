@@ -21,6 +21,7 @@ export enum ENUM_ROUTES {
   COMPONENTS_DROPDOWN = '/docs/components/dropdown',
   COMPONENTS_INPUT = '/docs/components/input',
   COMPONENTS_MODAL = '/docs/components/modal',
+  COMPONENTS_PAGINATION = '/docs/components/pagination',
   COMPONENTS_POPOVER = '/docs/components/popover',
   COMPONENTS_PROGRESS = '/docs/components/progress',
   COMPONENTS_RADIO = '/docs/components/radio',
