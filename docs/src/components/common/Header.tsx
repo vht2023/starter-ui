@@ -30,7 +30,7 @@ const Header = () => {
 
   const searchResult = useMemo(
     () => (searchValue.length > 0 ? COMPONENTS_ROUTES.filter((cpn) => cpn.name.toLocaleLowerCase().includes(searchDebounce.toLocaleLowerCase())) : []),
-    [searchDebounce]
+    [searchValue.length, searchDebounce]
   )
 
   useEffect(() => {

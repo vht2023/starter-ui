@@ -57,7 +57,7 @@ const Custom = () => {
         />
       </div>
     ),
-    []
+    [active]
   )
 
   return (

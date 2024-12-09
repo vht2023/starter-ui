@@ -33,7 +33,7 @@ const useHeaderNavigation = () => {
         sub: [],
       },
     ],
-    [pathname]
+    [docsRoutes, pathname]
   )
 
   return paths

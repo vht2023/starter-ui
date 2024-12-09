@@ -40,7 +40,7 @@ const Controlled = () => {
         </div>
       </div>
     ),
-    []
+    [selectedKeys]
   )
 
   return (
