@@ -6,13 +6,39 @@ import type {Metadata} from 'next'
 import {Inter} from 'next/font/google'
 
 import {cn} from '@/libs/utils'
+import {siteMetadata} from 'configs/siteMetadata'
 
 const inter = Inter({subsets: ['latin'], variable: '--font-inter'})
 
 export const metadata: Metadata = {
-  title: 'Starter UI',
-  description: 'Starter UI Documentations',
-  icons: './icon.png',
+  metadataBase: new URL(siteMetadata.siteUrl),
+  title: siteMetadata.title,
+  description: siteMetadata.description,
+  openGraph: {
+    title: siteMetadata.title,
+    description: siteMetadata.description,
+    siteName: siteMetadata.title,
+    images: [
+      {
+        url: siteMetadata.ogImage,
+        alt: siteMetadata.title,
+      },
+    ],
+    url: siteMetadata.siteUrl,
+    locale: siteMetadata.locale,
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export default function RootLayout({
