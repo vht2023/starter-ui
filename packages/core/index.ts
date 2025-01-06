@@ -24,6 +24,7 @@ export {
 	SelectMultiple,
 	Skeleton,
 	Spinner,
+	Steps,
 	Switch,
 	Tooltip,
 } from './src/components/index';

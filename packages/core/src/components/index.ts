@@ -23,6 +23,7 @@ import Select from './Select';
 import SelectMultiple from './SelectMultiple';
 import Skeleton from './Skeleton';
 import Spinner from './Spinner';
+import Steps from './Steps';
 import Switch from './Switch';
 import Tooltip from './Tooltip';
 
@@ -52,6 +53,7 @@ export {
 	SelectMultiple,
 	Skeleton,
 	Spinner,
+	Steps,
 	Switch,
 	Tooltip,
 };

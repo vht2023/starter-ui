@@ -197,6 +197,12 @@ const useSidebarNavigation = () => {
             sub: [],
           },
           {
+            name: 'Steps',
+            href: ENUM_ROUTES.COMPONENTS_STEPS,
+            active: pathname === ENUM_ROUTES.COMPONENTS_STEPS,
+            sub: [],
+          },
+          {
             name: 'Switch',
             href: ENUM_ROUTES.COMPONENTS_SWITCH,
             active: pathname === ENUM_ROUTES.COMPONENTS_SWITCH,

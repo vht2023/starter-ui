@@ -2,13 +2,14 @@
 
 import './showcases.scss'
 
-import {Card} from '@starter-ui/core'
+// import {Card} from '@starter-ui/core'
 import React from 'react'
 
 const page = () => {
   return (
     <div className='showcases grid h-full auto-cols-max grid-flow-col gap-6 tablet_max:flex tablet_max:flex-col tablet_max:flex-wrap'>
-      <Card>
+      COMMING SOON
+      {/* <Card>
         <Card.Body className='flex-center h-full w-full'>
           <div className='mastery'>
             <div className='text'>
@@ -81,7 +82,7 @@ const page = () => {
             <span className='text'>Start</span>
           </button>
         </Card.Body>
-      </Card>
+      </Card> */}
     </div>
   )
 }

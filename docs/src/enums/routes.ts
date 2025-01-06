@@ -29,6 +29,7 @@ export enum ENUM_ROUTES {
   COMPONENTS_SELECT = '/docs/components/select',
   COMPONENTS_SKELETON = '/docs/components/skeleton',
   COMPONENTS_SPINNER = '/docs/components/spinner',
+  COMPONENTS_STEPS = '/docs/components/steps',
   COMPONENTS_SWITCH = '/docs/components/switch',
 
   // CHALLENGES

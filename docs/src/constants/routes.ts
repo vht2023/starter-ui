@@ -91,6 +91,10 @@ const COMPONENTS_ROUTES = [
     href: ENUM_ROUTES.COMPONENTS_SPINNER,
   },
   {
+    name: 'Steps',
+    href: ENUM_ROUTES.COMPONENTS_STEPS,
+  },
+  {
     name: 'Switch',
     href: ENUM_ROUTES.COMPONENTS_SWITCH,
   },
